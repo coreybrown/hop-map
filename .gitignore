@@ -55,3 +55,10 @@ next-env.d.ts
 !/data/breweries.seed.json
 !/data/ground-truth.json
 !/data/corrections.json
+
+# registry.json is DERIVED but must be tracked anyway: lib/data.ts imports it,
+# so the Next build fails without it and a fresh clone cannot run the app.
+# Regenerate with scripts/build-registry.mjs; commit the result.
+!/data/registry.json
+# Same reason — lib/data.ts joins releases onto the registry at import time.
+!/data/releases.json

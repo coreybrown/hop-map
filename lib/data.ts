@@ -1,26 +1,47 @@
-import breweriesData from '@/data/breweries.json';
+import registryData from '@/data/registry.json';
 import releasesData from '@/data/releases.json';
 import type { Brewery, Release } from './types';
 
 /**
- * Single source of truth for the app: the geocoded brewery registry joined
- * with best-effort release data. Both are static JSON committed to the repo
- * and refreshed by the scripts in /scripts, so the whole product runs with
- * no database and no runtime API calls.
+ * Single source of truth for the app: the geocoded registry joined with
+ * best-effort release data. Static JSON committed to the repo and refreshed
+ * by the scripts in /scripts, so the whole product runs with no database and
+ * no runtime API calls.
+ *
+ * Reads `registry.json`, NOT `breweries.json`. The latter is the hand-curated
+ * seed of 63 that `build-registry.mjs` consumes as one input among several —
+ * serving it directly would show a quarter of Ontario and none of the OSM
+ * coverage, contact details, awards or corrections.
  */
-const releases = releasesData.releases as Record<string, Release[]>;
+const releases = (releasesData as { releases: Record<string, Release[]> }).releases;
 
-export const BREWERIES: Brewery[] = (
-  breweriesData.breweries as unknown as Brewery[]
-).map((brewery) => ({
+const ALL: Brewery[] = (registryData.breweries as unknown as Brewery[]).map((brewery) => ({
   ...brewery,
   releases: releases[brewery.id],
 }));
 
+/**
+ * What the product actually offers.
+ *
+ * Excludes the 18 records a human confirmed are not breweries (pubs OSM swept
+ * in under `craft=brewery`, a distillery, a coffee shop) and anything closed.
+ * Both judgements live in `data/corrections.json` and are applied at build
+ * time by `build-registry.mjs` — see that file before changing this filter.
+ */
+export const BREWERIES: Brewery[] = ALL.filter(
+  (b) => (b as Brewery & { isBrewery?: boolean }).isBrewery !== false,
+);
+
 export const OPEN_BREWERIES = BREWERIES.filter((b) => b.status !== 'closed');
 
+/** Everything, closed and excluded included — for maps and admin views. */
+export const ALL_RECORDS = ALL;
+
 export const RELEASES_GENERATED_AT = releasesData.generatedAt;
-export const BREWERIES_GENERATED_AT = breweriesData.generatedAt;
+export const REGISTRY_GENERATED_AT = registryData.generatedAt;
+
+/** ODbL requires attribution wherever OSM-derived data is shown. */
+export const ATTRIBUTION = registryData.attribution;
 
 /** Places people actually name when saying where they're going. */
 export const PLACES: Record<string, { label: string; lat: number; lng: number }> = {
@@ -40,3 +61,5 @@ export const PLACES: Record<string, { label: string; lat: number; lng: number }>
   gravenhurst: { label: 'Gravenhurst', lat: 44.9167, lng: -79.3667 },
   sudbury: { label: 'Sudbury', lat: 46.49, lng: -80.9906 },
 };
+
+export const PLACE_KEYS = Object.keys(PLACES);

@@ -1,0 +1,3271 @@
+{
+  "generatedAt": "2026-08-17T19:57:44.298Z",
+  "breweriesWithReleases": 30,
+  "releases": {
+    "bellwoods": [
+      {
+        "name": "Bellwoods Mix Pack",
+        "styles": [
+          "pale-ale",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://bellwoodsbrewery.com/products/bellwoods-mix-pack",
+        "available": true
+      },
+      {
+        "name": "Bellweiser Short Cans",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://bellwoodsbrewery.com/products/bellweiser-short-cans",
+        "available": true
+      },
+      {
+        "name": "Wood Woods (2026)",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://bellwoodsbrewery.com/products/wood-woods-2026",
+        "available": true
+      },
+      {
+        "name": "Stay Classy Pilsner",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-28",
+        "url": "https://bellwoodsbrewery.com/products/stay-classy-pilsner",
+        "available": true
+      },
+      {
+        "name": "Franconian Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-09",
+        "url": "https://bellwoodsbrewery.com/products/franconian-lager",
+        "available": false
+      },
+      {
+        "name": "Duckshark (collab with Burdock)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-09",
+        "url": "https://bellwoodsbrewery.com/products/duckshark",
+        "available": false
+      },
+      {
+        "name": "Keller Pils",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-23",
+        "url": "https://bellwoodsbrewery.com/products/keller-pils",
+        "available": false
+      },
+      {
+        "name": "DOUBLE FRILLS (Superdelic, Loral, Simcoe & Grapefruit SkyFarm Terpines)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-11",
+        "url": "https://bellwoodsbrewery.com/products/double-frills",
+        "available": false
+      },
+      {
+        "name": "Jelly King Pineapple Tangerine Grapefruit 473mL",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-06-04",
+        "url": "https://bellwoodsbrewery.com/products/jelly-king-pineapple-tangerine-grapefruit",
+        "available": false
+      },
+      {
+        "name": "Paper Tiger (2026)",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-05-26",
+        "url": "https://bellwoodsbrewery.com/products/paper-tiger-2026",
+        "available": false
+      },
+      {
+        "name": "Jelly King Can",
+        "styles": [
+          "hazy-ipa",
+          "sour"
+        ],
+        "firstSeen": "2026-05-20",
+        "url": "https://bellwoodsbrewery.com/products/jelly-king-can",
+        "available": true
+      },
+      {
+        "name": "Non-Alcoholic Jelly King w/ Tangerine, Ginger, Lemon",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-05-15",
+        "url": "https://bellwoodsbrewery.com/products/non-alcoholic-jelly-king-w-tangerine-ginger-lemon",
+        "available": true
+      }
+    ],
+    "blood-brothers": [
+      {
+        "name": "WITCH'S HAIR - 473 mL TALL CAN",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-17",
+        "url": "https://www.bloodbrothersbrewing.com/products/witchs-hair-473-ml-tall-can",
+        "available": true
+      },
+      {
+        "name": "PARADISE LOST - GUAVA PINEAPPLE • 473 ML TALL CAN",
+        "styles": [
+          "hazy-ipa",
+          "sour"
+        ],
+        "firstSeen": "2026-08-17",
+        "url": "https://www.bloodbrothersbrewing.com/products/paradise-lost-guava-pineapple-473-ml-tall-can",
+        "available": true
+      },
+      {
+        "name": "EARLIGLOW • 473 ML TALL CAN",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-17",
+        "url": "https://www.bloodbrothersbrewing.com/products/earliglow-473-ml-tall-can",
+        "available": true
+      },
+      {
+        "name": "GUILTY REMNANT • 473 ML TALL CAN",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-08-17",
+        "url": "https://www.bloodbrothersbrewing.com/products/guilty-remnant-473-ml-can",
+        "available": true
+      },
+      {
+        "name": "BLOODVAR - 473 ML TALL CAN",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-17",
+        "url": "https://www.bloodbrothersbrewing.com/products/bloodvar-473-ml-tall-can",
+        "available": true
+      },
+      {
+        "name": "PARADISE LOST - NON ALC GUAVA PINEAPPLE • 473 ML TALL CAN",
+        "styles": [
+          "hazy-ipa",
+          "session-low-alc",
+          "sour"
+        ],
+        "firstSeen": "2026-08-14",
+        "url": "https://www.bloodbrothersbrewing.com/products/paradise-lost-non-alc-guava-pineapple-473-ml-tall-can",
+        "available": true
+      },
+      {
+        "name": "DEVIL'S TRILL BEVERLY TRILLS HOPS 473mL TALL CAN",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-08",
+        "url": "https://www.bloodbrothersbrewing.com/products/devils-trill-beverly-trills-hops-473ml-tall-can",
+        "available": true
+      },
+      {
+        "name": "BLACK BAT • 473 mL TALL CAN",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://www.bloodbrothersbrewing.com/products/black-bat-473-ml-tall-can",
+        "available": true
+      },
+      {
+        "name": "BLOOD LIGHT - 355 ML 4-PACK",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://www.bloodbrothersbrewing.com/products/blood-light-355-ml-4-pack",
+        "available": true
+      },
+      {
+        "name": "HELLFLOWER - 473 ML TALL CAN",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://www.bloodbrothersbrewing.com/products/hellflower-473-ml-tall-can",
+        "available": true
+      },
+      {
+        "name": "SKY GOD • 473 ML TALL CAN",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://www.bloodbrothersbrewing.com/products/sky-god-473-ml-tall-can",
+        "available": true
+      },
+      {
+        "name": "AUTOPOP - SHIRLEY TEMPLE • 473 ML TALL CAN",
+        "styles": [
+          "session-low-alc",
+          "sour"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://www.bloodbrothersbrewing.com/products/autopop-shirley-temple-355-ml-tall-can",
+        "available": true
+      }
+    ],
+    "burdock": [
+      {
+        "name": "Deluxe",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-12",
+        "url": "https://burdockbrewery.com/products/deluxe-lager",
+        "available": false
+      },
+      {
+        "name": "Saison Russett",
+        "styles": [
+          "farmhouse-saison"
+        ],
+        "firstSeen": "2026-08-11",
+        "url": "https://burdockbrewery.com/products/saison-russett",
+        "available": true
+      },
+      {
+        "name": "Saison Pauline",
+        "styles": [
+          "farmhouse-saison",
+          "wheat-belgian"
+        ],
+        "firstSeen": "2026-08-11",
+        "url": "https://burdockbrewery.com/products/saison-pauline",
+        "available": true
+      },
+      {
+        "name": "Alto Bianco",
+        "styles": [
+          "farmhouse-saison"
+        ],
+        "firstSeen": "2026-08-07",
+        "url": "https://burdockbrewery.com/products/alto-bianco",
+        "available": true
+      },
+      {
+        "name": "Disco Ducks",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://burdockbrewery.com/products/disco-ducks",
+        "available": true
+      },
+      {
+        "name": "Spaltz",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://burdockbrewery.com/products/spaltz",
+        "available": true
+      },
+      {
+        "name": "Pocket Pilsner",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://burdockbrewery.com/products/pocket-pilsner",
+        "available": true
+      },
+      {
+        "name": "Ducktown",
+        "styles": [
+          "west-coast-ipa",
+          "session-low-alc",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-28",
+        "url": "https://burdockbrewery.com/products/ducktown",
+        "available": true
+      },
+      {
+        "name": "Tuesday",
+        "styles": [
+          "farmhouse-saison"
+        ],
+        "firstSeen": "2026-06-29",
+        "url": "https://burdockbrewery.com/products/tuesday-355ml",
+        "available": true
+      },
+      {
+        "name": "Kini Mango Guava",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-06-26",
+        "url": "https://burdockbrewery.com/products/kini-mango-guava",
+        "available": true
+      },
+      {
+        "name": "Deluxe Zero 5",
+        "styles": [
+          "session-low-alc"
+        ],
+        "firstSeen": "2026-05-29",
+        "url": "https://burdockbrewery.com/products/deluxe-zero-5",
+        "available": true
+      },
+      {
+        "name": "Cherry B",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-05-27",
+        "url": "https://burdockbrewery.com/products/cherry-b",
+        "available": true
+      }
+    ],
+    "rorschach": [
+      {
+        "name": "TRUTH SERUM DOUBLE DRY-HOPPED IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://rorschachbrewing.com/products/truth-serum-double-dry-hopped-ipa",
+        "available": true
+      },
+      {
+        "name": "Juice Blast: Smoothie Style Hard Juice",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://rorschachbrewing.com/products/hedonism-sorbet-sour-ipa-blackberry-lemonade-copy",
+        "available": true
+      },
+      {
+        "name": "Heresy: Pineapple, Coconut, Banana Smoothie Sour",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://rorschachbrewing.com/products/juice-blast-smoothi-style-hard-juice-copy",
+        "available": true
+      },
+      {
+        "name": "Jolly Beans: Peach Ring Sour",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-24",
+        "url": "https://rorschachbrewing.com/products/jolly-beans-watermelon-sour-copy",
+        "available": true
+      },
+      {
+        "name": "Amigos: DDH Double IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-24",
+        "url": "https://rorschachbrewing.com/products/amigos-ddh-double-ipa",
+        "available": true
+      },
+      {
+        "name": "Leviathan: DDH Double IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-17",
+        "url": "https://rorschachbrewing.com/products/cataclysm-double-dry-hopped-dipa-copy",
+        "available": true
+      },
+      {
+        "name": "Wanderlust XPA",
+        "styles": [
+          "hazy-ipa",
+          "pilsner-lager",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-07-17",
+        "url": "https://rorschachbrewing.com/products/wanderlust-xpa",
+        "available": true
+      },
+      {
+        "name": "Frostvein: DDH IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-03",
+        "url": "https://rorschachbrewing.com/products/stonejaw-ddh-ipa-copy",
+        "available": true
+      },
+      {
+        "name": "REMINISCENCE MEXICAN LAGER",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-17",
+        "url": "https://rorschachbrewing.com/products/reminiscence-mexican-lager",
+        "available": true
+      },
+      {
+        "name": "Decadence Chocolate Milk Stout: Irish Cream",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-06-12",
+        "url": "https://rorschachbrewing.com/products/decadence-chocolate-milk-stout-apple-cider-doughnut-copy",
+        "available": true
+      },
+      {
+        "name": "Decadence Chocolate Milk Stout: Apple Cider Doughnut",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-06-12",
+        "url": "https://rorschachbrewing.com/products/decadence-chocolate-milk-stout-cookies-cream-copy",
+        "available": true
+      },
+      {
+        "name": "FREE SPIRIT: ADVENTURE IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-05",
+        "url": "https://rorschachbrewing.com/products/free-spirit-adventure-ipa",
+        "available": true
+      }
+    ],
+    "steam-whistle": [
+      {
+        "name": "Baseball Jersey",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-17",
+        "url": "https://steamwhistle.ca/products/baseball-jersey",
+        "available": true
+      },
+      {
+        "name": "Insulated 6-Pack Cooler",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-03-02",
+        "url": "https://steamwhistle.ca/products/insulated-6-pack-cooler",
+        "available": true
+      },
+      {
+        "name": "Steam Whistle Pilsner Super Cans",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2025-07-04",
+        "url": "https://steamwhistle.ca/products/steam-whistle-pilsner-super-cans",
+        "available": true
+      },
+      {
+        "name": "Dart Board",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2024-12-16",
+        "url": "https://steamwhistle.ca/products/dart-board",
+        "available": true
+      },
+      {
+        "name": "Soccer Jersey",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2024-07-25",
+        "url": "https://steamwhistle.ca/products/soccer-jersey",
+        "available": true
+      },
+      {
+        "name": "Retro Pilsner Shaker 20 Oz",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2023-10-05",
+        "url": "https://steamwhistle.ca/products/retro-pilsner-shaker-20-oz",
+        "available": true
+      },
+      {
+        "name": "Retro Pilsner Shaker 16 Oz",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2023-10-05",
+        "url": "https://steamwhistle.ca/products/retro-pilsner-shaker-16-oz",
+        "available": true
+      },
+      {
+        "name": "Steam Whistle Pilsner Tall Cans",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2022-10-06",
+        "url": "https://steamwhistle.ca/products/steam-whistle-pilsner-tall-cans",
+        "available": true
+      },
+      {
+        "name": "Steam Whistle Pilsner Keg",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2022-10-06",
+        "url": "https://steamwhistle.ca/products/steam-whistle-pilsner-keg",
+        "available": true
+      },
+      {
+        "name": "Keg Coupler",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2022-10-06",
+        "url": "https://steamwhistle.ca/products/keg-coupler",
+        "available": true
+      },
+      {
+        "name": "Steam Whistle Pilsner Short Cans",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2022-10-06",
+        "url": "https://steamwhistle.ca/products/steam-whistle-pilsner-short-cans",
+        "available": true
+      },
+      {
+        "name": "Steam Whistle Pilsner Bottles",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2022-10-06",
+        "url": "https://steamwhistle.ca/products/steam-whistle-pilsner-bottles",
+        "available": true
+      }
+    ],
+    "eastbound": [
+      {
+        "name": "Houndstooth Irish Red Ale 473mL",
+        "styles": [
+          "session-low-alc"
+        ],
+        "firstSeen": "2026-04-16",
+        "url": "https://eastboundbeer.com/products/houndstooth-irish-red-ale-473ml",
+        "available": true
+      },
+      {
+        "name": "2025 Christmas Ale - A Little Wit of Good for the Holidays",
+        "styles": [
+          "wheat-belgian"
+        ],
+        "firstSeen": "2025-10-31",
+        "url": "https://eastboundbeer.com/products/2025-christmas-ale-a-little-wit-of-good-for-the-holidays",
+        "available": false
+      },
+      {
+        "name": "El Camino Mexican Lager",
+        "styles": [
+          "pilsner-lager",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2025-04-04",
+        "url": "https://eastboundbeer.com/products/el-camino-mexican-lager",
+        "available": true
+      },
+      {
+        "name": "Belgian Handshake IPA",
+        "styles": [
+          "pilsner-lager",
+          "wheat-belgian",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2024-12-10",
+        "url": "https://eastboundbeer.com/products/belgian-handshake",
+        "available": false
+      },
+      {
+        "name": "Prodigal Pilsner - Czech Pilsner",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2024-12-10",
+        "url": "https://eastboundbeer.com/products/prodigal-pilsner",
+        "available": false
+      },
+      {
+        "name": "Turbo Chop West Coast IPA",
+        "styles": [
+          "west-coast-ipa",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2024-11-26",
+        "url": "https://eastboundbeer.com/products/turbo-chop-west-coast-ipa",
+        "available": false
+      },
+      {
+        "name": "Wild Ryed - Rye IPA",
+        "styles": [
+          "wild-ale",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2024-09-12",
+        "url": "https://eastboundbeer.com/products/wild-ryed",
+        "available": false
+      },
+      {
+        "name": "Lite Speed Micro Pale Ale",
+        "styles": [
+          "session-low-alc",
+          "pale-ale"
+        ],
+        "firstSeen": "2023-11-16",
+        "url": "https://eastboundbeer.com/products/lite-speed-micro-pale-ale",
+        "available": false
+      },
+      {
+        "name": "2023 Christmas Ale - Wrap it Up for the Holidays - Sam & Dave",
+        "styles": [
+          "farmhouse-saison",
+          "wheat-belgian"
+        ],
+        "firstSeen": "2023-10-11",
+        "url": "https://eastboundbeer.com/products/wrap-it-up-for-christmas",
+        "available": false
+      },
+      {
+        "name": "Full Dunkel Jacket Dunkelweizen",
+        "styles": [
+          "dark-lager",
+          "wheat-belgian"
+        ],
+        "firstSeen": "2023-08-24",
+        "url": "https://eastboundbeer.com/products/full-dunkel-jacket",
+        "available": false
+      },
+      {
+        "name": "Permanent Vacation Margarita Sour Gose",
+        "styles": [
+          "hazy-ipa",
+          "session-low-alc",
+          "sour"
+        ],
+        "firstSeen": "2023-05-30",
+        "url": "https://eastboundbeer.com/products/permanent-vacation-margarita-gose",
+        "available": false
+      },
+      {
+        "name": "Driven to Madness - 6th Anniversary Cold IPA",
+        "styles": [
+          "pilsner-lager",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2023-04-07",
+        "url": "https://eastboundbeer.com/products/driven-to-madness-6th-anniversary-cold-ipa",
+        "available": false
+      }
+    ],
+    "henderson": [
+      {
+        "name": "Rush Day 2026 - Pop-Up Tattoo Studio",
+        "styles": [
+          "session-low-alc"
+        ],
+        "firstSeen": "2026-08-07",
+        "url": "https://hendersonbrewing.com/products/rush-day-2026-pop-up-tattoo-studio",
+        "available": false
+      },
+      {
+        "name": "Hi-Five",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-06-12",
+        "url": "https://hendersonbrewing.com/products/hi-five-1",
+        "available": false
+      },
+      {
+        "name": "Lovelite",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-03-10",
+        "url": "https://hendersonbrewing.com/products/lovelite",
+        "available": true
+      },
+      {
+        "name": "Oysterfest Pils",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-01-21",
+        "url": "https://hendersonbrewing.com/products/oysterfest-pils",
+        "available": false
+      },
+      {
+        "name": "The Sober Hockey Captain",
+        "styles": [
+          "session-low-alc"
+        ],
+        "firstSeen": "2025-11-14",
+        "url": "https://hendersonbrewing.com/products/the-sober-hockey-captain",
+        "available": false
+      },
+      {
+        "name": "Picklefest Blonde",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2025-08-12",
+        "url": "https://hendersonbrewing.com/products/picklefest-blonde",
+        "available": false
+      },
+      {
+        "name": "Sunshine Daydream",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2025-07-28",
+        "url": "https://hendersonbrewing.com/products/sunshine-daydream",
+        "available": false
+      },
+      {
+        "name": "Hazy River Road",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2025-07-17",
+        "url": "https://hendersonbrewing.com/products/hazy-river-road",
+        "available": true
+      },
+      {
+        "name": "Rush X Henderson Koozies - 4-Pack",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2025-07-14",
+        "url": "https://hendersonbrewing.com/products/rush-x-henderson-koozies-4-pack",
+        "available": true
+      },
+      {
+        "name": "Koozie - It's My Turn to Drive",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2025-07-14",
+        "url": "https://hendersonbrewing.com/products/koozie-its-my-turn-to-drive",
+        "available": true
+      },
+      {
+        "name": "Export Stout",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2025-02-18",
+        "url": "https://hendersonbrewing.com/products/export-stout",
+        "available": false
+      },
+      {
+        "name": "Bigfoot - Non-Alcoholic",
+        "styles": [
+          "west-coast-ipa",
+          "session-low-alc",
+          "pale-ale"
+        ],
+        "firstSeen": "2025-02-18",
+        "url": "https://hendersonbrewing.com/products/bigfoot-non-alcoholic",
+        "available": false
+      }
+    ],
+    "common-good": [
+      {
+        "name": "'Scarbrew' Filipino Lemonade Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-14",
+        "url": "http://commongoodbeer.com/products/scarbrew-filipino-lemonade-lager",
+        "available": true
+      },
+      {
+        "name": "Salted Plum Gose",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-08-03",
+        "url": "http://commongoodbeer.com/products/salted-plum-gose-1",
+        "available": true
+      },
+      {
+        "name": "'Bell Tower' Belgian Wit",
+        "styles": [
+          "hazy-ipa",
+          "wheat-belgian"
+        ],
+        "firstSeen": "2026-07-03",
+        "url": "http://commongoodbeer.com/products/bell-tower-belgian-wit",
+        "available": true
+      },
+      {
+        "name": "'Masala' Chai Spice Stout",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-07-03",
+        "url": "http://commongoodbeer.com/products/masala-chai-spice-stout",
+        "available": true
+      },
+      {
+        "name": "'Eddy' Session IPA",
+        "styles": [
+          "session-low-alc",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-01",
+        "url": "http://commongoodbeer.com/products/caught-in-an-eddy",
+        "available": true
+      },
+      {
+        "name": "'Wexford' Oatmeal Stout",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2025-08-16",
+        "url": "http://commongoodbeer.com/products/wexford-oatmeal-stout-473ml-can",
+        "available": true
+      },
+      {
+        "name": "'Ronin' Japanese Rice Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2024-09-26",
+        "url": "http://commongoodbeer.com/products/ronin-rice-lager",
+        "available": true
+      },
+      {
+        "name": "'Sociable' German Pilsner",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2023-12-28",
+        "url": "http://commongoodbeer.com/products/sociable-pilsner",
+        "available": true
+      },
+      {
+        "name": "'Solace' Hazy IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2022-05-20",
+        "url": "http://commongoodbeer.com/products/solace-east-coast-ipa",
+        "available": true
+      },
+      {
+        "name": "'Runner Duck' Craft Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2022-05-19",
+        "url": "http://commongoodbeer.com/products/runner-duck-craft-lager",
+        "available": true
+      }
+    ],
+    "third-moon": [
+      {
+        "name": "Hazy DIPA - 4-pk of \"Fresh Brood\" 473mL cans",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://thirdmoonbrewing.com/products/hazy-dipa-4-pk-of-fresh-brood-473ml-cans",
+        "available": true
+      },
+      {
+        "name": "Hazy IPA - 4-pk of \"Clearly Departed\" 473mL cans",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://thirdmoonbrewing.com/products/hazy-ipa-4-pk-of-clearly-departed-473ml-cans",
+        "available": true
+      },
+      {
+        "name": "Barrel Aged Pilsner - 4-pk of \"Barrel Aged Kills\" 473mL cans",
+        "styles": [
+          "barrel-aged",
+          "pilsner-lager",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://thirdmoonbrewing.com/products/barrel-aged-pilsner-4-pk-of-ba-kills-355ml-cans",
+        "available": true
+      },
+      {
+        "name": "Hazy Pale Ale - 4-pk of \"Pale Shadows\" 473mL cans",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-08-06",
+        "url": "https://thirdmoonbrewing.com/products/hazy-pale-ale-4-pk-of-pale-shadows-473ml-cans",
+        "available": true
+      },
+      {
+        "name": "Hazy IPA - 4-pk of \"Wretch\" 473mL cans",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-06",
+        "url": "https://thirdmoonbrewing.com/products/hazy-ipa-4-pk-of-wretch-tall-cans",
+        "available": true
+      },
+      {
+        "name": "Hazy IPA - 4-pk of \"Bone Tree\" 473mL cans",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-05",
+        "url": "https://thirdmoonbrewing.com/products/ipa-bone-tree",
+        "available": true
+      },
+      {
+        "name": "Quad IPA - 4-pk of \"Quadruple Victim Of The Same Curse\" 473mL cans",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://thirdmoonbrewing.com/products/quad-ipa-4-pk-of-quadruple-victim-of-the-same-curse-473ml-cans",
+        "available": true
+      },
+      {
+        "name": "Hazy DIPA - 4-pk of \"Neuromancer\" 473mL cans",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://thirdmoonbrewing.com/products/double-ipa-4-pk-of-neuromancer-tall-cans",
+        "available": true
+      },
+      {
+        "name": "Hazy IPA - 4-pk of \"Tropical Bone Tree\" 473mL cans",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://thirdmoonbrewing.com/products/hazy-ipa-4-pk-of-tropical-bone-tree-473ml-cans",
+        "available": true
+      },
+      {
+        "name": "West Coast IPA - 4-pk of \"Left Hand Path (Mosaic)\" 473mL cans",
+        "styles": [
+          "hazy-ipa",
+          "west-coast-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://thirdmoonbrewing.com/products/west-coast-ipa-4-pk-of-left-hand-path-mosaic-tall-cans",
+        "available": true
+      },
+      {
+        "name": "Triple IPA - 4-pk of \"Triple RISE\" 473mL cans",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-07-23",
+        "url": "https://thirdmoonbrewing.com/products/triple-ipa-4-pk-of-triple-rise-473ml-cans",
+        "available": true
+      },
+      {
+        "name": "Pilsner - 4-pk of \"Kills Pils\" 473mL cans",
+        "styles": [
+          "pilsner-lager",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-22",
+        "url": "https://thirdmoonbrewing.com/products/pilsner-4-pk-of-kills-pils-473ml-cans",
+        "available": true
+      }
+    ],
+    "badlands": [
+      {
+        "name": "12 Pack - 10 Different Beers (12 Pack - DELIVERY ONLY)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-16",
+        "url": "https://badlandsbrewing.ca/products/beer-pack-delivery-only",
+        "available": true
+      },
+      {
+        "name": "9th Anniversary Bottle Pack: Stouts/Barley Wine 4 Pack - 4 Bottles",
+        "styles": [
+          "barrel-aged",
+          "stout-porter"
+        ],
+        "firstSeen": "2026-08-12",
+        "url": "https://badlandsbrewing.ca/products/basil-hayden-wheat-stout-bourbon-barrel-aged-imperial-stout-11-9-abv-1-bottle",
+        "available": true
+      },
+      {
+        "name": "Streams (2026) - Bourbon Barrel Aged Stout and Barleywine - 11.9% ABV - 1 Bottle",
+        "styles": [
+          "barrel-aged",
+          "stout-porter"
+        ],
+        "firstSeen": "2026-08-12",
+        "url": "https://badlandsbrewing.ca/products/basil-hayden-wheat-stout-bourbon-barrel-aged-imperial-stout-11-9-abv-1-bottle-1",
+        "available": true
+      },
+      {
+        "name": "Willet (House Yeast 2026) - Bourbon Barrel Aged Stout - 11.9% ABV - 1 Bottle",
+        "styles": [
+          "barrel-aged",
+          "stout-porter"
+        ],
+        "firstSeen": "2026-08-12",
+        "url": "https://badlandsbrewing.ca/products/more-ipa-6-5-abv-4-pack",
+        "available": true
+      },
+      {
+        "name": "Basil Hayden (Wheat Stout 2026) - Bourbon Barrel Aged Stout - 11.9% ABV - 1 Bottle",
+        "styles": [
+          "barrel-aged",
+          "stout-porter"
+        ],
+        "firstSeen": "2026-08-12",
+        "url": "https://badlandsbrewing.ca/products/glen-haffy-ipa-6-5-abv-4-pack",
+        "available": true
+      },
+      {
+        "name": "Four Roses (2026) - Bourbon Barrel Aged Barleywine - 11.9% ABV - 1 Bottle",
+        "styles": [
+          "barrel-aged"
+        ],
+        "firstSeen": "2026-08-12",
+        "url": "https://badlandsbrewing.ca/products/basil-hayden-wheat-stout-bourbon-barrel-aged-imperial-stout-11-9-abv-1-bottle-2",
+        "available": true
+      },
+      {
+        "name": "Fox Furr (2026) - IPA - 6.5% ABV (4 Pack)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://badlandsbrewing.ca/products/fox-furr-2026-ipa-6-5-abv-4-pack-copy",
+        "available": true
+      },
+      {
+        "name": "Default Setting (2026) - IPA - 6.5% ABV (4 Pack)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://badlandsbrewing.ca/products/default-setting-2026-ipa-6-5-abv-4-pack-copy",
+        "available": true
+      },
+      {
+        "name": "Super Nectar (2026) - IPA - 6.5% ABV (4 Pack)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-28",
+        "url": "https://badlandsbrewing.ca/products/nelson-fire-ipa-6-5-abv-4-pack",
+        "available": true
+      },
+      {
+        "name": "Chelt Lager - Lager - 4.0% ABV (4 Pack)",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-18",
+        "url": "https://badlandsbrewing.ca/products/batch-2-ipa-6-5-abv-4-pack",
+        "available": true
+      },
+      {
+        "name": "Glen Haffy (2026) - IPA - 6.5% ABV (4 Pack)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-14",
+        "url": "https://badlandsbrewing.ca/products/riri-2025-ipa-6-5-abv-4-pack",
+        "available": true
+      },
+      {
+        "name": "Really Innocent Curse - IPA - 6.5% ABV (4 Pack)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-14",
+        "url": "https://badlandsbrewing.ca/products/batch-3-ipa-6-5-abv-4-pack",
+        "available": true
+      }
+    ],
+    "sonnen-hill": [
+      {
+        "name": "Lager Beer",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-14",
+        "url": "https://sonnenhill.com/products/lager-beer-1",
+        "available": false
+      },
+      {
+        "name": "Spéciale",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-06",
+        "url": "https://sonnenhill.com/products/speciale",
+        "available": true
+      },
+      {
+        "name": "Pale",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-08-06",
+        "url": "https://sonnenhill.com/products/pale",
+        "available": true
+      },
+      {
+        "name": "Bitsy",
+        "styles": [
+          "session-low-alc",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-06",
+        "url": "https://sonnenhill.com/products/bitsy",
+        "available": true
+      },
+      {
+        "name": "Dunkel Hour",
+        "styles": [
+          "dark-lager",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-01-06",
+        "url": "https://sonnenhill.com/products/dunkel-hour-bundle",
+        "available": true
+      },
+      {
+        "name": "Lager Beer Shirt",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2022-10-07",
+        "url": "https://sonnenhill.com/products/lager-beer-shirt",
+        "available": true
+      }
+    ],
+    "camerons": [
+      {
+        "name": "Resin Rodeo",
+        "styles": [
+          "west-coast-ipa",
+          "wild-ale",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-05",
+        "url": "https://www.cameronsbrewing.com/products/resin-rodeo",
+        "available": true
+      },
+      {
+        "name": "Resin Rodeo - 6 Pack",
+        "styles": [
+          "west-coast-ipa",
+          "wild-ale",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-05",
+        "url": "https://www.cameronsbrewing.com/products/resin-rodeo-6-pack",
+        "available": true
+      },
+      {
+        "name": "Rec League Champs",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-24",
+        "url": "https://www.cameronsbrewing.com/products/rec-league",
+        "available": true
+      },
+      {
+        "name": "Rec League - 6 Pack",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-24",
+        "url": "https://www.cameronsbrewing.com/products/rec-league-6-pack",
+        "available": true
+      },
+      {
+        "name": "Lager 109",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-16",
+        "url": "https://www.cameronsbrewing.com/products/lawn-hero-light-ipa-copy",
+        "available": true
+      },
+      {
+        "name": "Lager 109 - 6 Pack",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-04-14",
+        "url": "https://www.cameronsbrewing.com/products/lager-109-6-pack",
+        "available": true
+      },
+      {
+        "name": "Strawberry Milkshake IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-03-11",
+        "url": "https://www.cameronsbrewing.com/products/strawberry-milkshake-ipa",
+        "available": true
+      },
+      {
+        "name": "Strawberry Milkshake IPA - 6 Pack",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-03-11",
+        "url": "https://www.cameronsbrewing.com/products/strawberry-milkshake-ipa-6-pack",
+        "available": true
+      },
+      {
+        "name": "Lawn Hero - Light IPA - 6 Pack",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-02-14",
+        "url": "https://www.cameronsbrewing.com/products/game-theory-new-age-ipa-6-pack-copy",
+        "available": true
+      },
+      {
+        "name": "Lawn Hero - Light IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-02-12",
+        "url": "https://www.cameronsbrewing.com/products/lawn-hero-light-ipa-1",
+        "available": true
+      },
+      {
+        "name": "Game Theory New Age IPA - 6 Pack",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2025-06-23",
+        "url": "https://www.cameronsbrewing.com/products/6-pack",
+        "available": false
+      },
+      {
+        "name": "Game Theory New Age IPA - 30L Keg",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2025-06-23",
+        "url": "https://www.cameronsbrewing.com/products/game-theory-new-age-ipa-30l-keg",
+        "available": true
+      }
+    ],
+    "all-or-nothing": [
+      {
+        "name": "Over The Limit TRIPLE IPA (296 ml Can)",
+        "styles": [
+          "hazy-ipa",
+          "west-coast-ipa"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://www.allornothing.beer/products/triple-ipa-over-the-limits-296-ml",
+        "available": false
+      },
+      {
+        "name": "Globetrotter Hazy Honey Wheat IPA (473ml)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-08",
+        "url": "https://www.allornothing.beer/products/globetrotter-hazy-honey-wheat-ipa-473ml-6-1",
+        "available": true
+      },
+      {
+        "name": "Fearless Vienna Lager 30L Keg",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-03",
+        "url": "https://www.allornothing.beer/products/fearless-vienna-lager-30l-keg",
+        "available": true
+      },
+      {
+        "name": "Fearless Vienna Lager (473 ml Can)",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-03",
+        "url": "https://www.allornothing.beer/products/fearless-vienna-lager-473-ml-can",
+        "available": true
+      },
+      {
+        "name": "Partake Non Alcoholic Blonde",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-05-01",
+        "url": "https://www.allornothing.beer/products/partake-non-alcoholic-blonde",
+        "available": true
+      },
+      {
+        "name": "Skies The Limit Imperial IPA (473 ml Can)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-04-14",
+        "url": "https://www.allornothing.beer/products/skies-the-limit-dipa",
+        "available": true
+      },
+      {
+        "name": "Canadian Tank Museum Rolling Thunder Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-02-10",
+        "url": "https://www.allornothing.beer/products/canada-tank-museum-rolling-thunder-lager",
+        "available": true
+      },
+      {
+        "name": "SMASH Pale Ale - 2025 Wet Hopped (473 ml Can)",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2025-09-25",
+        "url": "https://www.allornothing.beer/products/smash-pale-ale-2025-wet-hopped-473-ml-can",
+        "available": true
+      },
+      {
+        "name": "2024 Maple & Skor infused Booker's & Buffalo Trace Barrel Aged Dig Deep Imperial Stout - 296 ml",
+        "styles": [
+          "barrel-aged",
+          "stout-porter"
+        ],
+        "firstSeen": "2024-09-24",
+        "url": "https://www.allornothing.beer/products/2024-maple-skor-infused-bookers-buffalo-trace-barrel-aged-dig-deep-imperial-stout-296-ml",
+        "available": false
+      },
+      {
+        "name": "2024 Toasted Coconut &  Elijah Craig Barrel Aged Dig Deep Imperial Stout - 296 ml",
+        "styles": [
+          "barrel-aged",
+          "stout-porter"
+        ],
+        "firstSeen": "2024-09-24",
+        "url": "https://www.allornothing.beer/products/2024-toasted-coconut-elijah-craig-barrel-aged-dig-deep-imperial-stout-296-ml",
+        "available": true
+      },
+      {
+        "name": "Hustle Over Hype Pale Wheat Ale (473 ml Can)",
+        "styles": [
+          "wheat-belgian",
+          "pale-ale"
+        ],
+        "firstSeen": "2024-09-23",
+        "url": "https://www.allornothing.beer/products/hustle-over-hype-pale-wheat",
+        "available": true
+      },
+      {
+        "name": "Think Big'Ger Cream Ale (473ml Can)",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2024-07-19",
+        "url": "https://www.allornothing.beer/products/think-bigger-cream-ale",
+        "available": true
+      }
+    ],
+    "chronicle": [
+      {
+        "name": "LIME WARP",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-29",
+        "url": "https://chroniclebeer.com/products/lime-warp",
+        "available": true
+      },
+      {
+        "name": "EVOLUTION IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-27",
+        "url": "https://chroniclebeer.com/products/evolution",
+        "available": true
+      },
+      {
+        "name": "Faster than Light",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-08",
+        "url": "https://chroniclebeer.com/products/faster-than-light",
+        "available": true
+      },
+      {
+        "name": "ALES FROM THE CRYPT BLACK CURRANT SOUR",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-06-08",
+        "url": "https://chroniclebeer.com/products/ales-from-the-crypt",
+        "available": true
+      },
+      {
+        "name": "WOOKIES AND CREAM",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-05-15",
+        "url": "https://chroniclebeer.com/products/wookies-and-cream",
+        "available": true
+      },
+      {
+        "name": "BLACK LOTUS BLACK LAGER",
+        "styles": [
+          "sour",
+          "dark-lager",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-05-08",
+        "url": "https://chroniclebeer.com/products/black-lotus-black-lager",
+        "available": true
+      },
+      {
+        "name": "CLOUD CITY HAZY PALE ALE",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-04-30",
+        "url": "https://chroniclebeer.com/products/cloud-city",
+        "available": true
+      },
+      {
+        "name": "AP-AP - AMERICAN PALE ALE",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-04-11",
+        "url": "https://chroniclebeer.com/products/ap-ap-american-pale-ale-1",
+        "available": true
+      },
+      {
+        "name": "DUNGEON CRAWLER",
+        "styles": [
+          "session-low-alc",
+          "stout-porter"
+        ],
+        "firstSeen": "2026-04-11",
+        "url": "https://chroniclebeer.com/products/dungeon-crawler",
+        "available": true
+      },
+      {
+        "name": "MIND FLAY IPA",
+        "styles": [
+          "hazy-ipa",
+          "west-coast-ipa"
+        ],
+        "firstSeen": "2026-04-01",
+        "url": "https://chroniclebeer.com/products/mind-flay-ipa",
+        "available": true
+      },
+      {
+        "name": "GOLDEN AXE BLONDE ALE",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-03-19",
+        "url": "https://chroniclebeer.com/products/golden-axe",
+        "available": true
+      },
+      {
+        "name": "Chupacabra",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-03-19",
+        "url": "https://chroniclebeer.com/products/chupacabra-lager",
+        "available": true
+      }
+    ],
+    "town-brewery": [
+      {
+        "name": "Double Wheels - Hazy DIPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-06",
+        "url": "https://townbrewery.ca/products/double-wheels-hazy-dipa",
+        "available": true
+      },
+      {
+        "name": "Locals Only - New Zealand Pils",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-23",
+        "url": "https://townbrewery.ca/products/locals-only-new-zealand-pils",
+        "available": true
+      },
+      {
+        "name": "Outside Jokes - Pale Ale",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-06-15",
+        "url": "https://townbrewery.ca/products/outside-jokes-pale-ale",
+        "available": true
+      },
+      {
+        "name": "Microdose - Light Hazy IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-12",
+        "url": "https://townbrewery.ca/products/microdose-session-ipa",
+        "available": true
+      },
+      {
+        "name": "Outside Jokes - Pale Ale - 30L Keg",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-05-20",
+        "url": "https://townbrewery.ca/products/outside-jokes-pale-ale-30l",
+        "available": true
+      },
+      {
+        "name": "Quick One - Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2025-10-17",
+        "url": "https://townbrewery.ca/products/quick-one-light-lager",
+        "available": true
+      },
+      {
+        "name": "Chef's Takeover Night @ Town Brewery",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2025-01-03",
+        "url": "https://townbrewery.ca/products/chefs-takeover-dinner",
+        "available": false
+      },
+      {
+        "name": "Square Wheels - IPA - 30L Keg",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2024-07-04",
+        "url": "https://townbrewery.ca/products/square-wheels-ipa-30l-keg-1",
+        "available": true
+      },
+      {
+        "name": "Square Wheels - Hazy IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2024-05-08",
+        "url": "https://townbrewery.ca/products/square-wheels-ipa",
+        "available": true
+      },
+      {
+        "name": "Saturday Evening - Party At The Port",
+        "styles": [
+          "session-low-alc"
+        ],
+        "firstSeen": "2023-09-29",
+        "url": "https://townbrewery.ca/products/saturday-evening-party-at-the-port",
+        "available": false
+      },
+      {
+        "name": "Saturday Afternoon - Party At The Port",
+        "styles": [
+          "session-low-alc"
+        ],
+        "firstSeen": "2023-09-29",
+        "url": "https://townbrewery.ca/products/saturday-afternoon-party-at-the-port",
+        "available": false
+      }
+    ],
+    "old-flame": [
+      {
+        "name": "Raven - Black Lager: 5%",
+        "styles": [
+          "stout-porter",
+          "dark-lager",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2025-04-14",
+        "url": "https://oldflamebrewingco.ca/products/raven",
+        "available": true
+      },
+      {
+        "name": "Brunette - Munich Dunkel Lager: 4.8%",
+        "styles": [
+          "dark-lager",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2025-04-14",
+        "url": "https://oldflamebrewingco.ca/products/brunette",
+        "available": true
+      },
+      {
+        "name": "No Regrets 12 Pack - Super Light Lager: 2.9%",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2021-08-12",
+        "url": "https://oldflamebrewingco.ca/products/no-regrets-super-light-lager-12-pack-2-9",
+        "available": true
+      },
+      {
+        "name": "Craft Lager Mix Pack",
+        "styles": [
+          "dark-lager",
+          "pilsner-lager",
+          "pale-ale"
+        ],
+        "firstSeen": "2020-08-18",
+        "url": "https://oldflamebrewingco.ca/products/craft-lager-mix-pack",
+        "available": true
+      },
+      {
+        "name": "Blonde - Helles Lager: 5%",
+        "styles": [
+          "pilsner-lager",
+          "pale-ale"
+        ],
+        "firstSeen": "2020-04-28",
+        "url": "https://oldflamebrewingco.ca/products/blonde",
+        "available": true
+      },
+      {
+        "name": "Hazy Blonde - Kellerbier Lager: 5%",
+        "styles": [
+          "hazy-ipa",
+          "pilsner-lager",
+          "pale-ale"
+        ],
+        "firstSeen": "2020-04-18",
+        "url": "https://oldflamebrewingco.ca/products/hazy-blonde",
+        "available": true
+      },
+      {
+        "name": "Red - Vienna Lager: 5%",
+        "styles": [
+          "dark-lager",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2020-03-17",
+        "url": "https://oldflamebrewingco.ca/products/red",
+        "available": true
+      },
+      {
+        "name": "No Regrets - Super Light Lager: 2.9%",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2020-03-17",
+        "url": "https://oldflamebrewingco.ca/products/no-regrets",
+        "available": true
+      }
+    ],
+    "fine-balance": [
+      {
+        "name": "Converge IPA (Le Ketch Collab)",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-11",
+        "url": "https://finebalancebrewing.ca/products/converge-ipa-le-ketch-collab",
+        "available": true
+      },
+      {
+        "name": "Saison with Red Dragonfruit & Lemon",
+        "styles": [
+          "sour",
+          "farmhouse-saison"
+        ],
+        "firstSeen": "2026-08-05",
+        "url": "https://finebalancebrewing.ca/products/saison-with-red-dragonfruit-lemon",
+        "available": true
+      },
+      {
+        "name": "Precipice New Zealand Pilsner",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-01",
+        "url": "https://finebalancebrewing.ca/products/precipice-new-zealand-pilsner",
+        "available": true
+      },
+      {
+        "name": "Oats & Cream IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-01",
+        "url": "https://finebalancebrewing.ca/products/oats-and-cream-ipa",
+        "available": true
+      },
+      {
+        "name": "Triple Ridgeline IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-31",
+        "url": "https://finebalancebrewing.ca/products/triple-ridgeline-ipa",
+        "available": true
+      },
+      {
+        "name": "Gelato Sour: Strawberry & Vanilla",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-27",
+        "url": "https://finebalancebrewing.ca/products/gelato-sour-strawberry-vanilla",
+        "available": true
+      },
+      {
+        "name": "Stuck on S'More Pastry Stout with Marshmallow, Graham Cracker, Chocolate, Espresso and Coconut",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-07-25",
+        "url": "https://finebalancebrewing.ca/products/stuck-on-smore-pastry-stout-with-marshmallow-graham-cracker-chocolate-espresso-and-coconut",
+        "available": true
+      },
+      {
+        "name": "Light Hazy Pale Ale",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-07-15",
+        "url": "https://finebalancebrewing.ca/products/light-hazy-pale-ale",
+        "available": true
+      },
+      {
+        "name": "Tiptoe IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-03",
+        "url": "https://finebalancebrewing.ca/products/tiptoe-ipa-473ml-can",
+        "available": true
+      },
+      {
+        "name": "Melted Gelato Smoothie Sour: Pineapple, Mango, Passionfruit, Coconut, Vanilla",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-01",
+        "url": "https://finebalancebrewing.ca/products/melted-gelato-smoothie-sour-pineapple-mango-passionfruit-coconut-vanilla",
+        "available": true
+      },
+      {
+        "name": "Spolu Czech Lager (Herman collab)",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-01",
+        "url": "https://finebalancebrewing.ca/products/spolu-czech-lager-herman-collab",
+        "available": true
+      },
+      {
+        "name": "Gelato Stout: Chocolate & Strawberry",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-01-22",
+        "url": "https://finebalancebrewing.ca/products/gelato-stout-chocolate-strawberry",
+        "available": false
+      }
+    ],
+    "parsons": [
+      {
+        "name": "Blueberry Acai Sour",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-09",
+        "url": "https://parsonsbeer.com/products/blueberry-acai-sour",
+        "available": true
+      },
+      {
+        "name": "S'mores Stout",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-07-02",
+        "url": "https://parsonsbeer.com/products/smores-stout",
+        "available": true
+      },
+      {
+        "name": "DIPA - Double IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-02",
+        "url": "https://parsonsbeer.com/products/dipa-double-ipa",
+        "available": true
+      },
+      {
+        "name": "Stalwart Bastion Oatmeal Stout",
+        "styles": [
+          "stout-porter",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-25",
+        "url": "https://parsonsbeer.com/products/stalwart-bastion-oatmeal-stout-cans",
+        "available": false
+      },
+      {
+        "name": "TIPA - Triple IPA",
+        "styles": [
+          "barrel-aged",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-05",
+        "url": "https://parsonsbeer.com/products/tipa-triple-ipa",
+        "available": true
+      },
+      {
+        "name": "PIPA - Petite IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-05-15",
+        "url": "https://parsonsbeer.com/products/pipa-petite-ipa",
+        "available": true
+      },
+      {
+        "name": "Estate Rosé",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-05-01",
+        "url": "https://parsonsbeer.com/products/estate-pinot-noir-copy",
+        "available": true
+      },
+      {
+        "name": "Devil's Right Hand: The Holy Ghost",
+        "styles": [
+          "session-low-alc",
+          "stout-porter"
+        ],
+        "firstSeen": "2026-03-27",
+        "url": "https://parsonsbeer.com/products/drh-the-holy-ghost",
+        "available": true
+      },
+      {
+        "name": "NA - Tresette Pilsner",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-03-19",
+        "url": "https://parsonsbeer.com/products/na-tresette-pilsner",
+        "available": false
+      },
+      {
+        "name": "NA - Half-Day Hazy IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-03-06",
+        "url": "https://parsonsbeer.com/products/na-half-day-hazy-ipa",
+        "available": false
+      },
+      {
+        "name": "the Dude Abides",
+        "styles": [
+          "barrel-aged",
+          "stout-porter"
+        ],
+        "firstSeen": "2026-02-20",
+        "url": "https://parsonsbeer.com/products/devils-right-hand-the-holy-ghost-copy",
+        "available": true
+      },
+      {
+        "name": "Sant'Andrea Nero di Troia Primitivo",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2025-12-12",
+        "url": "https://parsonsbeer.com/products/lirresistible-lune-noire-malbec-copy",
+        "available": false
+      }
+    ],
+    "collective-arts": [
+      {
+        "name": "Birds of a Feather Helles Lager | Art Reserve",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-12",
+        "url": "https://collectiveartsbrewing.com/products/birds-of-a-feather-art-reserve",
+        "available": true
+      },
+      {
+        "name": "Mindful Margarita | Zero Proof Cocktail",
+        "styles": [
+          "session-low-alc"
+        ],
+        "firstSeen": "2026-08-05",
+        "url": "https://collectiveartsbrewing.com/products/mindful-margarita-zero-proof-cocktail",
+        "available": true
+      },
+      {
+        "name": "Lychee Lemonade SPIKED SLURPEE®",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://collectiveartsbrewing.com/products/lychee-lemonade-spiked-slurpee",
+        "available": true
+      },
+      {
+        "name": "Botany Black Cherry & Vanilla Fruit Infused Sparkling Water",
+        "styles": [
+          "session-low-alc"
+        ],
+        "firstSeen": "2026-07-29",
+        "url": "https://collectiveartsbrewing.com/products/botany-water-black-cherry",
+        "available": false
+      },
+      {
+        "name": "Botany Elixir Flow: Bluberry, Mango and Acai",
+        "styles": [
+          "session-low-alc"
+        ],
+        "firstSeen": "2026-07-29",
+        "url": "https://collectiveartsbrewing.com/products/botany-elixir-flow",
+        "available": false
+      },
+      {
+        "name": "Star Collector Czech 12° Lager | Art Reserve",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-29",
+        "url": "https://collectiveartsbrewing.com/products/star-collector-lager",
+        "available": true
+      },
+      {
+        "name": "Passion Mojito Rum Cocktail",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-29",
+        "url": "https://collectiveartsbrewing.com/products/passion-mojito-rum-cocktail",
+        "available": true
+      },
+      {
+        "name": "Mile a Minute",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-24",
+        "url": "https://collectiveartsbrewing.com/products/mile-a-minute",
+        "available": true
+      },
+      {
+        "name": "Dealer's Choice",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-24",
+        "url": "https://collectiveartsbrewing.com/products/dealers-choice",
+        "available": true
+      },
+      {
+        "name": "Cherry Limeade Sour",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-21",
+        "url": "https://collectiveartsbrewing.com/products/cherry-limeade-sour",
+        "available": true
+      },
+      {
+        "name": "Strawberry Lemonade Sour",
+        "styles": [
+          "hazy-ipa",
+          "sour"
+        ],
+        "firstSeen": "2026-07-20",
+        "url": "https://collectiveartsbrewing.com/products/strawberry-lemonade-sour",
+        "available": true
+      },
+      {
+        "name": "Twice Pressed Blackberry & Peach Cider",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-14",
+        "url": "https://collectiveartsbrewing.com/products/twice-pressed-blackberry-peach-cider",
+        "available": false
+      }
+    ],
+    "counterpart": [
+      {
+        "name": "Blender (Guava Lemon) | Fruited Sour | $5.75",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://counterpartbrewing.com/products/blender-guava-lemon-fruited-sour-5-75",
+        "available": false
+      },
+      {
+        "name": "Dreaming Out Loud | Hazy IPA | $5.31",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://counterpartbrewing.com/products/dreaming-out-loud-hazy-ipa-5-31",
+        "available": true
+      },
+      {
+        "name": "Superdelic Flow | Hazy Pale Ale | $4.87",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-08-13",
+        "url": "https://counterpartbrewing.com/products/superdelic-flow-hazy-pale-ale-4-87",
+        "available": true
+      },
+      {
+        "name": "Zombie | Smoothie Sour | $6.64",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://counterpartbrewing.com/products/zombie-smoothie-sour-6-64",
+        "available": false
+      },
+      {
+        "name": "Broken Crown | Hazy IPA | $5.31",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://counterpartbrewing.com/products/broken-crown-hazy-ipa-5-31",
+        "available": true
+      },
+      {
+        "name": "Everything Zen | Hazy IPA | $5.31",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://counterpartbrewing.com/products/everything-zen-hazy-ipa-5-31",
+        "available": true
+      },
+      {
+        "name": "Setting Forth | West Coast IPA | $5.31",
+        "styles": [
+          "west-coast-ipa",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://counterpartbrewing.com/products/setting-forth-west-coast-ipa-5-31",
+        "available": true
+      },
+      {
+        "name": "Liberty | Hazy Double IPA | $5.75",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-16",
+        "url": "https://counterpartbrewing.com/products/liberty-hazy-double-ipa-5-75",
+        "available": true
+      },
+      {
+        "name": "Drip (Riwaka, Southern Cross, Rakau) | Hazy IPA | $5.31",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-16",
+        "url": "https://counterpartbrewing.com/products/drip-riwaka-southern-cross-rakau-hazy-ipa-5-31",
+        "available": true
+      },
+      {
+        "name": "Blender (Blueberry Grapefruit) | Fruited Sour | $5.75",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-03",
+        "url": "https://counterpartbrewing.com/products/blender-blueberry-grapefruit-fruited-sour-5-75",
+        "available": true
+      },
+      {
+        "name": "The World Is Mine | Hazy IPA | $5.75",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-03",
+        "url": "https://counterpartbrewing.com/products/the-world-is-mine-hazy-ipa-5-75",
+        "available": true
+      },
+      {
+        "name": "Instant Crush (Superdelic + Simcoe) | Hazy Pale | $4.87",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-07-03",
+        "url": "https://counterpartbrewing.com/products/instant-crush-superdelic-simcoe-hazy-pale-4-87",
+        "available": false
+      }
+    ],
+    "block-three": [
+      {
+        "name": "Fickle Mistress Hawaiian Punch",
+        "styles": [
+          "hazy-ipa",
+          "sour",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-08-07",
+        "url": "https://blockthreebrewing.com/products/fickle-mistress-hawaiian-punch",
+        "available": true
+      },
+      {
+        "name": "King Street Saison",
+        "styles": [
+          "farmhouse-saison",
+          "wheat-belgian"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://blockthreebrewing.com/products/king-st-saison-belgian-style-saison-4-6",
+        "available": true
+      },
+      {
+        "name": "Mo Money Mo Problems IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://blockthreebrewing.com/products/mo-money-mo-problems-ipa",
+        "available": true
+      },
+      {
+        "name": "Shockwave",
+        "styles": [
+          "hazy-ipa",
+          "sour"
+        ],
+        "firstSeen": "2026-07-20",
+        "url": "https://blockthreebrewing.com/products/shockwave",
+        "available": true
+      },
+      {
+        "name": "Lobsinger Lager",
+        "styles": [
+          "dark-lager",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-30",
+        "url": "https://blockthreebrewing.com/products/lobsinger",
+        "available": true
+      },
+      {
+        "name": "Fantail",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-22",
+        "url": "https://blockthreebrewing.com/products/fantail",
+        "available": true
+      },
+      {
+        "name": "Little Dipper",
+        "styles": [
+          "hazy-ipa",
+          "session-low-alc"
+        ],
+        "firstSeen": "2026-06-15",
+        "url": "https://blockthreebrewing.com/products/little-dipper",
+        "available": true
+      },
+      {
+        "name": "Block Zero - N/A IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-08",
+        "url": "https://blockthreebrewing.com/products/block-zero-n-a-ipa",
+        "available": true
+      },
+      {
+        "name": "Phoenix",
+        "styles": [
+          "west-coast-ipa",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-08",
+        "url": "https://blockthreebrewing.com/products/phoenix",
+        "available": true
+      },
+      {
+        "name": "Keep It Cool",
+        "styles": [
+          "session-low-alc",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-04-24",
+        "url": "https://blockthreebrewing.com/products/keep-it-cool",
+        "available": true
+      },
+      {
+        "name": "Cryotherapy",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-01-26",
+        "url": "https://blockthreebrewing.com/products/cryotherapy-1",
+        "available": true
+      },
+      {
+        "name": "Hollinger Helles",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2022-11-08",
+        "url": "https://blockthreebrewing.com/products/hollinger-helles-1",
+        "available": true
+      }
+    ],
+    "royal-city": [
+      {
+        "name": "Berserker Kveik Sour Blood Orange & Peach",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-08-12",
+        "url": "https://royalcitybrew.ca/products/berserker-kveik-sour-2",
+        "available": true
+      },
+      {
+        "name": "NON-ALC: Mark It Zero Non-Alcoholic Pale Ale",
+        "styles": [
+          "session-low-alc",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-08-12",
+        "url": "https://royalcitybrew.ca/products/mark-it-zero-non-alcoholic-pale-ale",
+        "available": true
+      },
+      {
+        "name": "Peach Radler",
+        "styles": [
+          "session-low-alc",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-22",
+        "url": "https://royalcitybrew.ca/products/peach-radler",
+        "available": true
+      },
+      {
+        "name": "Bootleg Cream Ale",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-07-08",
+        "url": "https://royalcitybrew.ca/products/bootleg-cream-ale",
+        "available": true
+      },
+      {
+        "name": "Two Rivers Kolsch - Subscription",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-06-16",
+        "url": "https://royalcitybrew.ca/products/two-rivers-blonde-ale-subscription",
+        "available": true
+      },
+      {
+        "name": "NON-ALC: Dry Run Nitro Stout",
+        "styles": [
+          "session-low-alc",
+          "stout-porter"
+        ],
+        "firstSeen": "2026-03-06",
+        "url": "https://royalcitybrew.ca/products/non-alc-dry-run-nitro-stout",
+        "available": true
+      },
+      {
+        "name": "Goldie APA",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-02-25",
+        "url": "https://royalcitybrew.ca/products/goldie-apa",
+        "available": true
+      },
+      {
+        "name": "Hibiscus Saison",
+        "styles": [
+          "farmhouse-saison"
+        ],
+        "firstSeen": "2026-01-21",
+        "url": "https://royalcitybrew.ca/products/hibiscus-saison-473ml",
+        "available": true
+      },
+      {
+        "name": "NON-ALC: Dry Run Lager",
+        "styles": [
+          "session-low-alc",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-01-07",
+        "url": "https://royalcitybrew.ca/products/non-alc-dry-run-lager",
+        "available": true
+      },
+      {
+        "name": "Royal City Lite Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2025-11-25",
+        "url": "https://royalcitybrew.ca/products/royal-city-lite-lager",
+        "available": true
+      },
+      {
+        "name": "NON-ALC: Dry Run IPA",
+        "styles": [
+          "session-low-alc",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2025-10-30",
+        "url": "https://royalcitybrew.ca/products/non-alc-dry-run-rotating-non-alcoholic-series",
+        "available": true
+      },
+      {
+        "name": "Station Stout",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2025-09-05",
+        "url": "https://royalcitybrew.ca/products/station-stout",
+        "available": true
+      }
+    ],
+    "refined-fool": [
+      {
+        "name": "Greg Only Eats at Airports - IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-29",
+        "url": "https://refinedfool.com/products/greg-only-eats-at-airports-ipa",
+        "available": true
+      },
+      {
+        "name": "Oh My God, There’s a Moat! - Czech Pilsner",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-19",
+        "url": "https://refinedfool.com/products/oh-my-god-there-s-a-moat-czech-pilsner",
+        "available": true
+      },
+      {
+        "name": "Bright's Groveless - Hazy IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-08",
+        "url": "https://refinedfool.com/products/brights-groveless-hazy-ipa",
+        "available": false
+      },
+      {
+        "name": "IPA Fun Box (12th Edition!)",
+        "styles": [
+          "hazy-ipa",
+          "west-coast-ipa",
+          "wild-ale"
+        ],
+        "firstSeen": "2026-05-12",
+        "url": "https://refinedfool.com/products/ipa-fun-box-12th-edition",
+        "available": false
+      },
+      {
+        "name": "Missionary Physician - Double IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-05-05",
+        "url": "https://refinedfool.com/products/missionary-physician-double-ipa",
+        "available": false
+      },
+      {
+        "name": "Cabin Jeans - Cream Ale",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-04-23",
+        "url": "https://refinedfool.com/products/cabin-jeans-cream-ale",
+        "available": true
+      },
+      {
+        "name": "A Serious Hosta Situation - Hefeweizen",
+        "styles": [
+          "wheat-belgian"
+        ],
+        "firstSeen": "2026-04-15",
+        "url": "https://refinedfool.com/products/a-serious-hosta-situation-hefeweizen",
+        "available": true
+      },
+      {
+        "name": "Uncles In the Wild - IPA",
+        "styles": [
+          "wild-ale",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-04-06",
+        "url": "https://refinedfool.com/products/uncles-in-the-wild-ipa",
+        "available": false
+      },
+      {
+        "name": "Unless Your Name is Derek - Oatmeal Stout",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-03-17",
+        "url": "https://refinedfool.com/products/unless-your-name-is-derek-oatmeal-stout",
+        "available": false
+      },
+      {
+        "name": "Buddies - Breakfast Stout",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-03-12",
+        "url": "https://refinedfool.com/products/buddies-breakfast-stout",
+        "available": false
+      },
+      {
+        "name": "Whatevs - Lagered IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-03-06",
+        "url": "https://refinedfool.com/products/whatevs-lagered-ipa",
+        "available": true
+      },
+      {
+        "name": "Pony Bologna - West Coast Pilsner",
+        "styles": [
+          "west-coast-ipa",
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-02-20",
+        "url": "https://refinedfool.com/products/pony-bologna-west-coast-pilsner",
+        "available": false
+      }
+    ],
+    "dominion-city": [
+      {
+        "name": "Time & Tide",
+        "styles": [
+          "west-coast-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-08-06",
+        "url": "https://www.dominioncity.ca/products/time-tide",
+        "available": true
+      },
+      {
+        "name": "East of the Sun",
+        "styles": [
+          "hazy-ipa",
+          "west-coast-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://www.dominioncity.ca/products/east-of-the-sun",
+        "available": true
+      },
+      {
+        "name": "Town & Country",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://www.dominioncity.ca/products/town-country",
+        "available": true
+      },
+      {
+        "name": "Civic Pilsner",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-28",
+        "url": "https://www.dominioncity.ca/products/civic-pilsner",
+        "available": true
+      },
+      {
+        "name": "Dominion City LITE Orange",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-21",
+        "url": "https://www.dominioncity.ca/products/dominion-city-lite-orange",
+        "available": true
+      },
+      {
+        "name": "Rosewood - 2025 PTG",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-15",
+        "url": "https://www.dominioncity.ca/products/rosewood-2025-ptg",
+        "available": true
+      },
+      {
+        "name": "Burdock - Monday 355ml",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-14",
+        "url": "https://www.dominioncity.ca/products/burdock-monday-355ml",
+        "available": true
+      },
+      {
+        "name": "Pelican Club - Cherry Amaretto Sour 355ml",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-02",
+        "url": "https://www.dominioncity.ca/products/pelican-club-cherry-amaretto-sour-355ml",
+        "available": true
+      },
+      {
+        "name": "Therianthropy Wines - Odi-X Musqué Merlot 2024",
+        "styles": [
+          "wild-ale"
+        ],
+        "firstSeen": "2026-06-29",
+        "url": "https://www.dominioncity.ca/products/therianthropy-wines-odi-x-musque-merlot-2024",
+        "available": true
+      },
+      {
+        "name": "Trouble In The Fields",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-19",
+        "url": "https://www.dominioncity.ca/products/trouble-in-the-fields",
+        "available": true
+      },
+      {
+        "name": "Sunsplit IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-15",
+        "url": "https://www.dominioncity.ca/products/sunsplit",
+        "available": true
+      },
+      {
+        "name": "Premium",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-06-12",
+        "url": "https://www.dominioncity.ca/products/premium",
+        "available": true
+      }
+    ],
+    "beyond-the-pale": [
+      {
+        "name": "Beyond the Pale - Little Sipper",
+        "styles": [
+          "session-low-alc",
+          "pale-ale",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-16",
+        "url": "https://beyondthepale.ca/products/beyond-the-pale-teeny-little-superguy",
+        "available": false
+      },
+      {
+        "name": "Beyond the Pale - Cloud Town",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://beyondthepale.ca/products/beyond-the-pale-cloud-town",
+        "available": false
+      },
+      {
+        "name": "Beyond the Pale - Orange is the New Pink",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-29",
+        "url": "https://beyondthepale.ca/products/beyond-the-pale-orange-is-the-new-pink",
+        "available": false
+      },
+      {
+        "name": "Beyond the Pale - Peacock",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-07",
+        "url": "https://beyondthepale.ca/products/beyond-the-pale-peacock",
+        "available": true
+      },
+      {
+        "name": "Beyond the Pale -  Double IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-27",
+        "url": "https://beyondthepale.ca/products/beyond-the-pale-double-ipa",
+        "available": false
+      },
+      {
+        "name": "HOPTASTIC VOYAGE - 6 Pack IPA Bundle",
+        "styles": [
+          "hazy-ipa",
+          "session-low-alc",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-06-11",
+        "url": "https://beyondthepale.ca/products/hoptastic-voyage-6-pack-ipa-bundle",
+        "available": true
+      },
+      {
+        "name": "\"You're Welcome!\" Beer Bundle",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-05-29",
+        "url": "https://beyondthepale.ca/products/youre-welcome-beer-bundle",
+        "available": true
+      },
+      {
+        "name": "Beyond the Pale - Flash Series: Nitro Dublin or Nuthin'",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2026-03-10",
+        "url": "https://beyondthepale.ca/products/dublin-or-nuthin",
+        "available": true
+      },
+      {
+        "name": "Beyond the Pale - Mainline - Daily Pilsner",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-01-31",
+        "url": "https://beyondthepale.ca/products/beyond-the-pale-daily-pilsner",
+        "available": true
+      },
+      {
+        "name": "Beyond the Pale - Mainline - Clean Cut",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2025-06-12",
+        "url": "https://beyondthepale.ca/products/clean-cut-german-inspired-kolsch-ottawa",
+        "available": true
+      },
+      {
+        "name": "Beyond the Pale - Tasty - SALE",
+        "styles": [
+          "west-coast-ipa",
+          "pale-ale",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2025-05-09",
+        "url": "https://beyondthepale.ca/products/beyond-the-pale-flash-series-tasty",
+        "available": true
+      },
+      {
+        "name": "Beyond The Pale - Calcom",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2024-10-04",
+        "url": "https://beyondthepale.ca/products/calcom",
+        "available": true
+      }
+    ],
+    "bicycle-craft": [
+      {
+        "name": "Ontario Summer IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-11",
+        "url": "https://bicyclecraftbrewery.ca/products/ontario-summer-ipa",
+        "available": true
+      },
+      {
+        "name": "Margarita Gose",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://bicyclecraftbrewery.ca/products/margarita-gose",
+        "available": true
+      },
+      {
+        "name": "Sandcastle Hazy Pale Ale",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-07-30",
+        "url": "https://bicyclecraftbrewery.ca/products/sandcastle-hazy-pale-ale",
+        "available": true
+      },
+      {
+        "name": "Gose of Juan Almonte - Jalapeno Lime",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2026-07-29",
+        "url": "https://bicyclecraftbrewery.ca/products/gose-of-juan-almonte-jalapeno-lime",
+        "available": false
+      },
+      {
+        "name": "Quench Non-Alcoholic Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-16",
+        "url": "https://bicyclecraftbrewery.ca/products/quench-non-alcoholic-lager",
+        "available": true
+      },
+      {
+        "name": "Strawberry Rhubarb Crisp - Fruited Pale Ale",
+        "styles": [
+          "sour",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-06-26",
+        "url": "https://bicyclecraftbrewery.ca/products/strawberry-rhubarb-crisp-fruited-pale-ale",
+        "available": true
+      },
+      {
+        "name": "Songbird Pale Ale",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-05-13",
+        "url": "https://bicyclecraftbrewery.ca/products/songbird-pale-ale",
+        "available": false
+      },
+      {
+        "name": "Happy Robot IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-04-22",
+        "url": "https://bicyclecraftbrewery.ca/products/happy-robot-ipa",
+        "available": false
+      },
+      {
+        "name": "On The Lam IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2025-10-08",
+        "url": "https://bicyclecraftbrewery.ca/products/on-the-lam-ipa",
+        "available": true
+      },
+      {
+        "name": "Barrel Series #19 - Apricity Belgian Golden Strong Ale - Barrel 3",
+        "styles": [
+          "barrel-aged",
+          "wheat-belgian"
+        ],
+        "firstSeen": "2025-10-04",
+        "url": "https://bicyclecraftbrewery.ca/products/barrel-series-19-apricity-belgian-golden-strong-ale-barrel-3",
+        "available": true
+      },
+      {
+        "name": "Barrel Series #21 - Apricity Belgian Golden Strong Ale - Barrel 6",
+        "styles": [
+          "barrel-aged",
+          "wheat-belgian"
+        ],
+        "firstSeen": "2025-10-04",
+        "url": "https://bicyclecraftbrewery.ca/products/barrel-series-21-apricity-belgian-golden-strong-ale-barrel-6",
+        "available": true
+      },
+      {
+        "name": "Juan Almonte Jalapeno Pale Ale",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2023-08-17",
+        "url": "https://bicyclecraftbrewery.ca/products/juan-almonte-jalapeno-pale-ale",
+        "available": false
+      }
+    ],
+    "beaus": [
+      {
+        "name": "Beau's Lite",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-04-30",
+        "url": "https://beaus.ca/products/beaus-lite",
+        "available": true
+      },
+      {
+        "name": "Juiced AF Citrus Blast",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2025-06-23",
+        "url": "https://beaus.ca/products/juiced-af-citrus-blast",
+        "available": true
+      },
+      {
+        "name": "Gravity Well",
+        "styles": [
+          "sour"
+        ],
+        "firstSeen": "2024-11-27",
+        "url": "https://beaus.ca/products/gravity-well",
+        "available": false
+      },
+      {
+        "name": "Double Juiced AF",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2024-11-27",
+        "url": "https://beaus.ca/products/double-juiced-af",
+        "available": true
+      },
+      {
+        "name": "Curse of Knowledge",
+        "styles": [
+          "hazy-ipa",
+          "barrel-aged",
+          "wild-ale"
+        ],
+        "firstSeen": "2024-11-27",
+        "url": "https://beaus.ca/products/curse-of-knowledge",
+        "available": true
+      },
+      {
+        "name": "Wonder Crush",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2024-11-24",
+        "url": "https://beaus.ca/products/wonder-crush",
+        "available": true
+      },
+      {
+        "name": "Juiced AF",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2024-11-24",
+        "url": "https://beaus.ca/products/juiced-af",
+        "available": true
+      },
+      {
+        "name": "Crème Brew-Lée",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2024-11-22",
+        "url": "https://beaus.ca/products/creme-brew-lee",
+        "available": true
+      },
+      {
+        "name": "Lug Lite",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2024-11-22",
+        "url": "https://beaus.ca/products/lug-lite",
+        "available": true
+      },
+      {
+        "name": "Lug Tread",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2024-11-22",
+        "url": "https://beaus.ca/products/lug-tread",
+        "available": true
+      }
+    ],
+    "calabogie": [
+      {
+        "name": "Valley Light",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-27",
+        "url": "https://calabogiebrewing.com/products/valley-light",
+        "available": true
+      },
+      {
+        "name": "Summer Solstice Pale Ale",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-06-03",
+        "url": "https://calabogiebrewing.com/products/summer-solstice",
+        "available": true
+      },
+      {
+        "name": "Uncharted: Mexican-Style Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2024-09-20",
+        "url": "https://calabogiebrewing.com/products/uncharted-cerveza",
+        "available": true
+      },
+      {
+        "name": "Horizon NEIPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2024-04-15",
+        "url": "https://calabogiebrewing.com/products/adventure-series-neipa-coming-soon",
+        "available": true
+      },
+      {
+        "name": "Brown Cow Nitro Milk Stout",
+        "styles": [
+          "stout-porter"
+        ],
+        "firstSeen": "2023-10-13",
+        "url": "https://calabogiebrewing.com/products/brown-cow",
+        "available": true
+      },
+      {
+        "name": "Portage Pilsner",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2022-06-24",
+        "url": "https://calabogiebrewing.com/products/portage-pilsner-473-ml",
+        "available": true
+      },
+      {
+        "name": "Bogie West Coast IPA",
+        "styles": [
+          "west-coast-ipa",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2021-03-22",
+        "url": "https://calabogiebrewing.com/products/bogie-american-ipa-473ml",
+        "available": true
+      },
+      {
+        "name": "K&P 1883",
+        "styles": [
+          "session-low-alc"
+        ],
+        "firstSeen": "2021-03-22",
+        "url": "https://calabogiebrewing.com/products/k-p-1883-amber-ale-473ml",
+        "available": true
+      },
+      {
+        "name": "Front Porch",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2021-03-22",
+        "url": "https://calabogiebrewing.com/products/front-porch-kolsch",
+        "available": true
+      }
+    ],
+    "sawdust-city": [
+      {
+        "name": "Lone Pine - West Coast IPA",
+        "styles": [
+          "west-coast-ipa",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-07",
+        "url": "https://sawdustcitybeer.com/products/lone-pine-west-coast-ipa",
+        "available": true
+      },
+      {
+        "name": "Mariposa Sun - Light Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://sawdustcitybeer.com/products/mariposa-sun-lager",
+        "available": true
+      },
+      {
+        "name": "Crack A Window - West Coast Pale Ale",
+        "styles": [
+          "west-coast-ipa",
+          "pale-ale",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-21",
+        "url": "https://sawdustcitybeer.com/products/crack-a-window-experimental-hazy-pale-ale",
+        "available": true
+      },
+      {
+        "name": "Passionfruit Guava - Flavoured Kettle Sour",
+        "styles": [
+          "hazy-ipa",
+          "sour"
+        ],
+        "firstSeen": "2026-07-09",
+        "url": "https://sawdustcitybeer.com/products/passionfruit-guava-flavoured-kettle-sour",
+        "available": true
+      },
+      {
+        "name": "Everyday Magic - Hazy IPA",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-06-24",
+        "url": "https://sawdustcitybeer.com/products/everyday-magic-hazy-ipa",
+        "available": true
+      },
+      {
+        "name": "Juicin' - New England-Style IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-06-18",
+        "url": "https://sawdustcitybeer.com/products/juicin-new-england-style-ipa-1",
+        "available": true
+      },
+      {
+        "name": "Strawberry Rhubarb Pie - Fruited Sour",
+        "styles": [
+          "sour",
+          "stout-porter"
+        ],
+        "firstSeen": "2026-06-12",
+        "url": "https://sawdustcitybeer.com/products/strawberry-rhubarb-pie-fruited-sour",
+        "available": true
+      },
+      {
+        "name": "Golden Beach - Pale Ale",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-05-14",
+        "url": "https://sawdustcitybeer.com/products/golden-beach-pale-ale",
+        "available": true
+      },
+      {
+        "name": "Dunc's Day Beer - Session Ale",
+        "styles": [
+          "session-low-alc",
+          "pale-ale",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-05-14",
+        "url": "https://sawdustcitybeer.com/products/duncs-day-beer-session-ale",
+        "available": true
+      },
+      {
+        "name": "Cherry Cheescake - Fruited Kettle Sour",
+        "styles": [
+          "sour",
+          "stout-porter",
+          "wheat-belgian"
+        ],
+        "firstSeen": "2026-05-14",
+        "url": "https://sawdustcitybeer.com/products/cherry-cheescake-fruited-kettle-sour",
+        "available": true
+      },
+      {
+        "name": "Bone Pine - Bi-Coastal Hazy IPA",
+        "styles": [
+          "hazy-ipa",
+          "west-coast-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-04-09",
+        "url": "https://sawdustcitybeer.com/products/bone-pine-hazy-ipa",
+        "available": true
+      },
+      {
+        "name": "Juicin' Fruit - Hazy IPA with Fruit",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-03-18",
+        "url": "https://sawdustcitybeer.com/products/juicin-fruit-hazy-ipa-with-fruit",
+        "available": true
+      }
+    ],
+    "lake-of-bays": [
+      {
+        "name": "Sunchaser - 90 Calories - 2.5% ABV - Extra Light Lime Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-08-11",
+        "url": "https://lakeofbaysbrewing.ca/products/sunchaser-90-calories-2-5-abv-light-lime-lager",
+        "available": true
+      },
+      {
+        "name": "Paddle On - Session IPA",
+        "styles": [
+          "session-low-alc",
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-11",
+        "url": "https://lakeofbaysbrewing.ca/products/paddle-on",
+        "available": true
+      },
+      {
+        "name": "Watermelon Twist - Basil Lime Pale Ale",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-08-10",
+        "url": "https://lakeofbaysbrewing.ca/products/watermelon-twist-basil-lime-pale-ale",
+        "available": true
+      },
+      {
+        "name": "Low Tide - 90 Calories - 2.5% ABV",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-08-06",
+        "url": "https://lakeofbaysbrewing.ca/products/low-tide",
+        "available": true
+      },
+      {
+        "name": "Off the Grid - Hazy Pale Ale",
+        "styles": [
+          "hazy-ipa",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-08-04",
+        "url": "https://lakeofbaysbrewing.ca/products/off-the-grid-473ml-single-can",
+        "available": true
+      },
+      {
+        "name": "All Season - Extra Light Lager",
+        "styles": [
+          "pilsner-lager"
+        ],
+        "firstSeen": "2026-07-28",
+        "url": "https://lakeofbaysbrewing.ca/products/all-seasons-extra-light-lager",
+        "available": true
+      },
+      {
+        "name": "Oak-Aged Foeder - Ladder Bridge",
+        "styles": [
+          "barrel-aged"
+        ],
+        "firstSeen": "2026-07-23",
+        "url": "https://lakeofbaysbrewing.ca/products/oak-aged-foeder-ladder-bridge",
+        "available": true
+      },
+      {
+        "name": "Dukes Refresher - Hazy IPA",
+        "styles": [
+          "hazy-ipa"
+        ],
+        "firstSeen": "2026-07-23",
+        "url": "https://lakeofbaysbrewing.ca/products/dukes-refresher-hazy-ipa",
+        "available": true
+      },
+      {
+        "name": "Keep Rollin' - Tropical Fruit Pale Ale",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-07-10",
+        "url": "https://lakeofbaysbrewing.ca/products/keep-rollin-tropical-fruit-pale-ale",
+        "available": true
+      },
+      {
+        "name": "The 'Summer Sizzler' Pack - 24 x 473ml Cans",
+        "styles": [
+          "hazy-ipa",
+          "pilsner-lager",
+          "pale-ale"
+        ],
+        "firstSeen": "2026-05-26",
+        "url": "https://lakeofbaysbrewing.ca/products/the-sumer-sizzler-pack-24-x-473ml-cans",
+        "available": true
+      },
+      {
+        "name": "Blue Harvest - Extra Light Blueberry Blonde",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-05-04",
+        "url": "https://lakeofbaysbrewing.ca/products/blue-harvest-extra-light-blueberry-blonde",
+        "available": true
+      },
+      {
+        "name": "Near Zero - Pale Ale - Non Alcoholic",
+        "styles": [
+          "pale-ale"
+        ],
+        "firstSeen": "2026-04-28",
+        "url": "https://lakeofbaysbrewing.ca/products/near-zero-pale-ale-non-alcoholic",
+        "available": true
+      }
+    ]
+  }
+}

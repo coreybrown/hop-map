@@ -1,0 +1,122 @@
+{
+  "_meta": {
+    "source": "Corey Brown, 2026-08-17. Answers to reputation-test-set.md.",
+    "purpose": "Held-out test set. Any classifier is scored against this BEFORE being run on the other 251 breweries.",
+    "note": "Corey answered in natural language, not in our tags — that mismatch is itself a finding (see taxonomyGaps). Mappings below are our translation of his words; where his phrasing has no tag, it is recorded in `unmapped` rather than silently dropped. `raw` always preserves his exact words, so every translation here is auditable against it.",
+    "taxonomyGaps": [
+      "RESOLVED 2026-08-17 — non-alcoholic, kolsch and amber-red are now StyleTags; easyDrinking and experimental are now TASTE_AXES. All `unmapped` entries below have been translated into them.",
+      "OPEN — 'old school' (True History) is still carried only as raw text. It reads as a stance rather than a style or an axis, and one instance is not enough to model."
+    ],
+    "retranslated": [
+      "godspeed and true-history previously listed `pale-ale` in goFor. Neither raw answer mentions a pale ale — `pale-ale` was the stand-in for kölsch back when kölsch folded into it. With `kolsch` now its own tag, the stand-in is removed and the real tag used. This makes the test set stricter, not looser.",
+      "steam-whistle's 'not: Experimental beers' and halo's 'experimental brews' are the same axis pointing opposite ways. Recorded as axes, not styles."
+    ]
+  },
+  "breweries": {
+    "bellwoods": {
+      "goFor": ["sour", "hazy-ipa", "non-alcoholic"],
+      "notFor": [],
+      "beers": ["Jelly King", "Roman Candle", "Jutsu"],
+      "raw": "Dry-hopped sours, IPAs, non-alcoholic"
+    },
+    "badlands": {
+      "goFor": ["hazy-ipa", "barrel-aged", "stout-porter"],
+      "notFor": ["pilsner-lager", "sour"],
+      "beers": ["Any IPA"],
+      "raw": "IPAs, barrel aged stouts / not: Lagers, Sours"
+    },
+    "godspeed": {
+      "goFor": ["pilsner-lager", "kolsch"],
+      "notFor": ["hazy-ipa", "stout-porter"],
+      "beers": [],
+      "raw": "Czech style lagers, pilsners, kolsh with japanese infusion / not: IPAs, stouts"
+    },
+    "left-field": {
+      "goFor": ["hazy-ipa", "stout-porter", "sour", "pilsner-lager", "barrel-aged"],
+      "notFor": [],
+      "trueGeneralist": true,
+      "beers": ["Greenwood", "Euphus"],
+      "raw": "All kinds of beer"
+    },
+    "blood-brothers": {
+      "goFor": ["hazy-ipa", "stout-porter"],
+      "notFor": [],
+      "beers": [],
+      "raw": "IPAs, Stouts"
+    },
+    "burdock": {
+      "goFor": ["pilsner-lager", "farmhouse-saison", "session-low-alc"],
+      "notFor": [],
+      "beers": [],
+      "raw": "Lagers, lighter beers, saisons"
+    },
+    "rorschach": {
+      "goFor": ["hazy-ipa", "sour", "stout-porter", "pilsner-lager"],
+      "notFor": [],
+      "trueGeneralist": true,
+      "beers": [],
+      "raw": "IPAs, weird style sours, heavy stouts, refreshing lagers/pilsners"
+    },
+    "great-lakes": {
+      "goFor": ["pilsner-lager", "pale-ale", "hazy-ipa", "west-coast-ipa"],
+      "notFor": [],
+      "trueGeneralist": true,
+      "beers": [],
+      "raw": "Lagers, ales, IPAs, but really anything"
+    },
+    "henderson": {
+      "goFor": ["pale-ale"],
+      "notFor": ["sour"],
+      "axes": { "easyDrinking": "high" },
+      "beers": ["Henderson's Best"],
+      "raw": "Ales, easy drinking beers / not: Sours"
+    },
+    "eastbound": {
+      "goFor": [],
+      "notFor": [],
+      "trueGeneralist": true,
+      "beers": [],
+      "raw": "Broad range"
+    },
+    "true-history": {
+      "goFor": ["pilsner-lager", "amber-red", "kolsch"],
+      "notFor": ["hazy-ipa", "sour"],
+      "unmapped": ["old school"],
+      "beers": [],
+      "raw": "Old school beers, lagers, pilsners, ambers, kolshs / not: IPAs, Sours"
+    },
+    "steam-whistle": {
+      "goFor": ["pilsner-lager"],
+      "notFor": [],
+      "axes": { "experimental": "low" },
+      "beers": [],
+      "raw": "Pilsner / not: Experimental beers"
+    },
+    "avling-bewery": {
+      "goFor": ["sour", "farmhouse-saison", "pale-ale"],
+      "notFor": [],
+      "beers": [],
+      "raw": "Sours, saisons, pale ales"
+    },
+    "third-moon": {
+      "goFor": ["hazy-ipa", "stout-porter"],
+      "notFor": [],
+      "beers": [],
+      "raw": "IPAs, stouts"
+    },
+    "sonnen-hill": {
+      "goFor": ["farmhouse-saison"],
+      "notFor": [],
+      "beers": [],
+      "raw": "Saisons"
+    },
+    "halo": {
+      "goFor": ["sour"],
+      "notFor": [],
+      "axes": { "experimental": "high" },
+      "beers": [],
+      "raw": "Sours, experimental brews"
+    }
+  },
+  "unanswered": ["muddy-york", "common-good", "bandit-brewery", "rouge-river"]
+}

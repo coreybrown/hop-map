@@ -39,3 +39,19 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Crawl + API output. All of it is regenerable by re-running scripts/, and it
+# churns on every run — ~5.5MB of diff noise per refresh.
+/data/*.json
+
+# ...EXCEPT the files a human wrote, which no script can reproduce.
+# (gitignore has no inline comments — a trailing "# note" becomes part of the
+# pattern and silently ignores the file you meant to keep.)
+# breweries.json: hand-curated source that build-registry.mjs reads
+# breweries.seed.json: the original 63
+# ground-truth.json: Corey's held-out answers, the only test set we have
+# corrections.json: human judgements that must survive a rebuild
+!/data/breweries.json
+!/data/breweries.seed.json
+!/data/ground-truth.json
+!/data/corrections.json

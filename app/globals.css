@@ -1,26 +1,211 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================================
+   SURVEY — the design system.
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+   Ordnance-survey map language: oxidized copper against near-white,
+   contour orange for wayfinding, a faint grid under the map, and
+   mono for anything measurable. Precision as respect for the craft,
+   rather than the taproom-chalkboard costume the category defaults to.
+
+   Both themes are first-class: planning happens at a desk in daylight,
+   execution happens on a phone in a car at dusk.
+   ============================================================ */
+
+:root {
+  /* surfaces */
+  --bg: oklch(0.995 0.002 200);
+  --surface: oklch(0.975 0.005 195);
+  --surface-raised: oklch(1 0 0);
+  --map-bg: oklch(0.955 0.012 165);
+
+  /* text */
+  --ink: oklch(0.24 0.02 205);
+  --muted: oklch(0.50 0.02 200);
+
+  /* structure */
+  --line: oklch(0.87 0.012 195);
+  --line-strong: oklch(0.78 0.016 195);
+
+  /* brand */
+  --primary: oklch(0.45 0.088 185);
+  --primary-soft: oklch(0.45 0.088 185 / 0.10);
+  --on-primary: oklch(0.99 0 0);
+  --accent: oklch(0.53 0.145 45);
+  --accent-soft: oklch(0.53 0.145 45 / 0.12);
+  --on-accent: oklch(0.99 0 0);
+
+  /* semantic — separate from brand, per the "state reads at a glance" rule */
+  --fresh: oklch(0.48 0.12 145);
+  --fresh-soft: oklch(0.48 0.12 145 / 0.12);
+  --warn: oklch(0.55 0.13 75);
+  --warn-soft: oklch(0.55 0.13 75 / 0.14);
+
+  /* the faint survey grid beneath the map */
+  --grid:
+    repeating-linear-gradient(0deg, transparent 0 27px, oklch(0.45 0.088 185 / 0.07) 27px 28px),
+    repeating-linear-gradient(90deg, transparent 0 27px, oklch(0.45 0.088 185 / 0.07) 27px 28px);
+
+  /* semantic z-index scale — never arbitrary values */
+  --z-map: 1;
+  --z-map-ui: 10;
+  --z-sticky: 20;
+  --z-drawer: 30;
+  --z-modal-backdrop: 40;
+  --z-modal: 50;
+  --z-toast: 60;
+
+  --radius: 3px;
+  --radius-lg: 5px;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --bg: oklch(0.155 0.016 210);
+    --surface: oklch(0.195 0.018 208);
+    --surface-raised: oklch(0.225 0.02 208);
+    --map-bg: oklch(0.185 0.022 190);
+
+    --ink: oklch(0.95 0.006 200);
+    --muted: oklch(0.68 0.014 200);
+
+    --line: oklch(0.31 0.02 205);
+    --line-strong: oklch(0.40 0.024 205);
+
+    --primary: oklch(0.76 0.10 185);
+    --primary-soft: oklch(0.76 0.10 185 / 0.14);
+    --on-primary: oklch(0.15 0.02 200);
+    --accent: oklch(0.70 0.15 48);
+    --accent-soft: oklch(0.70 0.15 48 / 0.16);
+    --on-accent: oklch(0.15 0.02 200);
+
+    --fresh: oklch(0.75 0.14 148);
+    --fresh-soft: oklch(0.75 0.14 148 / 0.16);
+    --warn: oklch(0.78 0.13 78);
+    --warn-soft: oklch(0.78 0.13 78 / 0.16);
+
+    --grid:
+      repeating-linear-gradient(0deg, transparent 0 27px, oklch(0.76 0.10 185 / 0.10) 27px 28px),
+      repeating-linear-gradient(90deg, transparent 0 27px, oklch(0.76 0.10 185 / 0.10) 27px 28px);
   }
 }
 
+:root[data-theme="dark"] {
+  --bg: oklch(0.155 0.016 210);
+  --surface: oklch(0.195 0.018 208);
+  --surface-raised: oklch(0.225 0.02 208);
+  --map-bg: oklch(0.185 0.022 190);
+
+  --ink: oklch(0.95 0.006 200);
+  --muted: oklch(0.68 0.014 200);
+
+  --line: oklch(0.31 0.02 205);
+  --line-strong: oklch(0.40 0.024 205);
+
+  --primary: oklch(0.76 0.10 185);
+  --primary-soft: oklch(0.76 0.10 185 / 0.14);
+  --on-primary: oklch(0.15 0.02 200);
+  --accent: oklch(0.70 0.15 48);
+  --accent-soft: oklch(0.70 0.15 48 / 0.16);
+  --on-accent: oklch(0.15 0.02 200);
+
+  --fresh: oklch(0.75 0.14 148);
+  --fresh-soft: oklch(0.75 0.14 148 / 0.16);
+  --warn: oklch(0.78 0.13 78);
+  --warn-soft: oklch(0.78 0.13 78 / 0.16);
+
+  --grid:
+    repeating-linear-gradient(0deg, transparent 0 27px, oklch(0.76 0.10 185 / 0.10) 27px 28px),
+    repeating-linear-gradient(90deg, transparent 0 27px, oklch(0.76 0.10 185 / 0.10) 27px 28px);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-map: var(--map-bg);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-on-primary: var(--on-primary);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-fresh: var(--fresh);
+  --color-fresh-soft: var(--fresh-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, Menlo, monospace;
+
+  --radius-survey: var(--radius);
+  --radius-survey-lg: var(--radius-lg);
+}
+
+html {
+  color-scheme: light dark;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display treatment: tracked caps, the surveyor's label. Applied by class
+   rather than to headings globally, so prose headings stay readable. */
+.survey-label {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.survey-display {
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+/* Anything measurable — distances, detours, coordinates, dates — is mono
+   and tabular so columns of numbers line up when scanned. */
+.survey-data {
+  font-family: var(--font-plex-mono), ui-monospace, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.survey-grid-bg {
+  background-color: var(--map-bg);
+  background-image: var(--grid);
+}
+
+/* Visible keyboard focus everywhere, never removed. */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+::selection {
+  background: var(--primary-soft);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

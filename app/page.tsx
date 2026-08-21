@@ -4,6 +4,7 @@ import { parseTrip, describeTrip, isRunnable, isRoute } from '@/lib/trip-url';
 import { TripForm } from '@/components/trip-form';
 import { StopRow } from '@/components/stop-row';
 import { ShareTrip } from '@/components/share-trip';
+import { SurveyMap } from '@/components/survey-map';
 
 /**
  * The core loop on one page: where + what → a ranked plan with reasons → a link
@@ -77,6 +78,19 @@ export default async function Home(props: PageProps<'/'>) {
             <NoMatches hasStyles={trip.styles.length > 0} filtered={Boolean(trip.requireBottleShop || trip.requireFood)} />
           ) : (
             <>
+              {/* The map answers "is this near where I'll be?" faster than a
+                  column of distances can. It sits above the list because that
+                  is the question asked first. */}
+              <div className="mb-6">
+                <SurveyMap
+                  results={shown}
+                  all={OPEN_BREWERIES}
+                  origin={trip.from}
+                  destination={trip.to}
+                  label={describeTrip(trip)}
+                />
+              </div>
+
               {/*
                 Said once, at the top, rather than repeated as a disclaimer on
                 every row. `knownFor` covers 25 of 246 breweries — pretending

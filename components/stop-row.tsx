@@ -46,7 +46,10 @@ export function StopRow({ result, index }: { result: ScoredBrewery; index: numbe
     : reasons;
 
   return (
-    <li className="group border-b border-line py-6 last:border-b-0">
+    <li
+      id={`stop-${index + 1}`}
+      className="group scroll-mt-4 border-b border-line py-6 last:border-b-0"
+    >
       <div className="flex items-baseline gap-4">
         <span className="survey-data w-6 shrink-0 text-sm text-muted" aria-hidden="true">
           {String(index + 1).padStart(2, '0')}

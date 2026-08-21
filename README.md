@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hop Map
 
-## Getting Started
+Find the Ontario breweries worth the detour — matched to the beer you actually
+like, along your route or around where you're staying, **with the reasons why**.
 
-First, run the development server:
+Two shapes of one question:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- *"I'm in Toronto — where's a good lager?"*
+- *"I'm driving Kingston to Toronto — what's worth stopping for?"*
+
+## Why reasons instead of ratings
+
+A star average can't tell you that a well-reviewed lager house is the wrong
+stop for someone who wants a hazy IPA. So every recommendation shows its
+working:
+
+```
+01  Burdock Brewery          Toronto            +9.0 km detour
+    Known for  Pilsner & Lager
+    · Wide range, but it's the Pilsner & Lager people go for
+    · Also pours Hazy IPA
+    Silver, European Style Lager (Pilsner), Canadian Brewing Awards 2022
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+That last line is the point. It's checkable.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## The rule the data follows
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**No source, no label.** Two fields, never collapsed:
 
-## Learn More
+| Field | Means | From |
+|---|---|---|
+| `offers` | what they stock | catalog crawls |
+| `knownFor` | what's worth the trip | blind-judged competition medals |
 
-To learn more about Next.js, take a look at the following resources:
+Only `knownFor` drives a recommendation, and only `knownFor` can do harm — a
+confident wrong answer costs someone a real drive. So a brewery with reputation
+evidence and one that merely stocks the style **do not look alike** in the UI,
+and a result set with no reputation evidence says so plainly rather than
+implying confidence it hasn't earned.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Right now that's 25 of 246 breweries. The interface is honest about it.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Current coverage
 
-## Deploy on Vercel
+| | |
+|---|---|
+| Breweries (active) | 246 |
+| Geocoded | all |
+| With `offers` | 104 |
+| With `knownFor` | 25 |
+| Harmful recommendations vs. held-out test set | **0** |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How it's built
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js 16, React 19, Tailwind v4. No database, no runtime API calls — the
+registry is static JSON refreshed by the scripts in `scripts/`. No accounts:
+the trip encodes into the URL, so sharing a plan and saving one are the same
+action.
+
+```
+scripts/fetch-osm-breweries.mjs   coverage + contact/hours from OpenStreetMap
+scripts/fetch-awards.mjs          Canadian Brewing Awards medals -> knownFor
+scripts/check-sites.mjs           which websites still belong to the brewery
+scripts/fetch-store-catalogs.mjs  Shopify/Woo/Squarespace product APIs
+scripts/render-catalogs.mjs       headless crawl for the rest
+scripts/classify-styles.mjs       catalogs -> offers
+scripts/build-registry.mjs        merge everything
+scripts/score-styles.mjs          score against held-out answers
+```
+
+`data/corrections.json` holds human judgements that survive a rebuild — closed
+breweries, and 18 records that turned out to be pubs rather than breweries.
+
+## Status
+
+Prototype. The data is incomplete by design rather than by accident, and the
+interface says which parts are thin. Reputation coverage is the next
+gap to close.
+
+## Attribution
+
+Contains data from OpenStreetMap contributors, licensed under
+[ODbL](https://opendatacommons.org/licenses/odbl/). Competition results from
+the Canadian Brewing Awards.

@@ -127,6 +127,46 @@ export function corridorPosition(
 }
 
 /**
+ * The same question against a REAL driving route rather than a straight line.
+ *
+ * The straight-line version above is a decent approximation and needs no
+ * network call, but it answers the wrong question once a road is involved:
+ * Kingston to Toronto is 264 km of highway that bends around Lake Ontario, so
+ * a brewery sitting 8 km from the straight line can be 40 km from any road you
+ * would actually drive — and one hugging the 401 can look far off a chord that
+ * cuts across the water.
+ *
+ * Given the route geometry, "off route" becomes the minimum distance to any
+ * segment of the path you are actually driving, which is what a detour is.
+ */
+export function polylinePosition(
+  path: Array<{ lat: number; lng: number }>,
+  point: { lat: number; lng: number },
+): { offRouteKm: number; t: number } {
+  if (path.length === 0) return { offRouteKm: Infinity, t: 0 };
+  if (path.length === 1) return { offRouteKm: haversineKm(path[0], point), t: 0 };
+
+  let best = Infinity;
+  let bestIndex = 0;
+  let bestLocal = 0;
+
+  for (let i = 0; i < path.length - 1; i++) {
+    const { offRouteKm, t } = corridorPosition(path[i], path[i + 1], point);
+    // `t` outside 0..1 means the nearest point is a segment END, which the
+    // neighbouring segment will measure properly. Clamping here is what makes
+    // the per-segment minimum equal the true distance to the whole path.
+    if (offRouteKm < best) {
+      best = offRouteKm;
+      bestIndex = i;
+      bestLocal = Math.max(0, Math.min(1, t));
+    }
+  }
+
+  // Fraction along the whole path, for ordering stops in travel order.
+  return { offRouteKm: best, t: (bestIndex + bestLocal) / (path.length - 1) };
+}
+
+/**
  * Style fit, 0–1. A brewery's `styles` array is ordered by how central the
  * style is to what they do, so an early match counts for more than a late
  * one: Godspeed listing pilsner first means more than a brewery that
@@ -222,6 +262,12 @@ export interface RankQuery {
     origin: { lat: number; lng: number };
     destination: { lat: number; lng: number };
   };
+  /**
+   * The actual driving geometry, when we have it. Present → detours are
+   * measured against the road; absent → the straight-line approximation,
+   * which is what the engine did before routing existed.
+   */
+  routePath?: Array<{ lat: number; lng: number }>;
   /** Max straight-line km from anchor, or max detour off a route. */
   radiusKm?: number;
   /**
@@ -260,11 +306,10 @@ export function rankBreweries(
     let geoScore = 0;
 
     if (query.route) {
-      const { offRouteKm, t } = corridorPosition(
-        query.route.origin,
-        query.route.destination,
-        point,
-      );
+      const { offRouteKm, t } =
+        query.routePath && query.routePath.length > 1
+          ? polylinePosition(query.routePath, point)
+          : corridorPosition(query.route.origin, query.route.destination, point);
       // Drop anything behind the origin or past the destination.
       if (t < -0.05 || t > 1.05) continue;
       if (offRouteKm > radius) continue;

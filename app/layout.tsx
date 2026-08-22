@@ -34,7 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${archivo.variable} ${plexMono.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col bg-bg text-ink">
+      <body className="h-full overflow-hidden bg-bg text-ink">
         <AgeGate />
         {children}
       </body>

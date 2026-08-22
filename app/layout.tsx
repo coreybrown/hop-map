@@ -23,9 +23,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ontario Beer Survey",
+  title: "Hop Map — Ontario breweries worth the detour",
   description:
-    "Find the Ontario breweries worth your time — matched to the beer you actually like, along your route or around where you're staying.",
+    "A map you search Ontario breweries on. Matched to the beer you actually like, near a place or along your route — with the reasons why.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

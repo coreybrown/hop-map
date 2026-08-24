@@ -1,14 +1,22 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-// maplibre-gl v6 has NO default export — everything is named. (v5 did, which
-// is what most examples online still show.)
-import {
-  Map as MapLibreMap,
-  Marker,
-  NavigationControl,
-  AttributionControl,
-  LngLatBounds,
+/**
+ * Pinned to maplibre-gl v5 deliberately.
+ *
+ * v6 loads the style, resolves the vector source's tile URLs, fetches sprites
+ * and renders the raster relief layer — and then never requests a single
+ * vector tile. No console error, no failed request; `isStyleLoaded()` simply
+ * stays false forever, so the map paints its background and nothing else.
+ *
+ * Verified side by side against the identical OpenFreeMap style: v5 fetches
+ * vector tiles and renders roads, water, parks and labels; v6 fetches zero.
+ * The tiles, CORS, sprites and glyphs are all fine — this is the library.
+ *
+ * Revisit on a later v6 patch; until then v5 is the working version.
+ */
+import maplibregl, {
+  type Map as MapLibreMap,
   type LngLatBoundsLike,
   type GeoJSONSource,
 } from 'maplibre-gl';
@@ -51,7 +59,7 @@ export function BreweryMap({
 }) {
   const holder = useRef<HTMLDivElement>(null);
   const map = useRef<MapLibreMap | null>(null);
-  const markers = useRef<globalThis.Map<string, Marker>>(new globalThis.Map());
+  const markers = useRef<globalThis.Map<string, maplibregl.Marker>>(new globalThis.Map());
   const ready = useRef(false);
   // Keep the newest handler without re-running the setup effect.
   const select = useRef(onSelect);
@@ -60,7 +68,7 @@ export function BreweryMap({
   useEffect(() => {
     if (!holder.current || map.current) return;
 
-    const m = new MapLibreMap({
+    const m = new maplibregl.Map({
       container: holder.current,
       style: STYLE_URL,
       bounds: ONTARIO,
@@ -68,9 +76,9 @@ export function BreweryMap({
       attributionControl: false,
     });
 
-    m.addControl(new NavigationControl({ showCompass: false }), 'bottom-right');
+    m.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
     m.addControl(
-      new AttributionControl({
+      new maplibregl.AttributionControl({
         compact: true,
         customAttribution:
           '<a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a> · © OpenStreetMap contributors',
@@ -170,7 +178,7 @@ export function BreweryMap({
         select.current(r.brewery.id);
       });
 
-      const marker = new Marker({ element: el })
+      const marker = new maplibregl.Marker({ element: el })
         .setLngLat([r.brewery.lng!, r.brewery.lat!])
         .addTo(m);
       markers.current.set(r.brewery.id, marker);
@@ -193,7 +201,7 @@ export function BreweryMap({
     const m = map.current;
     if (!m || results.length === 0) return;
     const fit = () => {
-      const b = new LngLatBounds();
+      const b = new maplibregl.LngLatBounds();
       results.forEach((r) => b.extend([r.brewery.lng!, r.brewery.lat!]));
       (routePath ?? []).forEach((p) => b.extend([p.lng, p.lat]));
       m.fitBounds(b, { padding: { top: 60, bottom: 60, left: 60, right: 60 }, maxZoom: 12, duration: 700 });

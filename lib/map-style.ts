@@ -46,55 +46,73 @@ interface Palette {
 }
 
 /**
- * Roads read as ink-on-paper rather than as coloured ribbons: the hierarchy
- * comes from width and from the casing contrast, which is how a survey sheet
- * separates a highway from a lane without shouting in yellow.
+ * THE BASEMAP IS NEUTRAL. THE BRAND COLOUR MARKS BREWERIES.
+ *
+ * The first pass got this backwards: land, parks, built-up areas and water
+ * were all near-identical dark greens, and the roads were painted in the same
+ * teal as the markers. The result read as "green on green on green with white
+ * lines" — water was invisible against land, and the brewery pins had to
+ * compete with a road network wearing their own colour.
+ *
+ * So three separations, in priority order:
+ *
+ *   1. HUE separates surfaces. Land is a near-neutral, water is genuinely
+ *      blue, parks are genuinely green. You should never have to work out
+ *      which one you're looking at.
+ *   2. VALUE separates the road hierarchy. Roads are grey at varying
+ *      lightness, never chromatic — a motorway is brighter than a lane, not
+ *      a different colour.
+ *   3. CHROMA is reserved. The only saturated things on this map are the
+ *      brewery markers and the route line. Everything else gives way to them.
  */
 const PALETTES: Record<MapTheme, Palette> = {
   light: {
-    land: '#e9f3ee', // --map-bg
-    water: '#cfe3e0',
-    green: '#dceadf',
-    builtUp: '#e2ece8',
-    building: '#d9e5e1',
+    land: '#f2f5f4',
+    water: '#c3d9e8',
+    green: '#e2ece0',
+    builtUp: '#e9eeed',
+    building: '#dfe6e5',
     roadFill: '#ffffff',
-    roadCasing: '#ccd7d6', // --line
-    // Deliberately NOT the accent. Accent belongs to the route overlay alone —
-    // painting every highway copper made the road you're actually driving
-    // indistinguishable from every other highway on screen.
+    roadCasing: '#c9d3d5',
     motorway: '#ffffff',
-    motorwayCasing: '#8fa3a2',
-    boundary: '#acbbba', // --line-strong
-    label: '#142224', // --ink
-    labelMinor: '#566768', // --muted
-    halo: '#e9f3ee',
+    motorwayCasing: '#9aa8ab',
+    boundary: '#aab8ba',
+    label: '#142224',
+    labelMinor: '#566768',
+    halo: '#f2f5f4',
   },
   dark: {
-    land: '#061615', // --map-bg
-    water: '#03100f',
-    green: '#0a1c19',
-    builtUp: '#0a1a1a',
-    building: '#122426',
-    roadFill: '#33474a',
-    roadCasing: '#0d1c1e',
-    motorway: '#5b7276',
-    motorwayCasing: '#16302f',
-    boundary: '#3b4b4d', // --line-strong
-    label: '#eaf0f0', // --ink
-    labelMinor: '#8f9b9c', // --muted
-    halo: '#061615',
+    land: '#12181a',
+    water: '#0b1d2b',
+    green: '#151f1a',
+    builtUp: '#171e20',
+    building: '#1e2629',
+    roadFill: '#454e52',
+    roadCasing: '#10171a',
+    motorway: '#6d787c',
+    motorwayCasing: '#0f1618',
+    boundary: '#3d4b4e',
+    label: '#e8eef0',
+    labelMinor: '#94a1a4',
+    halo: '#12181a',
   },
 };
 
-/** Stock POI and transit clutter. Our markers are the only points that matter. */
-const DROP = /^(poi|airport|aeroway_taxiway|building-3d|natural_earth)/;
+/**
+ * Stock POI and transit clutter. Our markers are the only points that matter.
+ *
+ * Aeroways go entirely: runways render as bright white X shapes that read as
+ * a drawing error at city zoom, and nobody choosing a brewery is navigating by
+ * taxiway.
+ */
+const DROP = /^(poi|airport|aeroway|building-3d|natural_earth)/;
 
 function categorise(id: string): keyof Palette | 'drop' | null {
   if (DROP.test(id)) return 'drop';
   if (id === 'background') return 'land';
   if (/^water|waterway/.test(id) && !/label|name/.test(id)) return 'water';
   if (/landcover_(wood|grass|ice|wetland)|^park/.test(id)) return 'green';
-  if (/^landuse|aeroway_fill/.test(id)) return 'builtUp';
+  if (/^landuse/.test(id)) return 'builtUp';
   if (/^building/.test(id)) return 'building';
   if (/^boundary/.test(id)) return 'boundary';
   if (/motorway|trunk/.test(id)) return /casing/.test(id) ? 'motorwayCasing' : 'motorway';

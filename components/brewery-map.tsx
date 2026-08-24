@@ -291,6 +291,11 @@ export function BreweryMap({
         // moves; stepping the zoom guarantees the group actually separates.
         m.fitBounds(b, { padding: 120, maxZoom: Math.min(17, m.getZoom() + 3), duration: 500 });
       });
+      // Record membership so the selection effect can light up a cluster that
+      // CONTAINS the selected brewery — otherwise searching for a brewery that
+      // happens to be clustered selects it in the list and shows nothing on
+      // the map, which reads as the search having failed.
+      el.dataset.members = group.members.map((x) => x.brewery.id).join(' ');
       markers.current.set(
         `cluster-${first.brewery.id}`,
         new maplibregl.Marker({ element: el })
@@ -303,13 +308,17 @@ export function BreweryMap({
   // Selection styling, and a gentle pan so the chosen stop is on screen.
   useEffect(() => {
     for (const [id, marker] of markers.current) {
-      marker.getElement().dataset.selected = String(id === selectedId);
+      const el = marker.getElement();
+      const holdsIt =
+        Boolean(selectedId) &&
+        (id === selectedId || (el.dataset.members ?? '').split(' ').includes(selectedId!));
+      el.dataset.selected = String(holdsIt);
     }
     const m = map.current;
     if (!m || !selectedId) return;
     const hit = results.find((r) => r.brewery.id === selectedId);
     if (hit) m.easeTo({ center: [hit.brewery.lng!, hit.brewery.lat!], duration: 500 });
-  }, [selectedId, results]);
+  }, [selectedId, results, zoomTick]);
 
   // Frame the answer whenever it changes shape.
   useEffect(() => {

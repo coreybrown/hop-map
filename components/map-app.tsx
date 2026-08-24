@@ -5,7 +5,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { rankBreweries } from '@/lib/ranking';
 import { STYLE_LABELS, STYLE_TAGS, type Brewery, type StyleTag } from '@/lib/types';
 import { fetchDrivingRoute, formatDuration, type DrivingRoute } from '@/lib/route';
-import { tripToSearch, type Trip } from '@/lib/trip-url';
+import { tripToSearch, parseAnchor, type Trip } from '@/lib/trip-url';
+import { PlaceSearch, type SearchChoice } from '@/components/place-search';
 import { StopRow } from '@/components/stop-row';
 import { ShareTrip } from '@/components/share-trip';
 
@@ -55,9 +56,11 @@ export function MapApp({
   const [routing, setRouting] = useState(false);
   const [panelOpen, setPanelOpen] = useState(true);
 
-  const byKey = useMemo(() => new Map(places.map((p) => [p.key, p])), [places]);
-  const originPlace = mode === 'route' ? byKey.get(from) : undefined;
-  const destPlace = byKey.get(to);
+  const originPlace = useMemo(
+    () => (mode === 'route' ? parseAnchor(from) : null),
+    [mode, from],
+  );
+  const destPlace = useMemo(() => parseAnchor(to), [to]);
 
   // Driving geometry, refetched when the endpoints change. Aborted on change
   // so a slow response can't overwrite a newer one.
@@ -117,6 +120,13 @@ export function MapApp({
     sync();
     mq.addEventListener('change', sync);
     return () => mq.removeEventListener('change', sync);
+  }, []);
+
+  const onChooseDestination = useCallback((choice: SearchChoice) => {
+    setTo(choice.value);
+    // Picking a brewery by name means "show me around here" AND "that one" —
+    // requiring a second click on the pin you just named would be silly.
+    setSelectedId(choice.breweryId ?? null);
   }, []);
 
   const toggleStyle = (tag: StyleTag) =>
@@ -219,20 +229,22 @@ export function MapApp({
 
             <div className="grid gap-2">
               {mode === 'route' && (
-                <Select
+                <PlaceSearch
                   label="From"
-                  value={from}
-                  onChange={setFrom}
+                  current={originPlace}
                   places={places}
-                  placeholder="Starting point…"
+                  breweries={breweries}
+                  placeholder="Town or brewery…"
+                  onChoose={(c) => setFrom(c.value)}
                 />
               )}
-              <Select
+              <PlaceSearch
                 label={mode === 'route' ? 'To' : 'Near'}
-                value={to}
-                onChange={setTo}
+                current={destPlace}
                 places={places}
-                placeholder="Choose a place…"
+                breweries={breweries}
+                placeholder="Town or brewery…"
+                onChoose={onChooseDestination}
               />
             </div>
 
@@ -306,37 +318,5 @@ export function MapApp({
         </div>
       </div>
     </div>
-  );
-}
-
-function Select({
-  label,
-  value,
-  onChange,
-  places,
-  placeholder,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  places: Place[];
-  placeholder: string;
-}) {
-  return (
-    <label className="flex items-center gap-2">
-      <span className="survey-label w-10 shrink-0">{label}</span>
-      <select
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="h-10 min-w-0 flex-1 rounded-survey border border-line bg-surface px-2 text-sm text-ink transition-colors duration-150 hover:border-line-strong"
-      >
-        <option value="">{placeholder}</option>
-        {places.map((p) => (
-          <option key={p.key} value={p.key}>
-            {p.label}
-          </option>
-        ))}
-      </select>
-    </label>
   );
 }

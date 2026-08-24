@@ -298,6 +298,12 @@ body {
 
 .obs-cluster:hover { transform: scale(1.12); }
 
+.obs-cluster[data-selected='true'] {
+  transform: scale(1.18);
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .obs-cluster { transition: none; }
   .obs-cluster:hover { transform: none; }

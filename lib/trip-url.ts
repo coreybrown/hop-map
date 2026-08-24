@@ -25,6 +25,44 @@ export interface Trip {
 }
 
 const isPlace = (v: unknown): v is string => typeof v === 'string' && v in PLACES;
+
+/**
+ * An anchor can be a preset city key OR a raw coordinate, written `@lat,lng`.
+ *
+ * The 15 presets can't express "near this brewery" or "near where I'm standing",
+ * and both are real cases — Corey's own example was standing in Toronto wanting
+ * the best IPA nearby. The `@` form stays readable and hand-editable, which is
+ * the same rule the rest of these parameters follow: a URL someone can read is
+ * a URL someone can repair.
+ */
+const COORD = /^@(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)$/;
+
+export function parseAnchor(value: string | undefined): AnchorPoint | null {
+  if (!value) return null;
+  if (isPlace(value)) return { key: value, ...PLACES[value] };
+
+  const m = COORD.exec(value);
+  if (!m) return null;
+  const lat = Number(m[1]);
+  const lng = Number(m[2]);
+  // Ontario-ish sanity bounds: a hand-edited or stale coordinate shouldn't
+  // silently send the map to the middle of the Atlantic.
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+  if (lat < 41 || lat > 57 || lng < -96 || lng > -73) return null;
+  return { key: value, label: 'Custom location', lat, lng };
+}
+
+export interface AnchorPoint {
+  key: string;
+  label: string;
+  lat: number;
+  lng: number;
+}
+
+/** Round hard: six decimals is centimetres and makes links needlessly long. */
+export function coordKey(lat: number, lng: number): string {
+  return `@${lat.toFixed(4)},${lng.toFixed(4)}`;
+}
 const isStyle = (v: string): v is StyleTag => (STYLE_TAGS as readonly string[]).includes(v);
 
 /** Next 16 hands `searchParams` in as a Promise; the caller awaits it. */
@@ -39,8 +77,8 @@ export function parseTrip(params: RawParams): Trip {
   const radius = Number(one(params.radius));
 
   return {
-    from: isPlace(from) ? from : undefined,
-    to: isPlace(to) ? to : undefined,
+    from: parseAnchor(from) ? from : undefined,
+    to: parseAnchor(to) ? to : undefined,
     styles: (one(params.styles) ?? '')
       .split(',')
       .map((s) => s.trim())
@@ -77,7 +115,8 @@ export function isRoute(trip: Trip): boolean {
 
 /** Human-readable summary for headings and share text. */
 export function describeTrip(trip: Trip): string {
-  const to = trip.to ? PLACES[trip.to].label : '';
-  if (isRoute(trip)) return `${PLACES[trip.from!].label} → ${to}`;
+  const to = parseAnchor(trip.to)?.label ?? '';
+  const from = parseAnchor(trip.from)?.label;
+  if (isRoute(trip) && from) return `${from} → ${to}`;
   return to;
 }

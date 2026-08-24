@@ -104,11 +104,20 @@ export function MapApp({
     window.history.replaceState(null, '', `/${tripToSearch(trip)}`);
   }, [trip]);
 
-  const theme =
-    typeof window !== 'undefined' &&
-    window.matchMedia?.('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light';
+  /**
+   * Live theme, not a one-shot read. Starts 'light' so the server and the
+   * first client render agree — reading matchMedia during render would
+   * hydrate-mismatch — then corrects on mount and follows the OS afterwards,
+   * so the basemap repaints if someone flips to dark mid-trip.
+   */
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const sync = () => setTheme(mq.matches ? 'dark' : 'light');
+    sync();
+    mq.addEventListener('change', sync);
+    return () => mq.removeEventListener('change', sync);
+  }, []);
 
   const toggleStyle = (tag: StyleTag) =>
     setStyles((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]));

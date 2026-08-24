@@ -23,6 +23,7 @@ import maplibregl, {
 import 'maplibre-gl/dist/maplibre-gl.css';
 import type { ScoredBrewery } from '@/lib/types';
 import type { RoutePoint } from '@/lib/route';
+import { buildSurveyStyle, loadBaseStyle } from '@/lib/map-style';
 
 /**
  * The map is the product surface, not an illustration on it.
@@ -38,7 +39,9 @@ import type { RoutePoint } from '@/lib/route';
  * Breweries are the only thing plotted. Everything else on screen is basemap.
  */
 
-const STYLE_URL = 'https://tiles.openfreemap.org/styles/liberty';
+/** If the restyle can't be fetched, a stock map beats no map. */
+const STOCK_FALLBACK = 'https://tiles.openfreemap.org/styles/liberty';
+
 const ONTARIO: LngLatBoundsLike = [
   [-83.5, 41.6],
   [-74.0, 46.8],
@@ -64,13 +67,17 @@ export function BreweryMap({
   // Keep the newest handler without re-running the setup effect.
   const select = useRef(onSelect);
   select.current = onSelect;
+  const themeRef = useRef(theme);
+  themeRef.current = theme;
 
   useEffect(() => {
     if (!holder.current || map.current) return;
 
     const m = new maplibregl.Map({
       container: holder.current,
-      style: STYLE_URL,
+      // Painted below once the base style resolves. Starting from an empty
+      // style avoids a flash of stock OSM green before ours lands.
+      style: { version: 8, sources: {}, layers: [] },
       bounds: ONTARIO,
       fitBoundsOptions: { padding: 40 },
       attributionControl: false,
@@ -86,12 +93,22 @@ export function BreweryMap({
       'bottom-left',
     );
     // Clicking empty basemap clears the selection, like any map app.
+    loadBaseStyle()
+      .then((base) => m.setStyle(buildSurveyStyle(base, themeRef.current)))
+      .catch(() => m.setStyle(STOCK_FALLBACK));
+
     m.on('click', () => select.current(null));
     m.on('error', (e) => console.error('[maplibre]', e?.error?.message ?? e));
     if (process.env.NODE_ENV !== 'production') {
       (window as unknown as { __map?: MapLibreMap }).__map = m;
     }
-    m.on('load', () => {
+    // `styledata` fires on the initial style AND after every setStyle, which
+    // is what makes the route survive a theme switch. `load` fires once.
+    m.on('styledata', () => {
+      if (m.getSource('route')) {
+        ready.current = true;
+        return;
+      }
       ready.current = true;
       m.addSource('route', {
         type: 'geojson',
@@ -135,6 +152,25 @@ export function BreweryMap({
       ready.current = false;
     };
   }, []);
+
+  /**
+   * Repaint on theme change. `setStyle` drops every source and layer, so the
+   * route has to be rebuilt afterwards — markers survive because they're DOM
+   * elements MapLibre only positions, not style layers it owns.
+   */
+  useEffect(() => {
+    const m = map.current;
+    if (!m || !ready.current) return;
+    let cancelled = false;
+    loadBaseStyle().then((base) => {
+      if (cancelled || !map.current) return;
+      ready.current = false;
+      m.setStyle(buildSurveyStyle(base, theme));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [theme]);
 
   // Route geometry.
   useEffect(() => {

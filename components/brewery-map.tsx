@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 /**
  * Pinned to maplibre-gl v5 deliberately.
  *
@@ -192,8 +192,35 @@ export function BreweryMap({
     else m.once('load', apply);
   }, [routePath]);
 
-  // Markers. Rebuilt when results change — 20 markers is cheap, and diffing
-  // them would trade real complexity for no perceptible gain.
+  /**
+   * Markers, clustered by pixel proximity.
+   *
+   * Measured before this: 8 of 24 marker pairs sat within 20px at 1440x900,
+   * and in Toronto an award-backed marker was completely hidden behind another
+   * one. A hidden marker is a brewery that doesn't exist to the user, and it
+   * was disproportionately hiding the pins that carry evidence — the exact
+   * opposite of what the map should surface.
+   *
+   * MapLibre's native clustering wants a GeoJSON source with circle layers.
+   * These are DOM markers on purpose: they carry the copper/teal distinction
+   * from the design system and they're real <button>s, so they're keyboard
+   * reachable and screen-reader legible. So the grouping is done here instead.
+   *
+   * Grouping depends only on ZOOM, not pan — the pixel gap between two fixed
+   * coordinates is constant as you pan — so this recomputes on zoom, not on
+   * every frame of a drag.
+   */
+  const [zoomTick, setZoomTick] = useState(0);
+  useEffect(() => {
+    const m = map.current;
+    if (!m) return;
+    const onZoom = () => setZoomTick((n) => n + 1);
+    m.on('zoomend', onZoom);
+    return () => {
+      m.off('zoomend', onZoom);
+    };
+  }, []);
+
   useEffect(() => {
     const m = map.current;
     if (!m) return;
@@ -201,25 +228,77 @@ export function BreweryMap({
     for (const marker of markers.current.values()) marker.remove();
     markers.current.clear();
 
-    results.forEach((r, i) => {
-      const known = r.brewery.styles.knownFor.length > 0;
+    // Marker is 26px; 34 leaves a visible gap between neighbours.
+    const CLUSTER_PX = 34;
+    const placed: Array<{ x: number; y: number; members: typeof results }> = [];
+
+    results.forEach((r) => {
+      const pt = m.project([r.brewery.lng!, r.brewery.lat!]);
+      const near = placed.find((g) => Math.hypot(g.x - pt.x, g.y - pt.y) < CLUSTER_PX);
+      if (near) near.members.push(r);
+      else placed.push({ x: pt.x, y: pt.y, members: [r] });
+    });
+
+    placed.forEach((group) => {
+      const first = group.members[0];
+      const index = results.indexOf(first) + 1;
+
+      if (group.members.length === 1) {
+        const known = first.brewery.styles.knownFor.length > 0;
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'obs-marker';
+        el.dataset.known = String(known);
+        el.textContent = String(index);
+        // Native tooltip: identifying a pin shouldn't cost a click.
+        el.title = `${first.brewery.name}${first.brewery.city ? ` — ${first.brewery.city}` : ''}`;
+        el.setAttribute(
+          'aria-label',
+          `${index}. ${first.brewery.name}${known ? ', has reputation evidence' : ''}`,
+        );
+        el.addEventListener('click', (e) => {
+          e.stopPropagation();
+          select.current(first.brewery.id);
+        });
+        markers.current.set(
+          first.brewery.id,
+          new maplibregl.Marker({ element: el })
+            .setLngLat([first.brewery.lng!, first.brewery.lat!])
+            .addTo(m),
+        );
+        return;
+      }
+
+      // A cluster still has to answer "is anything good in here?", so it
+      // carries the copper ring when any member has reputation evidence.
+      const anyKnown = group.members.some((x) => x.brewery.styles.knownFor.length > 0);
       const el = document.createElement('button');
       el.type = 'button';
-      el.className = 'obs-marker';
-      el.setAttribute('aria-label', `${i + 1}. ${r.brewery.name}`);
-      el.dataset.known = String(known);
-      el.textContent = String(i + 1);
+      el.className = 'obs-cluster';
+      el.dataset.known = String(anyKnown);
+      el.textContent = String(group.members.length);
+      const names = group.members.slice(0, 6).map((x) => x.brewery.name);
+      el.title =
+        `${group.members.length} breweries — ${names.join(', ')}` +
+        (group.members.length > names.length ? '…' : '') +
+        '\nClick to zoom in';
+      el.setAttribute('aria-label', `${group.members.length} breweries here. Click to zoom in.`);
       el.addEventListener('click', (e) => {
         e.stopPropagation();
-        select.current(r.brewery.id);
+        const b = new maplibregl.LngLatBounds();
+        group.members.forEach((x) => b.extend([x.brewery.lng!, x.brewery.lat!]));
+        // A tight cluster has near-identical bounds, so fitBounds alone barely
+        // moves; stepping the zoom guarantees the group actually separates.
+        m.fitBounds(b, { padding: 120, maxZoom: Math.min(17, m.getZoom() + 3), duration: 500 });
       });
-
-      const marker = new maplibregl.Marker({ element: el })
-        .setLngLat([r.brewery.lng!, r.brewery.lat!])
-        .addTo(m);
-      markers.current.set(r.brewery.id, marker);
+      markers.current.set(
+        `cluster-${first.brewery.id}`,
+        new maplibregl.Marker({ element: el })
+          .setLngLat([first.brewery.lng!, first.brewery.lat!])
+          .addTo(m),
+      );
     });
-  }, [results]);
+  }, [results, zoomTick]);
 
   // Selection styling, and a gentle pan so the chosen stop is on screen.
   useEffect(() => {

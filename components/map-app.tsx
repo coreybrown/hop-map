@@ -148,6 +148,29 @@ export function MapApp({
       />
 
       {/*
+        The legend. It went missing in the move from the SVG map to MapLibre,
+        which left the copper/teal distinction — the product's entire thesis —
+        as unexplained decoration. Worded as a claim about confidence, not as
+        a colour key, because that is what the colours actually encode.
+      */}
+      <div className="pointer-events-none absolute bottom-3 right-3 z-[var(--z-map-ui)] hidden rounded-survey border border-line bg-surface-raised/95 px-3 py-2 text-xs shadow-lg sm:block">
+        <p className="flex items-center gap-2 text-ink">
+          <span
+            className="inline-block size-3 shrink-0 rounded-full bg-accent"
+            aria-hidden="true"
+          />
+          Known for what you asked for
+        </p>
+        <p className="mt-1.5 flex items-center gap-2 text-muted">
+          <span
+            className="inline-block size-3 shrink-0 rounded-full border-2 border-primary"
+            aria-hidden="true"
+          />
+          Stocks it — no reputation data yet
+        </p>
+      </div>
+
+      {/*
         The panel floats over the map rather than sitting beside it, so the map
         is never boxed into a corner.
 

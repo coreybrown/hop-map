@@ -63,3 +63,37 @@ export const PLACES: Record<string, { label: string; lat: number; lng: number }>
 };
 
 export const PLACE_KEYS = Object.keys(PLACES);
+
+/**
+ * Every town that actually has a brewery, derived from the registry.
+ *
+ * The 15 hand-listed cities above are the ones people name in the abstract;
+ * these are the ones the data can answer for. Coordinates are the centroid of
+ * that town's breweries, which is a better anchor than a civic centre — it is
+ * the middle of the thing you came for.
+ *
+ * OSM's `city` field is unreliable on roughly half these records (it often
+ * holds a street address), so anything starting with a digit or reading like a
+ * street is dropped rather than offered as a town.
+ */
+const LOOKS_LIKE_STREET = /^\d|\b(street|road|avenue|ave|rd|st|drive|hwy|highway|line|concession)\b/i;
+
+export const REGISTRY_TOWNS: Array<{ key: string; label: string; lat: number; lng: number }> =
+  Object.entries(
+    BREWERIES.filter((b) => b.status !== 'closed').reduce<Record<string, Brewery[]>>(
+      (acc, b) => {
+        const city = (b.city ?? '').trim();
+        if (!city || LOOKS_LIKE_STREET.test(city)) return acc;
+        (acc[city] ??= []).push(b);
+        return acc;
+      },
+      {},
+    ),
+  ).map(([label, list]) => ({
+    key: `@${(list.reduce((n, b) => n + b.lat!, 0) / list.length).toFixed(4)},${(
+      list.reduce((n, b) => n + b.lng!, 0) / list.length
+    ).toFixed(4)}`,
+    label,
+    lat: list.reduce((n, b) => n + b.lat!, 0) / list.length,
+    lng: list.reduce((n, b) => n + b.lng!, 0) / list.length,
+  }));

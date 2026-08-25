@@ -308,3 +308,22 @@ body {
   .obs-cluster { transition: none; }
   .obs-cluster:hover { transform: none; }
 }
+
+/* Context dots: every brewery, before any query narrows them. Deliberately
+   outside the copper/teal vocabulary — nothing here has been matched against
+   anything yet, so neither colour would be honest. */
+.obs-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line-strong);
+  background: var(--surface-raised);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 150ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.obs-dot:hover { transform: scale(1.5); border-color: var(--primary); }
+@media (prefers-reduced-motion: reduce) {
+  .obs-dot { transition: none; }
+  .obs-dot:hover { transform: none; }
+}

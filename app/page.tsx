@@ -1,4 +1,4 @@
-import { OPEN_BREWERIES, PLACES } from '@/lib/data';
+import { OPEN_BREWERIES, PLACES, REGISTRY_TOWNS } from '@/lib/data';
 import { parseTrip } from '@/lib/trip-url';
 import { MapApp, type Place } from '@/components/map-app';
 
@@ -13,7 +13,16 @@ import { MapApp, type Place } from '@/components/map-app';
 export default async function Home(props: PageProps<'/'>) {
   const trip = parseTrip(await props.searchParams);
 
-  const places: Place[] = Object.entries(PLACES).map(([key, p]) => ({ key, ...p }));
+  /**
+   * The named cities first, then every town the registry can answer for.
+   * Anything beyond these is looked up live — see PlaceSearch.
+   */
+  const named = Object.entries(PLACES).map(([key, p]) => ({ key, ...p }));
+  const namedLabels = new Set(named.map((p) => p.label));
+  const places: Place[] = [
+    ...named,
+    ...REGISTRY_TOWNS.filter((t) => !namedLabels.has(t.label)),
+  ];
 
   return <MapApp breweries={OPEN_BREWERIES} places={places} initialTrip={trip} />;
 }

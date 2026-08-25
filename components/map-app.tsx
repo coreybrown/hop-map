@@ -11,7 +11,13 @@ import {
   type StyleTag,
 } from '@/lib/types';
 import { fetchDrivingRoute, formatDuration, type DrivingRoute } from '@/lib/route';
-import { tripToSearch, parseTrip, parseAnchor, type Trip } from '@/lib/trip-url';
+import {
+  tripToSearch,
+  parseTrip,
+  parseAnchor,
+  rememberAnchorLabel,
+  type Trip,
+} from '@/lib/trip-url';
 import { PlaceSearch, type SearchChoice } from '@/components/place-search';
 import { StopRow } from '@/components/stop-row';
 import { ShareTrip } from '@/components/share-trip';
@@ -55,7 +61,11 @@ export function MapApp({
 }) {
   const [mode, setMode] = useState<'place' | 'route'>(initialTrip.from ? 'route' : 'place');
   const [from, setFrom] = useState(initialTrip.from ?? '');
-  const [to, setTo] = useState(initialTrip.to ?? 'toronto');
+  // No default destination. Landing pre-answered as "Toronto" told everyone
+  // outside Toronto they were in the wrong place; the honest opening state is
+  // the whole province with an invitation to narrow it.
+  const [to, setTo] = useState(initialTrip.to ?? '');
+  const [toLabel, setToLabel] = useState(initialTrip.toLabel ?? '');
   const [styles, setStyles] = useState<StyleTag[]>(initialTrip.styles);
   // Parsed and bounds-checked in trip-url, then never passed on — `?radius=`
   // in a shared link silently did nothing.
@@ -69,7 +79,10 @@ export function MapApp({
     () => (mode === 'route' ? parseAnchor(from) : null),
     [mode, from],
   );
-  const destPlace = useMemo(() => parseAnchor(to), [to]);
+  const destPlace = useMemo(() => {
+    if (toLabel && to.startsWith('@')) rememberAnchorLabel(to, toLabel);
+    return parseAnchor(to);
+  }, [to, toLabel]);
 
   // Driving geometry, refetched when the endpoints change. Aborted on change
   // so a slow response can't overwrite a newer one.
@@ -109,9 +122,10 @@ export function MapApp({
     () => ({
       from: mode === 'route' ? from || undefined : undefined,
       to: to || undefined,
+      toLabel: toLabel || undefined,
       styles,
     }),
-    [mode, from, to, styles],
+    [mode, from, to, toLabel, styles],
   );
   /**
    * History, split by intent.
@@ -152,7 +166,8 @@ export function MapApp({
       suppressSync.current = true;
       setMode(t.from ? 'route' : 'place');
       setFrom(t.from ?? '');
-      setTo(t.to ?? 'toronto');
+      setTo(t.to ?? '');
+      setToLabel(t.toLabel ?? '');
       setStyles(t.styles);
       setSelectedId(null);
     };
@@ -176,6 +191,8 @@ export function MapApp({
   }, []);
 
   const onChooseDestination = useCallback((choice: SearchChoice) => {
+    rememberAnchorLabel(choice.value, choice.label);
+    setToLabel(choice.value.startsWith('@') ? choice.label : '');
     setTo(choice.value);
     // Picking a brewery by name means "show me around here" AND "that one" —
     // requiring a second click on the pin you just named would be silly.
@@ -184,6 +201,26 @@ export function MapApp({
 
   const toggleStyle = (tag: StyleTag) =>
     setStyles((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]));
+
+  /**
+   * Insets matching the floating panel, so `fitBounds` never parks a result
+   * underneath it. On a Kingston→Toronto route the origin was landing behind
+   * the 400px panel — the endpoint you named, invisible.
+   */
+  const [mapPadding, setMapPadding] = useState({ top: 60, bottom: 60, left: 60, right: 60 });
+  useEffect(() => {
+    const measure = () => {
+      const wide = window.innerWidth >= 640;
+      setMapPadding(
+        wide
+          ? { top: 60, bottom: 60, left: 440, right: 80 }
+          : { top: 80, bottom: Math.round(window.innerHeight * 0.58) + 24, left: 32, right: 32 },
+      );
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
 
   const listRef = useRef<HTMLDivElement>(null);
   const onSelect = useCallback((id: string | null) => {
@@ -214,10 +251,41 @@ export function MapApp({
         routePath={route?.path ?? null}
         routeApproximated={route?.approximated}
         selectedStyles={styles}
+        padding={mapPadding}
+        overview={
+          destPlace
+            ? undefined
+            : breweries
+                .filter((b) => Number.isFinite(b.lat) && Number.isFinite(b.lng))
+                .map((b) => ({ id: b.id, name: b.name, lat: b.lat!, lng: b.lng! }))
+        }
         selectedId={selectedId}
         onSelect={onSelect}
         theme={theme}
       />
+
+      {/*
+        The wordmark, floating on the map rather than sitting in the panel.
+        In the panel it was a plain text row above the inputs, costing height
+        the results wanted. The mark is a surveyor's trig point — the symbol
+        for a fixed, measured position — which is the Survey language and
+        avoids the hop-cone cliché the design system exists to reject.
+      */}
+      <div className="pointer-events-none absolute right-3 top-3 z-[var(--z-map-ui)] flex items-center gap-2">
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+          <path
+            d="M11 3.2 19 17.4H3z"
+            fill="none"
+            stroke="var(--accent)"
+            strokeWidth="1.6"
+            strokeLinejoin="round"
+          />
+          <circle cx="11" cy="13.4" r="2" fill="var(--accent)" />
+        </svg>
+        <span className="survey-display text-[0.95rem] tracking-tight text-ink drop-shadow-sm">
+          Hop Map
+        </span>
+      </div>
 
       {/*
         The legend. It went missing in the move from the SVG map to MapLibre,
@@ -256,8 +324,7 @@ export function MapApp({
       >
         <div className="pointer-events-auto flex max-h-[58dvh] flex-col overflow-hidden rounded-survey-lg border border-line bg-surface-raised shadow-xl sm:max-h-full">
           <div className="border-b border-line p-3 sm:p-4">
-            <div className="mb-3 flex items-center justify-between gap-2">
-              <h1 className="survey-display text-base text-ink">Hop Map</h1>
+            <div className="mb-2 flex items-center justify-end gap-2">
               <button
                 type="button"
                 onClick={() => setPanelOpen((v) => !v)}
@@ -373,7 +440,9 @@ export function MapApp({
               <div ref={listRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
                 {results.length === 0 ? (
                   <p className="px-4 py-8 text-center text-sm text-muted">
-                    Nothing matched. Try fewer styles, or a larger centre nearby.
+                    {destPlace
+                      ? 'Nothing matched. Try fewer styles, or a bigger town nearby.'
+                      : `Every brewery in Ontario is on the map. Type a town — anywhere in the province — or a brewery you already like, and we'll rank what's around it.`}
                   </p>
                 ) : (
                   <ol className="px-2 sm:px-3">

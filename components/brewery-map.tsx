@@ -42,9 +42,14 @@ import { buildSurveyStyle, loadBaseStyle } from '@/lib/map-style';
 /** If the restyle can't be fetched, a stock map beats no map. */
 const STOCK_FALLBACK = 'https://tiles.openfreemap.org/styles/liberty';
 
+/**
+ * Southern Ontario, Windsor to Ottawa. The old box reached to 46.8°N, which is
+ * mostly empty shield and pushed the populated south into the bottom third of
+ * the screen. Every brewery in the registry sits inside this.
+ */
 const ONTARIO: LngLatBoundsLike = [
-  [-83.5, 41.6],
-  [-74.0, 46.8],
+  [-83.6, 41.6],
+  [-74.2, 46.1],
 ];
 
 export function BreweryMap({
@@ -52,6 +57,8 @@ export function BreweryMap({
   routePath,
   routeApproximated,
   selectedStyles,
+  overview,
+  padding,
   selectedId,
   onSelect,
   theme,
@@ -62,6 +69,14 @@ export function BreweryMap({
   routeApproximated?: boolean;
   /** The styles asked for, so "known for" can mean "known for THAT". */
   selectedStyles: StyleTag[];
+  /**
+   * Every brewery, plotted small when there is no query yet. Landing on an
+   * empty map would be a worse answer to "where can I go" than showing the
+   * whole province and letting the search narrow it.
+   */
+  overview?: Array<{ id: string; name: string; lat: number; lng: number }>;
+  /** Insets so fitBounds doesn't tuck results under the floating panel. */
+  padding?: { top: number; bottom: number; left: number; right: number };
   selectedId: string | null;
   onSelect: (id: string | null) => void;
   theme: 'light' | 'dark';
@@ -89,7 +104,9 @@ export function BreweryMap({
       attributionControl: false,
     });
 
-    m.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'bottom-right');
+    // Bottom-right belongs to the legend; the zoom sits above the attribution
+    // on the left so the two never stack on top of each other.
+    m.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
     m.addControl(
       new maplibregl.AttributionControl({
         compact: true,
@@ -280,6 +297,24 @@ export function BreweryMap({
     for (const marker of markers.current.values()) marker.remove();
     markers.current.clear();
 
+    // No query yet: plot everything small and unnumbered. These are context,
+    // not recommendations, so they never take the copper/teal vocabulary —
+    // nothing here has been matched against anything.
+    if (results.length === 0 && overview?.length) {
+      overview.forEach((b) => {
+        const el = document.createElement('button');
+        el.type = 'button';
+        el.className = 'obs-dot';
+        el.title = b.name;
+        el.setAttribute('aria-label', b.name);
+        markers.current.set(
+          b.id,
+          new maplibregl.Marker({ element: el }).setLngLat([b.lng, b.lat]).addTo(m),
+        );
+      });
+      return;
+    }
+
     // Marker is 26px; 34 leaves a visible gap between neighbours.
     const CLUSTER_PX = 34;
     const placed: Array<{ x: number; y: number; members: typeof results }> = [];
@@ -357,7 +392,7 @@ export function BreweryMap({
           .addTo(m),
       );
     });
-  }, [results, zoomTick, selectedStyles]);
+  }, [results, zoomTick, selectedStyles, overview]);
 
   // Selection styling, and a gentle pan so the chosen stop is on screen.
   useEffect(() => {
@@ -382,13 +417,24 @@ export function BreweryMap({
       const b = new maplibregl.LngLatBounds();
       results.forEach((r) => b.extend([r.brewery.lng!, r.brewery.lat!]));
       (routePath ?? []).forEach((p) => b.extend([p.lng, p.lat]));
-      m.fitBounds(b, { padding: { top: 60, bottom: 60, left: 60, right: 60 }, maxZoom: 12, duration: 700 });
+      /**
+       * Pad by the PANEL, not by a uniform 60px. The panel is a 400px overlay
+       * on the left (a bottom sheet on mobile), so uniform padding parked the
+       * origin city underneath it — on a Kingston→Toronto route you could not
+       * see Kingston. Nothing should sit under the panel unless the user put
+       * it there by panning.
+       */
+      m.fitBounds(b, {
+        padding: padding ?? { top: 60, bottom: 60, left: 60, right: 60 },
+        maxZoom: 12,
+        duration: 700,
+      });
     };
     if (ready.current) fit();
     else m.once('load', fit);
     // Intentionally not keyed on selectedId — re-framing on every click would
     // yank the map away from whatever the user was looking at.
-  }, [results, routePath]);
+  }, [results, routePath, padding]);
 
   /**
    * Sized with h/w rather than `absolute inset-0`: MapLibre adds its own

@@ -18,11 +18,60 @@ import type { Place } from '@/components/map-app';
  * coordinates, which is how "near this place" gets expressed.
  */
 
+/**
+ * Live town lookup, for anywhere the registry can't name.
+ *
+ * The registry only knows towns that HAVE a brewery — 65 of them — so typing
+ * "Orangeville" returned nothing even though Sonnen Hill is 4.7 km away. The
+ * town you're going to is not always the town with the brewery in it, which is
+ * the entire premise of a detour.
+ *
+ * Photon rather than Nominatim: it is the OSM project's geocoder built FOR
+ * type-ahead, where Nominatim's usage policy explicitly forbids autocomplete.
+ * Same underlying OSM data we already attribute under ODbL.
+ *
+ * Filtered to Ontario populated places — `osm_key=place` keeps towns and drops
+ * the schools, allotments and roads that share their name.
+ */
+const PHOTON = 'https://photon.komoot.io/api/';
+const ONTARIO_CENTRE = { lat: 44.0, lon: -79.5 };
+
+async function lookupTowns(query: string, signal: AbortSignal): Promise<SearchChoice[]> {
+  const url =
+    `${PHOTON}?q=${encodeURIComponent(query)}&limit=8` +
+    `&lat=${ONTARIO_CENTRE.lat}&lon=${ONTARIO_CENTRE.lon}`;
+  const res = await fetch(url, { signal });
+  if (!res.ok) return [];
+  const data = await res.json();
+
+  return (data.features ?? [])
+    .filter((f: { properties: Record<string, string> }) => {
+      const p = f.properties;
+      return (
+        p.state === 'Ontario' &&
+        p.osm_key === 'place' &&
+        ['city', 'town', 'village', 'hamlet', 'municipality'].includes(p.osm_value)
+      );
+    })
+    .map((f: { properties: Record<string, string>; geometry: { coordinates: [number, number] } }) => {
+      const [lng, lat] = f.geometry.coordinates;
+      return {
+        value: coordKey(lat, lng),
+        label: f.properties.name,
+        sublabel: f.properties.county ?? 'Ontario',
+        kind: 'town' as const,
+      };
+    })
+    .slice(0, 5);
+}
+
 export interface SearchChoice {
   /** Trip value: a place key, or an `@lat,lng` string. */
   value: string;
   label: string;
-  kind: 'place' | 'brewery';
+  /** County or region, to separate the four Ontario "Perth"s. */
+  sublabel?: string;
+  kind: 'place' | 'brewery' | 'town';
   /** Present for breweries, so the caller can select it on the map too. */
   breweryId?: string;
 }
@@ -54,6 +103,8 @@ export function PlaceSearch({
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
+  const [remote, setRemote] = useState<SearchChoice[]>([]);
+  const [looking, setLooking] = useState(false);
   const listId = useId();
   const wrap = useRef<HTMLDivElement>(null);
 
@@ -84,10 +135,43 @@ export function PlaceSearch({
         breweryId: b.id,
       }));
 
-    return [...placeHits, ...breweryHits].slice(0, 12);
-  }, [query, places, breweries]);
+    const localLabels = new Set(
+      [...placeHits, ...breweryHits].map((h) => h.label.toLowerCase()),
+    );
+    const remoteHits = remote.filter((t) => !localLabels.has(t.label.toLowerCase()));
+
+    return [...placeHits, ...breweryHits, ...remoteHits].slice(0, 12);
+  }, [query, places, breweries, remote]);
 
   useEffect(() => setActive(0), [query]);
+
+  /**
+   * Debounced so a lookup fires per pause, not per keystroke, and aborted on
+   * change so a slow response can't land under a newer query.
+   */
+  useEffect(() => {
+    const q = query.trim();
+    if (q.length < 3) {
+      setRemote([]);
+      return;
+    }
+    const ac = new AbortController();
+    const timer = setTimeout(() => {
+      setLooking(true);
+      lookupTowns(q, ac.signal)
+        .then((towns) => {
+          if (!ac.signal.aborted) setRemote(towns);
+        })
+        .catch(() => {})
+        .finally(() => {
+          if (!ac.signal.aborted) setLooking(false);
+        });
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+      ac.abort();
+    };
+  }, [query]);
 
   // Click-away closes, which is what every combobox does and what people expect.
   useEffect(() => {
@@ -165,7 +249,12 @@ export function PlaceSearch({
                     i === active ? 'bg-primary-soft text-ink' : 'text-muted hover:text-ink'
                   }`}
                 >
-                  <span className="truncate">{r.label}</span>
+                  <span className="truncate">
+                    {r.label}
+                    {r.sublabel && (
+                      <span className="ml-1.5 text-xs opacity-70">{r.sublabel}</span>
+                    )}
+                  </span>
                   <span className="survey-label shrink-0">
                     {r.kind === 'brewery' ? 'brewery' : 'town'}
                   </span>
@@ -175,7 +264,7 @@ export function PlaceSearch({
           </ul>
         )}
 
-        {open && query && results.length === 0 && (
+        {open && query && results.length === 0 && !looking && (
           <p className="absolute left-0 right-0 top-11 z-[var(--z-dropdown,30)] rounded-survey border border-line bg-surface-raised px-3 py-2 text-sm text-muted shadow-xl">
             No town or brewery matches “{query}”.
           </p>

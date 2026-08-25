@@ -14,6 +14,8 @@ import { PLACES } from './data';
  * A URL someone can read is a URL someone can trust and repair.
  */
 export interface Trip {
+  /** Human name for a coordinate anchor, so shared links stay legible. */
+  toLabel?: string;
   /** Route origin. Absent means this is a point search, not a corridor. */
   from?: string;
   /** Destination, or the anchor for a point search. */
@@ -49,7 +51,24 @@ export function parseAnchor(value: string | undefined): AnchorPoint | null {
   // silently send the map to the middle of the Atlantic.
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
   if (lat < 41 || lat > 57 || lng < -96 || lng > -73) return null;
-  return { key: value, label: 'Custom location', lat, lng };
+  return { key: value, label: labelFor(value) ?? 'Custom location', lat, lng };
+}
+
+/**
+ * Names for coordinate anchors, carried in the URL as `&n=`.
+ *
+ * Without this, searching "Orangeville" set the anchor to @43.9193,-80.0974
+ * and the field then read "Custom location" — the app forgetting the word you
+ * just typed, and a shared link arriving with no idea where it points.
+ */
+const anchorLabels = new Map<string, string>();
+
+export function rememberAnchorLabel(key: string, label: string): void {
+  anchorLabels.set(key, label);
+}
+
+function labelFor(key: string): string | undefined {
+  return anchorLabels.get(key);
 }
 
 export interface AnchorPoint {
@@ -86,6 +105,7 @@ export function parseTrip(params: RawParams): Trip {
     // A hand-edited radius of 9999 shouldn't return the whole province, and
     // NaN shouldn't silently become the default.
     radiusKm: Number.isFinite(radius) ? Math.min(Math.max(radius, 1), 150) : undefined,
+    toLabel: one(params.n) || undefined,
     requireBottleShop: one(params.shop) === '1',
     requireFood: one(params.food) === '1',
   };
@@ -96,6 +116,7 @@ export function tripToSearch(trip: Trip): string {
   const p = new URLSearchParams();
   if (trip.from) p.set('from', trip.from);
   if (trip.to) p.set('to', trip.to);
+  if (trip.toLabel) p.set('n', trip.toLabel);
   if (trip.styles.length) p.set('styles', trip.styles.join(','));
   if (trip.radiusKm) p.set('radius', String(trip.radiusKm));
   if (trip.requireBottleShop) p.set('shop', '1');

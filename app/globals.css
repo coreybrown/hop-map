@@ -270,6 +270,26 @@ body {
 }
 .maplibregl-ctrl-attrib a { color: var(--muted) !important; }
 
+/* The wordmark is flush top-right and the zoom control was landing on top of
+   it — "Hop Map" printed straight through the + button. Push the whole
+   top-right stack down past the wordmark's row so the two read as one column
+   of chrome down the right edge rather than a collision. */
+.maplibregl-ctrl-top-right {
+  margin-top: 34px;
+}
+
+/* Attribution is a condition of using the data, not decoration, so it has to
+   be on screen. On a phone the panel is a bottom sheet and the bottom-left
+   corner is entirely behind it — the credit was rendering into a covered
+   region. The sheet is bottom-anchored, so the top-left corner is free map;
+   move it there below the sheet's breakpoint. */
+@media (max-width: 639px) {
+  .maplibregl-ctrl-bottom-left {
+    top: 0;
+    bottom: auto;
+  }
+}
+
 /* A cluster reads as "several, here" — bigger, heavier, and still carrying the
    copper ring when any brewery inside it has reputation evidence, so the
    honesty rule survives being grouped. */

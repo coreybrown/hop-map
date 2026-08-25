@@ -90,6 +90,10 @@ export function BreweryMap({
   select.current = onSelect;
   const themeRef = useRef(theme);
   themeRef.current = theme;
+  // Read by the cluster click handler, which is built inside an effect that
+  // must not re-run when only the insets change.
+  const paddingRef = useRef(padding);
+  paddingRef.current = padding ?? { top: 60, bottom: 60, left: 60, right: 60 };
 
   useEffect(() => {
     if (!holder.current || map.current) return;
@@ -104,17 +108,27 @@ export function BreweryMap({
       attributionControl: false,
     });
 
-    // Bottom-right belongs to the legend; the zoom sits above the attribution
-    // on the left so the two never stack on top of each other.
+    // Bottom-right belongs to the legend, so the zoom goes top-right and sits
+    // BELOW the wordmark, which is also flush right — see the offset on
+    // `.maplibregl-ctrl-top-right` in globals.css. Side by side, the wordmark
+    // printed straight through the + button.
     m.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
-    m.addControl(
-      new maplibregl.AttributionControl({
-        compact: true,
-        customAttribution:
-          '<a href="https://openfreemap.org" target="_blank" rel="noreferrer">OpenFreeMap</a> · © OpenStreetMap contributors',
-      }),
-      'bottom-left',
-    );
+    /*
+     * No customAttribution. The vector source carries its own, and MapLibre
+     * concatenates the two — the bar read "OpenFreeMap · © OpenStreetMap
+     * contributors | OpenFreeMap © OpenMapTiles Data from OpenStreetMap",
+     * 617px of the same credit twice.
+     *
+     * Note WHERE the source's copy comes from, because it is not where you
+     * look first: not the style document, but the TileJSON at
+     * tiles.openfreemap.org/planet, fetched when the source loads. Stripping
+     * `sources[].attribution` in buildSurveyStyle does nothing — verified.
+     *
+     * ODbL is satisfied by that string: it links OpenFreeMap, OpenMapTiles and
+     * OpenStreetMap. If the tile host ever stops sending it, attribution has
+     * to come back here — check before switching tile providers.
+     */
+    m.addControl(new maplibregl.AttributionControl({ compact: true }), 'bottom-left');
     // Clicking empty basemap clears the selection, like any map app.
     loadBaseStyle()
       .then((base) => m.setStyle(buildSurveyStyle(base, themeRef.current)))
@@ -167,9 +181,35 @@ export function BreweryMap({
     const ro = new ResizeObserver(() => m.resize());
     ro.observe(holder.current);
 
+    /*
+     * `compact` means collapsible, not collapsed — MapLibre ships the panel
+     * open. On desktop that is right: bottom-left is free map and the credit
+     * should simply be readable. On a phone it is 354px of a 375px screen, and
+     * because the panel is a bottom sheet the corner it lives in is covered —
+     * so it moves to the top row (see globals.css) and lands straight across
+     * the wordmark. Collapse it to the ⓘ below the sheet's breakpoint; the
+     * summary still opens it, which is the whole point of compact mode.
+     *
+     * Driven by the `open` property rather than the class, so MapLibre's own
+     * toggle listener keeps `maplibregl-compact-show` in step with us.
+     */
+    const narrow = window.matchMedia('(max-width: 639px)');
+    const syncAttribution = () => {
+      const el = holder.current?.querySelector<HTMLDetailsElement>('.maplibregl-ctrl-attrib');
+      if (el) el.open = !narrow.matches;
+    };
+    syncAttribution();
+    narrow.addEventListener('change', syncAttribution);
+    // AttributionControl rebuilds its contents on `styledata` and reopens
+    // itself doing so, which quietly undid the call above — the collapse only
+    // sticks if we reassert it after the style lands.
+    m.on('styledata', syncAttribution);
+    m.on('load', syncAttribution);
+
     map.current = m;
     return () => {
       ro.disconnect();
+      narrow.removeEventListener('change', syncAttribution);
       m.remove();
       map.current = null;
       ready.current = false;
@@ -378,7 +418,13 @@ export function BreweryMap({
         group.members.forEach((x) => b.extend([x.brewery.lng!, x.brewery.lat!]));
         // A tight cluster has near-identical bounds, so fitBounds alone barely
         // moves; stepping the zoom guarantees the group actually separates.
-        m.fitBounds(b, { padding: 120, maxZoom: Math.min(17, m.getZoom() + 3), duration: 500 });
+        // Panel-aware padding here too, or expanding a cluster scatters its
+        // members straight underneath the list you're reading them in.
+        m.fitBounds(b, {
+          padding: paddingRef.current,
+          maxZoom: Math.min(17, m.getZoom() + 3),
+          duration: 500,
+        });
       });
       // Record membership so the selection effect can light up a cluster that
       // CONTAINS the selected brewery — otherwise searching for a brewery that
@@ -409,32 +455,43 @@ export function BreweryMap({
     if (hit) m.easeTo({ center: [hit.brewery.lng!, hit.brewery.lat!], duration: 500 });
   }, [selectedId, results, zoomTick]);
 
-  // Frame the answer whenever it changes shape.
+  // Frame the answer whenever it changes shape — and frame the province when
+  // there is no answer yet.
   useEffect(() => {
     const m = map.current;
-    if (!m || results.length === 0) return;
+    if (!m) return;
+    /**
+     * Pad by the PANEL, not by a uniform 60px. The panel is a 400px overlay
+     * on the left (a bottom sheet on mobile), so uniform padding parked the
+     * origin city underneath it — on a Kingston→Toronto route you could not
+     * see Kingston. Nothing should sit under the panel unless the user put
+     * it there by panning.
+     */
+    const pad = padding ?? { top: 60, bottom: 60, left: 60, right: 60 };
     const fit = () => {
+      if (results.length === 0) {
+        /*
+         * The opening view. The constructor's `fitBoundsOptions` can't do this
+         * job: it runs before the panel has been measured, and it pads
+         * uniformly. On a 375×812 phone the sheet takes 58% of the height, so
+         * a uniform fit centred the province and left the visible strip on
+         * Timmins and North Bay — every brewery in the registry hidden behind
+         * the sheet, on the one view whose entire purpose is "here is all of
+         * Ontario". Re-fit with the real insets once they're known.
+         */
+        if (overview?.length) m.fitBounds(ONTARIO, { padding: pad, duration: 0 });
+        return;
+      }
       const b = new maplibregl.LngLatBounds();
       results.forEach((r) => b.extend([r.brewery.lng!, r.brewery.lat!]));
       (routePath ?? []).forEach((p) => b.extend([p.lng, p.lat]));
-      /**
-       * Pad by the PANEL, not by a uniform 60px. The panel is a 400px overlay
-       * on the left (a bottom sheet on mobile), so uniform padding parked the
-       * origin city underneath it — on a Kingston→Toronto route you could not
-       * see Kingston. Nothing should sit under the panel unless the user put
-       * it there by panning.
-       */
-      m.fitBounds(b, {
-        padding: padding ?? { top: 60, bottom: 60, left: 60, right: 60 },
-        maxZoom: 12,
-        duration: 700,
-      });
+      m.fitBounds(b, { padding: pad, maxZoom: 12, duration: 700 });
     };
     if (ready.current) fit();
     else m.once('load', fit);
     // Intentionally not keyed on selectedId — re-framing on every click would
     // yank the map away from whatever the user was looking at.
-  }, [results, routePath, padding]);
+  }, [results, routePath, padding, overview]);
 
   /**
    * Sized with h/w rather than `absolute inset-0`: MapLibre adds its own

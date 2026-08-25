@@ -244,6 +244,19 @@ export function MapApp({
     isKnownForSelected(r.brewery.styles.knownFor, styles),
   ).length;
 
+  /**
+   * The dots on the opening map. Derived once and used for BOTH the markers
+   * and the count above the list — read separately they drifted, and the panel
+   * announced "no matches" over a map showing every brewery in the province.
+   */
+  const plottable = useMemo(
+    () =>
+      breweries
+        .filter((b) => Number.isFinite(b.lat) && Number.isFinite(b.lng))
+        .map((b) => ({ id: b.id, name: b.name, lat: b.lat!, lng: b.lng! })),
+    [breweries],
+  );
+
   return (
     <div className="relative h-[100dvh] w-full overflow-hidden">
       <BreweryMap
@@ -252,13 +265,7 @@ export function MapApp({
         routeApproximated={route?.approximated}
         selectedStyles={styles}
         padding={mapPadding}
-        overview={
-          destPlace
-            ? undefined
-            : breweries
-                .filter((b) => Number.isFinite(b.lat) && Number.isFinite(b.lng))
-                .map((b) => ({ id: b.id, name: b.name, lat: b.lat!, lng: b.lng! }))
-        }
+        overview={destPlace ? undefined : plottable}
         selectedId={selectedId}
         onSelect={onSelect}
         theme={theme}
@@ -293,7 +300,17 @@ export function MapApp({
         as unexplained decoration. Worded as a claim about confidence, not as
         a colour key, because that is what the colours actually encode.
       */}
-      <div className="pointer-events-none absolute bottom-3 right-3 z-[var(--z-map-ui)] hidden rounded-survey border border-line bg-surface-raised/95 px-3 py-2 text-xs shadow-lg sm:block">
+      {/*
+        Only while it is describing something on screen. The opening map plots
+        every brewery as a neutral context dot — deliberately outside the
+        copper/teal vocabulary, because nothing has been matched yet — so a
+        legend for copper and teal was a key to colours that weren't there.
+      */}
+      <div
+        className={`pointer-events-none absolute bottom-3 right-3 z-[var(--z-map-ui)] hidden rounded-survey border border-line bg-surface-raised/95 px-3 py-2 text-xs shadow-lg ${
+          results.length > 0 ? 'sm:block' : ''
+        }`}
+      >
         <p className="flex items-center gap-2 text-ink">
           <span
             className="inline-block size-3 shrink-0 rounded-full bg-accent"
@@ -404,18 +421,31 @@ export function MapApp({
           {panelOpen && (
             <>
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-line px-3 py-2 sm:px-4">
+                {/*
+                  Three states, not two. With no destination chosen nothing has
+                  been matched against anything, so "no matches · 0 with medals"
+                  was answering a question nobody asked — and contradicting both
+                  the map behind it and the copy directly below. Say what is
+                  actually true of the opening view instead.
+                */}
                 <p className="survey-data text-xs text-muted">
-                  {results.length === 0
-                    ? 'no matches'
-                    : `${results.length} ${results.length === 1 ? 'brewery' : 'breweries'}`}
-                  {` · ${withRep} ${styles.length ? 'known for your styles' : 'with medals'}`}
-                  {route && !route.approximated && (
+                  {!destPlace ? (
+                    `${plottable.length} breweries · pick a place to rank them`
+                  ) : (
                     <>
-                      {' · '}
-                      {Math.round(route.distanceKm)} km · {formatDuration(route.durationMin)}
+                      {results.length === 0
+                        ? 'no matches'
+                        : `${results.length} ${results.length === 1 ? 'brewery' : 'breweries'}`}
+                      {` · ${withRep} ${styles.length ? 'known for your styles' : 'with medals'}`}
+                      {route && !route.approximated && (
+                        <>
+                          {' · '}
+                          {Math.round(route.distanceKm)} km · {formatDuration(route.durationMin)}
+                        </>
+                      )}
+                      {routing && ' · routing…'}
                     </>
                   )}
-                  {routing && ' · routing…'}
                 </p>
                 {results.length > 0 && <ShareTrip label={label} />}
               </div>

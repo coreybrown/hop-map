@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { rankBreweries } from '@/lib/ranking';
 import { STYLE_LABELS, STYLE_TAGS, type Brewery, type StyleTag } from '@/lib/types';
 import { fetchDrivingRoute, formatDuration, type DrivingRoute } from '@/lib/route';
-import { tripToSearch, parseAnchor, type Trip } from '@/lib/trip-url';
+import { tripToSearch, parseTrip, parseAnchor, type Trip } from '@/lib/trip-url';
 import { PlaceSearch, type SearchChoice } from '@/components/place-search';
 import { StopRow } from '@/components/stop-row';
 import { ShareTrip } from '@/components/share-trip';
@@ -103,9 +103,52 @@ export function MapApp({
     }),
     [mode, from, to, styles],
   );
+  /**
+   * History, split by intent.
+   *
+   * Every change used to call replaceState, which meant Back left the app
+   * entirely and took the trip with it — the most-used control in the browser,
+   * broken. But pushing an entry per style-chip toggle is just as bad: Back
+   * then takes six presses to undo one search.
+   *
+   * So: changing WHERE you're going is a new search and gets a history entry.
+   * Toggling a style refines the search you're already looking at and replaces.
+   */
+  const lastPlaces = useRef<string>('');
+  const suppressSync = useRef(false);
   useEffect(() => {
-    window.history.replaceState(null, '', `/${tripToSearch(trip)}`);
+    const search = tripToSearch(trip);
+    if (suppressSync.current) {
+      // We're here because of a popstate; the URL is already correct and
+      // writing again would clobber the entry we just navigated to.
+      suppressSync.current = false;
+      lastPlaces.current = `${trip.from ?? ''}|${trip.to ?? ''}`;
+      return;
+    }
+    if (search === window.location.search) return;
+
+    const places = `${trip.from ?? ''}|${trip.to ?? ''}`;
+    const isNewSearch = lastPlaces.current !== '' && places !== lastPlaces.current;
+    lastPlaces.current = places;
+
+    window.history[isNewSearch ? 'pushState' : 'replaceState'](null, '', `/${search}`);
   }, [trip]);
+
+  // Back/forward must actually move the app, not just the address bar.
+  useEffect(() => {
+    const onPop = () => {
+      const params = Object.fromEntries(new URLSearchParams(window.location.search));
+      const t = parseTrip(params);
+      suppressSync.current = true;
+      setMode(t.from ? 'route' : 'place');
+      setFrom(t.from ?? '');
+      setTo(t.to ?? 'toronto');
+      setStyles(t.styles);
+      setSelectedId(null);
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   /**
    * Live theme, not a one-shot read. Starts 'light' so the server and the
@@ -152,6 +195,7 @@ export function MapApp({
       <BreweryMap
         results={results}
         routePath={route?.path ?? null}
+        routeApproximated={route?.approximated}
         selectedId={selectedId}
         onSelect={onSelect}
         theme={theme}
@@ -290,6 +334,23 @@ export function MapApp({
                 </p>
                 {results.length > 0 && <ShareTrip label={label} />}
               </div>
+
+              {/*
+                Never present a straight line as a route.
+
+                When OSRM is unreachable, fetchDrivingRoute falls back to a
+                two-point line so the page still works — but silently showing
+                that as driving directions is the product's governing rule
+                broken in the UI: never claim more than the data supports. The
+                detour figures below are straight-line too, so say that.
+              */}
+              {route?.approximated && (
+                <p className="border-b border-line bg-warn-soft px-3 py-2 text-xs text-warn sm:px-4">
+                  Couldn’t reach the routing service, so this is a straight line
+                  between the two points — not driving directions. Detours below are
+                  as-the-crow-flies and will read shorter than the real drive.
+                </p>
+              )}
 
               <div ref={listRef} className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
                 {results.length === 0 ? (

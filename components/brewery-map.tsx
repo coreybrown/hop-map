@@ -50,12 +50,15 @@ const ONTARIO: LngLatBoundsLike = [
 export function BreweryMap({
   results,
   routePath,
+  routeApproximated,
   selectedId,
   onSelect,
   theme,
 }: {
   results: ScoredBrewery[];
   routePath: RoutePoint[] | null;
+  /** True when routing failed and this line is a straight-line stand-in. */
+  routeApproximated?: boolean;
   selectedId: string | null;
   onSelect: (id: string | null) => void;
   theme: 'light' | 'dark';
@@ -172,13 +175,23 @@ export function BreweryMap({
     };
   }, [theme]);
 
-  // Route geometry.
+  /**
+   * Route geometry and its styling, in one effect.
+   *
+   * Retries until the source exists rather than listening once. `styledata`
+   * fires repeatedly and can land BEFORE the route source has been added — a
+   * `once` listener then bails, never fires again, and the route silently
+   * never draws. That's exactly what happened: the layer existed, the fetch
+   * succeeded, and the source held zero coordinates.
+   */
   useEffect(() => {
     const m = map.current;
     if (!m) return;
-    const apply = () => {
+
+    const apply = (): boolean => {
       const src = m.getSource('route') as GeoJSONSource | undefined;
-      if (!src) return;
+      if (!src) return false;
+
       src.setData({
         type: 'Feature',
         properties: {},
@@ -187,10 +200,46 @@ export function BreweryMap({
           coordinates: (routePath ?? []).map((p) => [p.lng, p.lat]),
         },
       });
+
+      /**
+       * A straight-line fallback must not LOOK like a road.
+       *
+       * When routing fails we still draw the two-point line so the map isn't
+       * empty — but in the same solid stroke as real geometry it claims a
+       * drive that was never computed, and it visibly cuts across Lake
+       * Ontario. Dashed and thinner reads as schematic, which is what it is.
+       */
+      if (m.getLayer('route-line')) {
+        const approx = Boolean(routeApproximated);
+        // Round caps render dashes as dots; butt keeps them as dashes.
+        m.setLayoutProperty('route-line', 'line-cap', approx ? 'butt' : 'round');
+        m.setPaintProperty('route-line', 'line-dasharray', approx ? [2, 2] : [1, 0]);
+        m.setPaintProperty('route-line', 'line-width', approx ? 3 : 4);
+        m.setPaintProperty('route-casing', 'line-opacity', approx ? 0 : 0.35);
+      }
+      return true;
     };
-    if (ready.current) apply();
-    else m.once('load', apply);
-  }, [routePath]);
+
+    apply();
+
+    /**
+     * Stay subscribed for the life of the effect, rather than unsubscribing on
+     * first success. `setStyle` — which a theme change triggers, and which the
+     * initial paint triggers too — drops every source, taking the route with
+     * it. Unsubscribing after the first apply left the line permanently blank
+     * after any later restyle: source present, layer present, zero coordinates.
+     *
+     * setData is cheap and idempotent, so re-applying on each styledata is the
+     * simplest thing that stays correct.
+     */
+    const onData = () => {
+      apply();
+    };
+    m.on('styledata', onData);
+    return () => {
+      m.off('styledata', onData);
+    };
+  }, [routePath, routeApproximated, theme]);
 
   /**
    * Markers, clustered by pixel proximity.

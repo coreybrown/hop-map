@@ -358,17 +358,20 @@ export function MapApp({
                     Nothing matched. Try fewer styles, or a larger centre nearby.
                   </p>
                 ) : (
-                  <ol className="px-3 sm:px-4">
+                  <ol className="px-2 sm:px-3">
                     {results.map((r, i) => (
-                      <div
-                        key={r.brewery.id}
-                        id={`row-${r.brewery.id}`}
-                        onClick={() => onSelect(r.brewery.id)}
-                        className={`cursor-pointer rounded-survey transition-colors duration-150 ${
-                          selectedId === r.brewery.id ? 'bg-primary-soft' : ''
-                        }`}
-                      >
-                        <StopRow result={r} index={i} />
+                      <div key={r.brewery.id} id={`row-${r.brewery.id}`}>
+                        <StopRow
+                          result={r}
+                          index={i}
+                          // With nothing chosen yet, the top recommendation is
+                          // open: the best answer shouldn't need a click, but
+                          // the other 23 shouldn't cost 256px each either.
+                          expanded={selectedId ? selectedId === r.brewery.id : i === 0}
+                          onSelect={() =>
+                            onSelect(selectedId === r.brewery.id ? null : r.brewery.id)
+                          }
+                        />
                       </div>
                     ))}
                   </ol>

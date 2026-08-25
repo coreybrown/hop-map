@@ -3,7 +3,13 @@
 import dynamic from 'next/dynamic';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { rankBreweries } from '@/lib/ranking';
-import { STYLE_LABELS, STYLE_TAGS, type Brewery, type StyleTag } from '@/lib/types';
+import {
+  STYLE_LABELS,
+  STYLE_TAGS,
+  isKnownForSelected,
+  type Brewery,
+  type StyleTag,
+} from '@/lib/types';
 import { fetchDrivingRoute, formatDuration, type DrivingRoute } from '@/lib/route';
 import { tripToSearch, parseTrip, parseAnchor, type Trip } from '@/lib/trip-url';
 import { PlaceSearch, type SearchChoice } from '@/components/place-search';
@@ -51,6 +57,9 @@ export function MapApp({
   const [from, setFrom] = useState(initialTrip.from ?? '');
   const [to, setTo] = useState(initialTrip.to ?? 'toronto');
   const [styles, setStyles] = useState<StyleTag[]>(initialTrip.styles);
+  // Parsed and bounds-checked in trip-url, then never passed on — `?radius=`
+  // in a shared link silently did nothing.
+  const radiusKm = initialTrip.radiusKm;
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [route, setRoute] = useState<DrivingRoute | null>(null);
   const [routing, setRouting] = useState(false);
@@ -91,8 +100,9 @@ export function MapApp({
             routePath: route?.path,
           }
         : { anchor: destPlace }),
+      radiusKm,
     }).slice(0, 24);
-  }, [breweries, styles, originPlace, destPlace, route]);
+  }, [breweries, styles, originPlace, destPlace, route, radiusKm]);
 
   // Keep the URL in step so the plan stays shareable.
   const trip: Trip = useMemo(
@@ -188,7 +198,14 @@ export function MapApp({
   const label = originPlace
     ? `${originPlace.label} → ${destPlace?.label ?? ''}`
     : (destPlace?.label ?? '');
-  const withRep = results.filter((r) => r.brewery.styles.knownFor.length > 0).length;
+  /**
+   * Counted the same way the markers are coloured and the legend is worded —
+   * all three used to disagree. `knownFor.length > 0` answers "holds a medal
+   * in anything", which is not the question the user asked.
+   */
+  const withRep = results.filter((r) =>
+    isKnownForSelected(r.brewery.styles.knownFor, styles),
+  ).length;
 
   return (
     <div className="relative h-[100dvh] w-full overflow-hidden">
@@ -196,6 +213,7 @@ export function MapApp({
         results={results}
         routePath={route?.path ?? null}
         routeApproximated={route?.approximated}
+        selectedStyles={styles}
         selectedId={selectedId}
         onSelect={onSelect}
         theme={theme}
@@ -213,14 +231,14 @@ export function MapApp({
             className="inline-block size-3 shrink-0 rounded-full bg-accent"
             aria-hidden="true"
           />
-          Known for what you asked for
+          {styles.length ? 'Known for what you asked for' : 'Medal winner'}
         </p>
         <p className="mt-1.5 flex items-center gap-2 text-muted">
           <span
             className="inline-block size-3 shrink-0 rounded-full border-2 border-primary"
             aria-hidden="true"
           />
-          Stocks it — no reputation data yet
+          {styles.length ? 'Stocks it — no medal for that style' : 'No medals on record'}
         </p>
       </div>
 
@@ -323,7 +341,7 @@ export function MapApp({
                   {results.length === 0
                     ? 'no matches'
                     : `${results.length} ${results.length === 1 ? 'brewery' : 'breweries'}`}
-                  {withRep > 0 && ` · ${withRep} with evidence`}
+                  {` · ${withRep} ${styles.length ? 'known for your styles' : 'with medals'}`}
                   {route && !route.approximated && (
                     <>
                       {' · '}

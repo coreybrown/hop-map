@@ -1,5 +1,6 @@
-# Ontario Beer Survey
+# Hop Map
 
+> Named Hop Map 2026-08-21; earlier documents call it "Ontario Beer Survey".
 > Derived from `../core-loop.md`, `../discovery-document.md` and `../HANDOFF.md`
 > rather than from an interview — every field below is already settled in those
 > documents. They remain the source of truth; this file is the summary the

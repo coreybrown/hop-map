@@ -321,8 +321,8 @@ export function rankBreweries(
       geoScore = 1 - offRouteKm / radius;
       reasons.push(
         detourKm <= 4
-          ? 'Basically on the route'
-          : `About a ${detourKm} km round-trip detour`,
+          ? 'Right on the route'
+          : `${detourKm} km round trip off your route`,
       );
     } else if (query.anchor) {
       distanceKm = haversineKm(query.anchor, point);
@@ -390,7 +390,10 @@ export function rankBreweries(
       (brewery.signals.googleCount ?? 0) < 800
     ) {
       reasons.push(
-        `${brewery.signals.google} on Google from ${brewery.signals.googleCount} visitors — a destination people go to on purpose`,
+        // `googleCount` counts REVIEWS, not visitors, and "a destination people
+        // go to on purpose" is an inference dressed as a finding. State the
+        // number; the low-count-high-rating shape is already why it ranked.
+        `${brewery.signals.google} on Google from ${brewery.signals.googleCount} reviews`,
       );
     }
 
@@ -405,8 +408,11 @@ export function rankBreweries(
           : fresh.days <= 7
             ? `${fresh.days} days ago`
             : `${Math.round(fresh.days / 7)} weeks ago`;
+      // "released ${when}" invented an event we have no data for: `firstSeen`
+      // is the date OUR crawl first saw the product, not the brewery's release
+      // date. Saying "first seen" claims exactly what we know and no more.
       reasons.unshift(
-        `New ${STYLE_LABELS[fresh.style]} released ${when} — ${fresh.release.name}`,
+        `New ${STYLE_LABELS[fresh.style]}, first seen ${when} — ${fresh.release.name}`,
       );
     }
 
@@ -415,7 +421,10 @@ export function rankBreweries(
     // Never recommend an unconfirmed brewery without saying so — a wasted
     // drive to a closed taproom is the failure this product exists to avoid.
     if (brewery.status === 'unverified') {
-      reasons.push("We haven't confirmed this one is still open — call ahead");
+      // Fires on 78% of results (205 of 264 are `unverified`), so worded as
+      // provenance rather than suspicion — at that frequency a doubt-flavoured
+      // hedge turns the whole list into a disclaimer and stops being read.
+      reasons.push('From map data, not checked by us — call ahead');
     }
 
     // A fresh matching release is a real tiebreaker but must never let a

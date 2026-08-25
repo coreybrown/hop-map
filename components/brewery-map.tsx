@@ -21,7 +21,7 @@ import maplibregl, {
   type GeoJSONSource,
 } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import type { ScoredBrewery } from '@/lib/types';
+import { isKnownForSelected, type ScoredBrewery, type StyleTag } from '@/lib/types';
 import type { RoutePoint } from '@/lib/route';
 import { buildSurveyStyle, loadBaseStyle } from '@/lib/map-style';
 
@@ -51,6 +51,7 @@ export function BreweryMap({
   results,
   routePath,
   routeApproximated,
+  selectedStyles,
   selectedId,
   onSelect,
   theme,
@@ -59,6 +60,8 @@ export function BreweryMap({
   routePath: RoutePoint[] | null;
   /** True when routing failed and this line is a straight-line stand-in. */
   routeApproximated?: boolean;
+  /** The styles asked for, so "known for" can mean "known for THAT". */
+  selectedStyles: StyleTag[];
   selectedId: string | null;
   onSelect: (id: string | null) => void;
   theme: 'light' | 'dark';
@@ -293,7 +296,7 @@ export function BreweryMap({
       const index = results.indexOf(first) + 1;
 
       if (group.members.length === 1) {
-        const known = first.brewery.styles.knownFor.length > 0;
+        const known = isKnownForSelected(first.brewery.styles.knownFor, selectedStyles);
         const el = document.createElement('button');
         el.type = 'button';
         el.className = 'obs-marker';
@@ -320,7 +323,9 @@ export function BreweryMap({
 
       // A cluster still has to answer "is anything good in here?", so it
       // carries the copper ring when any member has reputation evidence.
-      const anyKnown = group.members.some((x) => x.brewery.styles.knownFor.length > 0);
+      const anyKnown = group.members.some((x) =>
+        isKnownForSelected(x.brewery.styles.knownFor, selectedStyles),
+      );
       const el = document.createElement('button');
       el.type = 'button';
       el.className = 'obs-cluster';
@@ -352,7 +357,7 @@ export function BreweryMap({
           .addTo(m),
       );
     });
-  }, [results, zoomTick]);
+  }, [results, zoomTick, selectedStyles]);
 
   // Selection styling, and a gentle pan so the chosen stop is on screen.
   useEffect(() => {

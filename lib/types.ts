@@ -33,6 +33,26 @@ export const STYLE_TAGS = [
 
 export type StyleTag = (typeof STYLE_TAGS)[number];
 
+/**
+ * Does this brewery's reputation answer the question that was ASKED?
+ *
+ * The map and the results header both used `knownFor.length > 0` — any medal,
+ * in any style — while the legend read "Known for what you asked for". Those
+ * are different claims, and the legend's was false: search for sours and a
+ * brewery holding a stout medal was highlighted as though it had answered you.
+ *
+ * That is the governing rule failing in the one place the product is supposed
+ * to enforce it, so the highlight now means what the label says. With no
+ * styles selected there is no question to answer, and any medal qualifies.
+ */
+export function isKnownForSelected(
+  knownFor: readonly StyleTag[],
+  selected: readonly StyleTag[],
+): boolean {
+  if (selected.length === 0) return knownFor.length > 0;
+  return knownFor.some((s) => selected.includes(s));
+}
+
 export const STYLE_LABELS: Record<StyleTag, string> = {
   'hazy-ipa': 'Hazy IPA',
   'west-coast-ipa': 'West Coast IPA',

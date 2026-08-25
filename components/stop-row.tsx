@@ -1,5 +1,6 @@
 import type { ScoredBrewery } from '@/lib/types';
 import { STYLE_LABELS } from '@/lib/types';
+import { OpeningHours } from '@/components/opening-hours';
 
 /**
  * One recommended stop: a compact summary that expands when selected.
@@ -43,9 +44,18 @@ export function StopRow({
         ? { value: distanceKm.toFixed(distanceKm < 10 ? 1 : 0), unit: 'km away' }
         : null;
 
-  // The engine puts a fresh release first in `reasons`; it also renders as its
-  // own chip below, so drop the prose copy rather than saying it twice.
-  const prose = freshRelease ? reasons.filter((r) => !r.includes(freshRelease.name)) : reasons;
+  /**
+   * Drop the engine's release sentence, which is duplicated by the chip below.
+   *
+   * Matched on the sentence's own shape, NOT on the release name. Filtering by
+   * name deletes any reason that happens to contain it, and real release names
+   * in this registry include "Pale" and "Premium" — so a brewery with a new
+   * beer called "Pale" would silently lose its "Known for Pale Ale" line, the
+   * single best thing on the row.
+   */
+  const prose = freshRelease
+    ? reasons.filter((r) => !r.startsWith('New ') || !r.includes('first seen'))
+    : reasons;
 
   return (
     <li id={`stop-${index + 1}`} className="scroll-mt-2 border-b border-line last:border-b-0">
@@ -86,7 +96,7 @@ export function StopRow({
           {/* One-word state flags, so a collapsed row still warns. */}
           <span className="mt-1 flex flex-wrap items-center gap-x-3 text-[0.7rem]">
             {freshRelease && <span className="text-fresh">New release</span>}
-            {unverified && <span className="text-warn">Unconfirmed</span>}
+            {unverified && <span className="text-muted">Not confirmed open</span>}
           </span>
         </span>
 
@@ -160,9 +170,7 @@ export function StopRow({
             </a>
           </div>
 
-          {brewery.openingHours && (
-            <p className="survey-data mt-1 text-xs text-muted">{brewery.openingHours}</p>
-          )}
+          {brewery.openingHours && <OpeningHours spec={brewery.openingHours} />}
         </div>
       )}
     </li>

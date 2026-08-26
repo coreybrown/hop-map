@@ -62,3 +62,11 @@ next-env.d.ts
 !/data/registry.json
 # Same reason — lib/data.ts joins releases onto the registry at import time.
 !/data/releases.json
+
+# wide-harvest raw corpus — other people's pages, never committed to the public repo
+/data/harvest/
+
+# ...but the DERIVED claims (short verified quotes + provenance) and the pilot
+# roster are human-reviewable evidence, not crawler churn. Track them.
+!/data/pilot-set.json
+!/data/claims/

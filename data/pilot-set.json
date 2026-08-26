@@ -1,0 +1,128 @@
+{
+  "createdAt": "2026-08-25",
+  "purpose": "Wide-harvest pilot across the coverage gradient. Half have expert ground truth (accuracy is measurable); half are deliberately niche (honesty is measurable: thin coverage must yield few, low-tier claims \u2014 not fabrication).",
+  "heavy": [
+    {
+      "id": "bellwoods-brewery",
+      "name": "Bellwoods Brewery",
+      "city": "Toronto",
+      "note": "famous; multi-location (Ossington + Hafis) \u2014 tests location split"
+    },
+    {
+      "id": "godspeed-brewery",
+      "name": "Godspeed Brewery",
+      "city": "Toronto",
+      "note": "famous specialist; 2025 CBA Best in Show; brewpub-with-licence edge case"
+    },
+    {
+      "id": "great-lakes-brewery",
+      "name": "Great Lakes Brewery",
+      "city": "Etobicoke",
+      "note": "famous generalist"
+    },
+    {
+      "id": "left-field-brewery",
+      "name": "Left Field Brewery",
+      "city": "Toronto",
+      "note": "ground truth says 'all kinds' \u2014 tests breadth handling"
+    },
+    {
+      "id": "blood-brothers-brewing",
+      "name": "Blood Brothers Brewing",
+      "city": "Toronto",
+      "note": "hype brewery"
+    },
+    {
+      "id": "burdock-brewery",
+      "name": "Burdock",
+      "city": "Toronto",
+      "note": "multi-location (Bloor + Kensington)"
+    },
+    {
+      "id": "steam-whistle-brewing",
+      "name": "Steam Whistle Brewing",
+      "city": "Toronto",
+      "note": "tourist-scale venue \u2014 the factor-collapse stress test: tours/venue press vs beer press"
+    },
+    {
+      "id": "sonnen-hill-brewing",
+      "name": "Sonnen Hill Brewing",
+      "city": "Caledon",
+      "note": "saison specialist, semi-rural"
+    },
+    {
+      "id": "third-moon-brewing",
+      "name": "Third Moon Brewing",
+      "city": "Milton",
+      "note": "hype specialist outside the core"
+    },
+    {
+      "id": "badlands-brewing",
+      "name": "Badlands Brewing Company",
+      "city": "Caledon",
+      "note": "enthusiast-known, low general press"
+    }
+  ],
+  "niche": [
+    {
+      "id": "mackinnon-brothers",
+      "name": "MacKinnon Brothers Brewing",
+      "city": "Bath",
+      "note": "farm brewery ON the Toronto\u2192Kingston corridor; mid coverage"
+    },
+    {
+      "id": "church-key-brewing",
+      "name": "Church-Key Brewing Company",
+      "city": "Campbellford",
+      "note": "long-standing rural"
+    },
+    {
+      "id": "parsons-brewing",
+      "name": "Parsons Brewing Company",
+      "city": "Picton",
+      "note": "PEC; vibes-led (on a field) \u2014 tests experience dimensions"
+    },
+    {
+      "id": "555-brewing",
+      "name": "555 Brewing Co.",
+      "city": "Picton",
+      "note": "PEC niche"
+    },
+    {
+      "id": "gananoque-brewing",
+      "name": "Gananoque Brewing Company",
+      "city": "Gananoque",
+      "note": "corridor-adjacent, thin press expected"
+    },
+    {
+      "id": "new-limburg-brewing",
+      "name": "New Limburg Brewing Company",
+      "city": "Norfolk County",
+      "note": "Belgian specialist, genuinely niche"
+    },
+    {
+      "id": "black-gold-brewery",
+      "name": "Black Gold Brewery",
+      "city": "Petrolia",
+      "note": "obscure southwest; brewpub-with-licence"
+    },
+    {
+      "id": "manitoulin-brewing",
+      "name": "Manitoulin Brewing Company",
+      "city": "Little Current",
+      "note": "remote north \u2014 coverage floor"
+    },
+    {
+      "id": "bayfield-brewing",
+      "name": "Bayfield Brewing Co.",
+      "city": "Bayfield",
+      "note": "small lake town"
+    },
+    {
+      "id": "whitewater-brewing",
+      "name": "Whitewater Brewing Company",
+      "city": "Cobden",
+      "note": "multi-location rural \u2014 tests location split with thin press"
+    }
+  ]
+}

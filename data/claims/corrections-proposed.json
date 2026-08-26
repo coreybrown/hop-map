@@ -1,13 +1,1 @@
-[
- {
-  "id": "manitoulin-brewing",
-  "proposedAt": "2026-08-25",
-  "proposal": "status: closed",
-  "evidence": "Closure announced 2026-04-09 after ~12 years; CBC / CTV / Northern Ontario Business / Manitoulin Expositor all report it; 'open while inventory lasts, into early May'. Possible sale to new owners \u2014 recheck before deleting rather than assuming.",
-  "sources": [
-   "https://www.cbc.ca/news/canada/sudbury/manitoulin-brewing-shutting-down-9.7159541",
-   "https://www.ctvnews.ca/northern-ontario/video/2026/04/10/manitoulin-brewing-co-is-closing-its-doors/"
-  ],
-  "rule": "corrections.json is human-decided; this file is the QUEUE, not the decision."
- }
-]
+[]

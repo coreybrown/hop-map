@@ -1,119 +1,124 @@
 {
-  "_meta": {
-    "purpose": "Human decisions that must survive a registry rebuild. build-registry.mjs regenerates registry.json from OSM + crawls every run, so anything recorded only there is lost on the next build. This file is the durable layer.",
-    "decidedBy": "Corey Brown, 2026-08-18",
-    "rule": "Only a human writes here. Nothing in this file is inferred, and every entry carries the evidence that justified it."
+ "_meta": {
+  "purpose": "Human decisions that must survive a registry rebuild. build-registry.mjs regenerates registry.json from OSM + crawls every run, so anything recorded only there is lost on the next build. This file is the durable layer.",
+  "decidedBy": "Corey Brown, 2026-08-18",
+  "rule": "Only a human writes here. Nothing in this file is inferred, and every entry carries the evidence that justified it."
+ },
+ "notBrewery": {
+  "_note": "Excluded from all brewery queries but deliberately KEPT as records, with their OSM ids intact — a later fetch-osm-breweries run would otherwise re-add them silently. `venueKind` is what downstream filtering should read.",
+  "bungalow": {
+   "venueKind": "pub",
+   "why": "Pours Samuel Adams, Creemore, Stiegl, Sapporo — no own beer"
   },
-  "notBrewery": {
-    "_note": "Excluded from all brewery queries but deliberately KEPT as records, with their OSM ids intact — a later fetch-osm-breweries run would otherwise re-add them silently. `venueKind` is what downstream filtering should read.",
-    "bungalow": {
-      "venueKind": "pub",
-      "why": "Pours Samuel Adams, Creemore, Stiegl, Sapporo — no own beer"
-    },
-    "d-arcy-mcgee-s": {
-      "venueKind": "pub",
-      "why": "Irish pub; pours Guinness, Heineken"
-    },
-    "daniel-o-connell-s-irish-pub": {
-      "venueKind": "pub",
-      "why": "Irish pub; pours Guinness. OSM website tag also wrong (points at filsdiner.ca)"
-    },
-    "heart-and-crown-pub": {
-      "venueKind": "pub",
-      "why": "Pours Guinness, Heineken"
-    },
-    "irene-s": {
-      "venueKind": "pub",
-      "why": "Pours Guinness, Creemore, Moosehead, Beau's and others"
-    },
-    "jack-s-gastropub": {
-      "venueKind": "pub",
-      "why": "Pours Heineken, Land Shark, Smirnoff Ice. Also rebranded — domain now thegoosekitchenandbar.com"
-    },
-    "mcreilly-s-public-house": {
-      "venueKind": "pub",
-      "why": "Pours Guinness"
-    },
-    "morty-s-pub": {
-      "venueKind": "pub",
-      "why": "Pours Molson Canadian, Coors Light, Bud Light. NOTE: has a live store API whose products classified as offers:sour — a pub menu read as a brewery catalog"
-    },
-    "pennywhistle-pub": {
-      "venueKind": "pub",
-      "why": "Pours Guinness"
-    },
-    "pheasant-plucker": {
-      "venueKind": "pub",
-      "why": "Pours Guinness. NOTE: carries offers (pilsner-lager, amber-red, hazy-ipa, pale-ale) crawled from its PUB MENU, not its own range"
-    },
-    "real-sports-bar-and-grill": {
-      "venueKind": "pub",
-      "why": "Sports bar; pours Guinness, Carlsberg, Heineken, Molson"
-    },
-    "the-overtime-pub": {
-      "venueKind": "pub",
-      "why": "Pours Kronenbourg, Michelob Ultra, Bud Light, Carlsberg"
-    },
-    "the-royal-oak": {
-      "venueKind": "pub",
-      "why": "Pours Guinness"
-    },
-    "the-wood-on-wellington": {
-      "venueKind": "pub",
-      "why": "Pours Guinness, Heineken"
-    },
-    "forty-creek-distillery": {
-      "venueKind": "distillery",
-      "why": "Distillery. The brewery=* test structurally cannot catch this — it pours its own product, so there is no third-party brand list"
-    },
-    "joe-hot-cold-coffee": {
-      "venueKind": "cafe",
-      "why": "Coffee shop. Domain now redirects to thegrove.rocks/joe"
-    },
-    "eataly-toronto": {
-      "venueKind": "food-hall",
-      "why": "Italian food hall, not a brewery"
-    },
-    "the-forty": {
-      "venueKind": "pub",
-      "why": "The Forty Public House, Grimsby. Domain now redirects to its Facebook page. A pub, not a brewery — missed by the brewery=* test because OSM records no tap list for it."
-    }
+  "d-arcy-mcgee-s": {
+   "venueKind": "pub",
+   "why": "Irish pub; pours Guinness, Heineken"
   },
-  "closed": {
-    "_note": "status: closed. Domain loss alone is evidence, not proof — each of these also has no corroborating signal (no live store, no crawled catalog, no recent OSM survey).",
-    "batch": {
-      "why": "batchtoronto.com now serves catscradleboutique.com, a boutique. No other signal."
-    },
-    "fenelon-falls-brewing-co": {
-      "why": "fenelonfallsbrewing.com listed for sale on HugeDomains. No other signal."
-    },
-    "evergreen-craft-ales": {
-      "why": "evergreencraftales.com redirects to linktt4dku.website, a parked spam domain."
-    },
-    "gather": {
-      "why": "gatherbrewery.ca now serves grayartglass.com. The glassworks continued; the brewery did not."
-    },
-    "stone-city-ales": {
-      "why": "Confirmed by Corey 2026-08-18. 275 Princess St, Kingston is now Something in the Water's Kingston Taproom — somethingbrewing.ca lists that exact address. stonecityales.com serves an unrelated UK firm.",
-      "succeededBy": "something-in-the-water-brewing-co"
-    }
+  "daniel-o-connell-s-irish-pub": {
+   "venueKind": "pub",
+   "why": "Irish pub; pours Guinness. OSM website tag also wrong (points at filsdiner.ca)"
   },
-  "websiteFix": {
-    "_note": "The brewery moved and is trading; our recorded domain was stale. Verified live before writing.",
-    "merit": {
-      "website": "https://meritbrewing.ca/",
-      "status": "open",
-      "why": "Confirmed by Corey 2026-08-18. meritbrewing.ca returns 200 with a working Shopify store; the old .com is listed on HugeDomains. OSM was also surveyed on the ground 2025-06-01."
-    }
+  "heart-and-crown-pub": {
+   "venueKind": "pub",
+   "why": "Pours Guinness, Heineken"
   },
-  "notes": {
-    "something-in-the-water-brewing-co": "Two locations: Liberty Village, Toronto (the one this record holds) and the Kingston taproom at 275 Princess St that was Stone City Ales. The registry is one-record-per-brewery, so the Kingston site is currently unrepresented."
+  "irene-s": {
+   "venueKind": "pub",
+   "why": "Pours Guinness, Creemore, Moosehead, Beau's and others"
   },
-  "falsePositive": {
-    "_note": "check-sites.mjs flagged these as dead. They are not. Recorded here so a future run of that script cannot re-flag them without a human looking again.",
-    "beyond-the-pale": {
-      "why": "beyondthepale.ca redirects to btpshop.ca, which is THEIR OWN shop — not a domain that changed hands. Their store API answers live with 41 products, the catalog crawled fine, and OSM has hours. Open.",
-      "status": "open"
-    }
+  "jack-s-gastropub": {
+   "venueKind": "pub",
+   "why": "Pours Heineken, Land Shark, Smirnoff Ice. Also rebranded — domain now thegoosekitchenandbar.com"
+  },
+  "mcreilly-s-public-house": {
+   "venueKind": "pub",
+   "why": "Pours Guinness"
+  },
+  "morty-s-pub": {
+   "venueKind": "pub",
+   "why": "Pours Molson Canadian, Coors Light, Bud Light. NOTE: has a live store API whose products classified as offers:sour — a pub menu read as a brewery catalog"
+  },
+  "pennywhistle-pub": {
+   "venueKind": "pub",
+   "why": "Pours Guinness"
+  },
+  "pheasant-plucker": {
+   "venueKind": "pub",
+   "why": "Pours Guinness. NOTE: carries offers (pilsner-lager, amber-red, hazy-ipa, pale-ale) crawled from its PUB MENU, not its own range"
+  },
+  "real-sports-bar-and-grill": {
+   "venueKind": "pub",
+   "why": "Sports bar; pours Guinness, Carlsberg, Heineken, Molson"
+  },
+  "the-overtime-pub": {
+   "venueKind": "pub",
+   "why": "Pours Kronenbourg, Michelob Ultra, Bud Light, Carlsberg"
+  },
+  "the-royal-oak": {
+   "venueKind": "pub",
+   "why": "Pours Guinness"
+  },
+  "the-wood-on-wellington": {
+   "venueKind": "pub",
+   "why": "Pours Guinness, Heineken"
+  },
+  "forty-creek-distillery": {
+   "venueKind": "distillery",
+   "why": "Distillery. The brewery=* test structurally cannot catch this — it pours its own product, so there is no third-party brand list"
+  },
+  "joe-hot-cold-coffee": {
+   "venueKind": "cafe",
+   "why": "Coffee shop. Domain now redirects to thegrove.rocks/joe"
+  },
+  "eataly-toronto": {
+   "venueKind": "food-hall",
+   "why": "Italian food hall, not a brewery"
+  },
+  "the-forty": {
+   "venueKind": "pub",
+   "why": "The Forty Public House, Grimsby. Domain now redirects to its Facebook page. A pub, not a brewery — missed by the brewery=* test because OSM records no tap list for it."
   }
+ },
+ "closed": {
+  "_note": "status: closed. Domain loss alone is evidence, not proof — each of these also has no corroborating signal (no live store, no crawled catalog, no recent OSM survey).",
+  "batch": {
+   "why": "batchtoronto.com now serves catscradleboutique.com, a boutique. No other signal."
+  },
+  "fenelon-falls-brewing-co": {
+   "why": "fenelonfallsbrewing.com listed for sale on HugeDomains. No other signal."
+  },
+  "evergreen-craft-ales": {
+   "why": "evergreencraftales.com redirects to linktt4dku.website, a parked spam domain."
+  },
+  "gather": {
+   "why": "gatherbrewery.ca now serves grayartglass.com. The glassworks continued; the brewery did not."
+  },
+  "stone-city-ales": {
+   "why": "Confirmed by Corey 2026-08-18. 275 Princess St, Kingston is now Something in the Water's Kingston Taproom — somethingbrewing.ca lists that exact address. stonecityales.com serves an unrelated UK firm.",
+   "succeededBy": "something-in-the-water-brewing-co"
+  },
+  "manitoulin-brewery": {
+   "why": "Confirmed by Corey 2026-08-25. Closure announced 2026-04-09 after ~12 years — CBC, CTV, Northern Ontario Business, The Manitoulin Expositor all report it; Google's knowledge layer now says 'permanently closed'. Own domain still serves, which is why check-sites never caught it — found by the wide-harvest liveness probe.",
+   "evidence": "https://www.cbc.ca/news/canada/sudbury/manitoulin-brewing-shutting-down-9.7159541",
+   "note": "Announcement mentioned prospective buyers; if it reopens under new ownership that is a NEW decision, not a revert of this one."
+  }
+ },
+ "websiteFix": {
+  "_note": "The brewery moved and is trading; our recorded domain was stale. Verified live before writing.",
+  "merit": {
+   "website": "https://meritbrewing.ca/",
+   "status": "open",
+   "why": "Confirmed by Corey 2026-08-18. meritbrewing.ca returns 200 with a working Shopify store; the old .com is listed on HugeDomains. OSM was also surveyed on the ground 2025-06-01."
+  }
+ },
+ "notes": {
+  "something-in-the-water-brewing-co": "Two locations: Liberty Village, Toronto (the one this record holds) and the Kingston taproom at 275 Princess St that was Stone City Ales. The registry is one-record-per-brewery, so the Kingston site is currently unrepresented."
+ },
+ "falsePositive": {
+  "_note": "check-sites.mjs flagged these as dead. They are not. Recorded here so a future run of that script cannot re-flag them without a human looking again.",
+  "beyond-the-pale": {
+   "why": "beyondthepale.ca redirects to btpshop.ca, which is THEIR OWN shop — not a domain that changed hands. Their store API answers live with 41 products, the catalog crawled fine, and OSM has hours. Open.",
+   "status": "open"
+  }
+ }
 }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T21:57:49.577Z",
+  "generatedAt": "2026-08-26T18:21:58.043Z",
   "attribution": "Contains data from OpenStreetMap contributors, licensed under ODbL.",
   "count": 270,
   "curated": 63,
@@ -18,7 +18,7 @@
     "flaggedNotBrewery": 14,
     "knownFor": 26,
     "excludedNotBrewery": 18,
-    "closed": 6,
+    "closed": 7,
     "liveWebsite": 140,
     "needsReview": 0
   },
@@ -6106,7 +6106,7 @@
       "links": {},
       "releaseSource": "none",
       "enrichment": "listed",
-      "status": "unverified",
+      "status": "closed",
       "lat": 45.976545,
       "lng": -81.9243039,
       "styles": {
@@ -6123,7 +6123,8 @@
       },
       "osmId": "node/7795283085",
       "lastVerified": "2026-08-17",
-      "contact": {}
+      "contact": {},
+      "closedReason": "Confirmed by Corey 2026-08-25. Closure announced 2026-04-09 after ~12 years — CBC, CTV, Northern Ontario Business, The Manitoulin Expositor all report it; Google's knowledge layer now says 'permanently closed'. Own domain still serves, which is why check-sites never caught it — found by the wide-harvest liveness probe."
     },
     {
       "id": "manor-park-brewing",

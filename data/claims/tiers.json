@@ -285,12 +285,14 @@
      "evidence": 1
     },
     "beer.style.stout-porter": {
-     "tier": "B",
+     "tier": "A",
      "classes": [
-      "community"
+      "community",
+      "juried"
      ],
+     "juried": "Gold, Irish Stout, Canadian Brewing Awards 2025 — Iron Eye Nitro Stout",
      "verifiedQuotes": 0,
-     "evidence": 1
+     "evidence": 2
     },
     "beer.overall": {
      "tier": "A",
@@ -693,6 +695,15 @@
      "classes": [
       "community"
      ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.stout-porter": {
+     "tier": "B",
+     "classes": [
+      "juried"
+     ],
+     "juried": "Silver, American & British Porter, Canadian Brewing Awards 2025 — Porter of Prov",
      "verifiedQuotes": 0,
      "evidence": 1
     }

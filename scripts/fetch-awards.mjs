@@ -24,15 +24,31 @@
  *   node scripts/fetch-awards.mjs 2024 2023   # specific years
  */
 
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(here, '..', 'data', 'awards.json');
+/**
+ * Per-year raw-row cache. The Internet Archive throttles hard, and every
+ * re-run used to refetch years that had already parsed cleanly — which is
+ * both impolite and how a run dies half-done. A year with a cache file is
+ * served from disk; delete the file to force a refetch. Untracked, like the
+ * rest of data/harvest/.
+ */
+const CACHE = path.join(here, '..', 'data', 'harvest', 'awards-cache');
 const REGISTRY = path.join(here, '..', 'data', 'registry.json');
 
 const YEARS = process.argv.slice(2).filter((a) => /^\d{4}$/.test(a));
+/**
+ * --live-only: skip years that would need the Internet Archive (no cache, no
+ * live ALT source). The archive throttles for hours at a stretch and the
+ * output only writes when the loop COMPLETES — so a throttled tail year used
+ * to hold the seven good years hostage. Write what is solid now; backfill
+ * archive years when the throttle lifts (the cache keeps every success).
+ */
+const LIVE_ONLY = process.argv.includes('--live-only');
 const ALL_YEARS = ['2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014'];
 
 /** Full browser header set. A bare UA gets 403 from their WAF; this does not. */
@@ -63,7 +79,10 @@ const CATEGORY_RULES = [
   [/kolsch|kölsch/i, ['kolsch']],
   [/barrel.?aged|wood.?aged|bourbon|whisky|whiskey/i, ['barrel-aged']],
   [/brett|wild|lambic|spontaneous|gueuze|mixed.?culture|mixed.?ferment/i, ['wild-ale']],
-  [/sour|gose|berliner|kettle.?sour|fruit.?beer|fruited/i, ['sour']],
+  // 'Fruit Beer' deliberately NOT here: fruit is an adjunct, not a base —
+  // Godspeed's Yuzu (a citrus SAISON) took Silver in Fruit Beer 2025 and the
+  // old mapping promoted 'sour' from it. Ambiguous category → no tag.
+  [/sour|gose|berliner|kettle.?sour|fruited sour/i, ['sour']],
   [/saison|farmhouse|grisette|biere de garde|bière de garde/i, ['farmhouse-saison']],
   [/imperial stout|russian imperial|stout|porter|schwarzbier.*ale/i, ['stout-porter']],
   [/hazy|new england|juicy|northeast.?style ipa/i, ['hazy-ipa']],
@@ -126,7 +145,18 @@ async function snapshotCandidates(year) {
     await sleep(500);
   }
   if (!seen.size) throw new Error('no snapshots in any URL shape');
-  return [...seen.values()].sort((a, b) => b.len - a.len).slice(0, 4);
+  /*
+   * NOT top-N by length globally: the rebuilt (Next.js) site's captures are
+   * the LARGEST files and parse to zero — 2024's real table lost every length
+   * contest to a JS shell. Take the two largest per distinct URL, so every
+   * era of the site gets its shot, then order across shapes by length.
+   */
+  const byUrl = new Map();
+  for (const c of [...seen.values()].sort((a, b) => b.len - a.len)) {
+    const list = byUrl.get(c.original) ?? [];
+    if (list.length < 2) { list.push(c); byUrl.set(c.original, list); }
+  }
+  return [...byUrl.values()].flat().sort((a, b) => b.len - a.len).slice(0, 8);
 }
 
 /** Strip a page to ordered text lines, preserving cell boundaries. */
@@ -194,9 +224,46 @@ function parseWinners(lines, year) {
     if (!MEDAL_RE.test(lines[i])) continue;
     push(b, lines[i + 1], lines[i], lines[i + 2], lines[i + 3], lines[i + 4]);
   }
-  // Same anchor, two readings — the wrong order shears every field by one and
-  // produces garbage rows the guards reject, so the richer parse is the truth.
-  return b.length > a.length * 1.5 ? b : a;
+  /*
+   * Order C — the beer press's per-line format, used by beerinfo (2019, 2020)
+   * and Matter of Beer (2021, 2022):
+   *
+   *   GOLD: Kinabik Pilsner | Snake Lake Brewing Company | Alberta
+   *   Gold: Jagged Little Pilsner – Stray Dog Brewing Company – Ontario
+   *
+   * The separator must be SPACED (' | ' or ' – ') — bare dashes appear inside
+   * beer names. The nearest preceding non-medal line is the category.
+   */
+  const c = [];
+  {
+    let category = '';
+    for (const line of lines) {
+      const m = line.match(/^(gold|silver|bronze)\s*:\s*(.+)$/i);
+      if (!m) {
+        if (line.length <= 90 && !/^(gold|silver|bronze)/i.test(line)) category = line;
+        continue;
+      }
+      const parts = m[2].split(/\s+[|\u2013\u2014-]\s+/).map((x) => x.trim()).filter(Boolean);
+      if (parts.length >= 3) push(c, category, m[1], parts[0], parts[1], parts[parts.length - 1]);
+    }
+  }
+
+  /*
+   * Same anchor, two readings — the wrong order shears every field by one and
+   * produces PLAUSIBLE-LOOKING garbage (a beer name where the brewery goes, a
+   * brewery where the province goes) that the length guards cannot catch. Row
+   * count cannot pick the winner: both parses find every medal anchor. What
+   * discriminates is the PROVINCE column — only the correctly-ordered parse
+   * puts recognizable provinces there. 2025 parsed 130 rows with zero Ontario
+   * before this check existed.
+   */
+  const PROV = /^(ontario|on|qu[ée]bec|qc|british columbia|bc|alberta|ab|manitoba|mb|saskatchewan|sk|nova scotia|ns|new brunswick|nb|newfoundland.*|nl|prince edward island|pei?|yukon|yt|northwest territories|nt|nunavut|nu)$/i;
+  const provScore = (rows) =>
+    rows.length ? rows.filter((r) => PROV.test(r.province.trim())).length / rows.length : 0;
+  const scored = [a, b, c].map((rows) => ({ rows, score: provScore(rows) }));
+  const best = scored.filter((x) => x.score >= 0.3).sort((x, y) => y.rows.length - x.rows.length)[0];
+  if (best) return best.rows;
+  return scored.sort((x, y) => y.rows.length - x.rows.length)[0].rows; // no province column anywhere
 }
 
 async function main() {
@@ -214,14 +281,31 @@ async function main() {
    */
   const ALT_SOURCE = {
     2025: 'https://www.americancraftbeer.com/the-2025-canadian-brewing-awards-winners/',
+    2024: 'https://www.americancraftbeer.com/the-2024-canadian-brewing-awards-winners/',
+    2023: 'https://www.americancraftbeer.com/the-2023-canadian-brewing-awards-winners/',
+    2022: 'https://matterofbeer.com/2022/05/14/2022-canadian-brewing-awards-winners/',
+    2021: 'https://matterofbeer.com/2021/09/20/2021-canadian-brewing-awards-winners/',
+    2020: 'https://beerinfo.com/the-2020-canadian-brewing-awards/',
+    2019: 'https://beerinfo.com/canadian_brewing_awards_2019/',
   };
 
+  await mkdir(CACHE, { recursive: true });
   for (const year of years) {
     process.stdout.write(`  ${year}  `);
     try {
       let rows = [];
       let how = '';
-      if (ALT_SOURCE[year]) {
+      try {
+        const cached = JSON.parse(await readFile(path.join(CACHE, `${year}.json`), 'utf8'));
+        if (Array.isArray(cached) && cached.length >= 20) { rows = cached; how = 'cache'; }
+      } catch { /* no cache — fetch */ }
+      if (rows.length < 20 && LIVE_ONLY && !ALT_SOURCE[year]) {
+        perYear[year] = 0;
+        console.log('— skipped (--live-only: archive-dependent)');
+        await sleep(200);
+        continue;
+      }
+      if (rows.length < 20 && ALT_SOURCE[year]) {
         const res = await fetch(ALT_SOURCE[year], { headers: HEADERS, signal: AbortSignal.timeout(60_000) });
         if (res.ok) {
           rows = parseWinners(toLines(await res.text()), year);
@@ -234,26 +318,48 @@ async function main() {
         // fine, parsed zero" must try the next capture, not conclude the year
         // was empty.
         const candidates = await snapshotCandidates(year);
+        let fetched = 0;
         for (const c of candidates) {
           let body = null;
-          for (let attempt = 1; attempt <= 3 && body === null; attempt++) {
-            const res = await fetch(`https://web.archive.org/web/${c.ts}id_/${c.original}`, {
-              headers: HEADERS, signal: AbortSignal.timeout(60_000),
-            });
-            if (res.ok) {
-              const text = await res.text();
-              if (text.length > 5000) body = text;
-            }
-            if (body === null) await sleep(attempt * 4000);
+          for (let attempt = 1; attempt <= 4 && body === null; attempt++) {
+            // The fetch itself can THROW (undici 'fetch failed' on a reset
+            // connection), not just return !ok — and an unguarded throw here
+            // escaped the candidate loop and killed the whole year. A network
+            // throw is just a failed attempt: back off and try again.
+            try {
+              const res = await fetch(`https://web.archive.org/web/${c.ts}id_/${c.original}`, {
+                headers: HEADERS, signal: AbortSignal.timeout(60_000),
+              });
+              if (res.status === 429) {
+                // The archive said SLOW DOWN. Believe it. 4s backoffs just
+                // spend the attempt budget inside the same throttle window —
+                // a 429 needs minutes, and it 429ed a whole run into
+                // 'parse failures' before this branch existed.
+                process.stdout.write('⏳');
+                await sleep(120_000);
+                continue;
+              }
+              if (res.ok) {
+                const text = await res.text();
+                if (text.length > 5000) { body = text; fetched++; }
+              }
+            } catch { /* network throw — treat as a failed attempt */ }
+            if (body === null) await sleep(attempt * 5000);
           }
           if (body === null) continue;
           rows = parseWinners(toLines(body), year);
           how = `snapshot ${c.ts} (${new URL(c.original).host}${new URL(c.original).pathname})`;
           if (rows.length >= 20) break;
-          await sleep(2000);
+          await sleep(8000);
         }
+        // Distinguish starvation from a real parse failure — they demand
+        // opposite responses (wait vs fix the parser), and conflating them
+        // cost an afternoon.
+        if (rows.length < 20 && fetched === 0)
+          throw new Error('archive throttled/unreachable — no candidate body retrieved');
       }
-      if (rows.length < 20) throw new Error(`best parse was ${rows.length} rows across all candidates`);
+      if (rows.length < 20) throw new Error(`best parse was ${rows.length} rows across ${typeof fetched === 'number' ? fetched : '?'} fetched candidates`);
+      if (how !== 'cache') await writeFile(path.join(CACHE, `${year}.json`), JSON.stringify(rows));
       all.push(...rows);
       perYear[year] = rows.length;
       const on = rows.filter((r) => /ontario|^on$/i.test(r.province)).length;
@@ -262,7 +368,7 @@ async function main() {
       perYear[year] = 0;
       console.log(`— ${String(err.message).slice(0, 70)}`);
     }
-    await sleep(3000); // the archive rate-limits hard
+    await sleep(8000); // the archive rate-limits hard — be genuinely slow
   }
 
   /**

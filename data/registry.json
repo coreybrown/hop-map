@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-26T18:21:58.043Z",
+  "generatedAt": "2026-08-26T22:29:55.143Z",
   "attribution": "Contains data from OpenStreetMap contributors, licensed under ODbL.",
   "count": 270,
   "curated": 63,
   "listed": 207,
-  "withStyles": 113,
+  "withStyles": 116,
   "coverage": {
     "website": 201,
     "phone": 114,
@@ -16,7 +16,7 @@
     "offers": 104,
     "description": 66,
     "flaggedNotBrewery": 14,
-    "knownFor": 26,
+    "knownFor": 28,
     "excludedNotBrewery": 18,
     "closed": 7,
     "liveWebsite": 140,
@@ -289,7 +289,7 @@
           "style": "pale-ale",
           "source": "awards",
           "detail": "Silver, Cream Ale, Canadian Brewing Awards 2024 — Cream Ale",
-          "score": 0.742
+          "score": 1.054
         }
       ],
       "unverifiedHypothesis": [
@@ -1343,18 +1343,9 @@
           "sour",
           "non-alcoholic"
         ],
-        "knownFor": [
-          "sour"
-        ]
+        "knownFor": []
       },
-      "reputationEvidence": [
-        {
-          "style": "sour",
-          "source": "awards",
-          "detail": "Bronze, American-style Sour Ale, Canadian Brewing Awards 2024 — Atomic Jam Raspberry Sour",
-          "score": 0.75
-        }
-      ],
+      "reputationEvidence": [],
       "unverifiedHypothesis": [
         "hazy-ipa",
         "pale-ale"
@@ -1383,8 +1374,7 @@
         "productCount": 42,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:45:32.477Z"
-      },
-      "knownForSource": "awards"
+      }
     },
     {
       "id": "big-rig-brewery",
@@ -1691,9 +1681,18 @@
           "pilsner-lager",
           "non-alcoholic"
         ],
-        "knownFor": []
+        "knownFor": [
+          "stout-porter"
+        ]
       },
-      "reputationEvidence": [],
+      "reputationEvidence": [
+        {
+          "style": "stout-porter",
+          "source": "awards",
+          "detail": "Gold, Irish Stout, Canadian Brewing Awards 2025 — Iron Eye Nitro Stout",
+          "score": 0.92
+        }
+      ],
       "unverifiedHypothesis": [
         "hazy-ipa",
         "sour",
@@ -1722,7 +1721,8 @@
         "productCount": 64,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:45:34.089Z"
-      }
+      },
+      "knownForSource": "awards"
     },
     {
       "id": "bobcaygeon-brewery",
@@ -1778,9 +1778,7 @@
           "sour",
           "pale-ale"
         ],
-        "knownFor": [
-          "west-coast-ipa"
-        ]
+        "knownFor": []
       },
       "signals": {},
       "venue": {
@@ -1800,16 +1798,7 @@
       "siteHealth": {
         "verdict": "live",
         "checkedAt": "2026-08-17T21:57:29.689Z"
-      },
-      "reputationEvidence": [
-        {
-          "style": "west-coast-ipa",
-          "source": "awards",
-          "detail": "Gold, Specialty IPA, Canadian Brewing Awards 2022 — Angry Chipmunk",
-          "score": 0.68
-        }
-      ],
-      "knownForSource": "awards"
+      }
     },
     {
       "id": "brasserie-tienne-br-l",
@@ -2245,6 +2234,7 @@
       "styles": {
         "offers": [],
         "knownFor": [
+          "amber-red",
           "hazy-ipa"
         ]
       },
@@ -2260,6 +2250,12 @@
       "lastVerified": "2026-08-17",
       "contact": {},
       "reputationEvidence": [
+        {
+          "style": "amber-red",
+          "source": "awards",
+          "detail": "Gold, American Red Ale, Canadian Brewing Awards 2025 — AMBER ALE",
+          "score": 0.92
+        },
         {
           "style": "hazy-ipa",
           "source": "awards",
@@ -2550,9 +2546,18 @@
           "hazy-ipa",
           "stout-porter"
         ],
-        "knownFor": []
+        "knownFor": [
+          "stout-porter"
+        ]
       },
-      "reputationEvidence": [],
+      "reputationEvidence": [
+        {
+          "style": "stout-porter",
+          "source": "awards",
+          "detail": "Gold, Porter, Canadian Brewing Awards 2021 — Black Donald",
+          "score": 1.25
+        }
+      ],
       "unverifiedHypothesis": [
         "pale-ale",
         "hazy-ipa"
@@ -2581,7 +2586,8 @@
         "productCount": 27,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:45:44.669Z"
-      }
+      },
+      "knownForSource": "awards"
     },
     {
       "id": "caledon-hills-brewing-company",
@@ -2643,18 +2649,9 @@
           "amber-red",
           "wheat-belgian"
         ],
-        "knownFor": [
-          "west-coast-ipa"
-        ]
+        "knownFor": []
       },
-      "reputationEvidence": [
-        {
-          "style": "west-coast-ipa",
-          "source": "awards",
-          "detail": "Gold, American-Style India Pale Ale, Canadian Brewing Awards 2022 — Jurassic IPA",
-          "score": 0.68
-        }
-      ],
+      "reputationEvidence": [],
       "unverifiedHypothesis": [
         "pale-ale",
         "hazy-ipa",
@@ -2681,8 +2678,7 @@
         "productCount": 69,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:45:45.107Z"
-      },
-      "knownForSource": "awards"
+      }
     },
     {
       "id": "cartwright-springs-brewery",
@@ -2748,7 +2744,9 @@
       "lng": -75.087188,
       "styles": {
         "offers": [],
-        "knownFor": []
+        "knownFor": [
+          "wheat-belgian"
+        ]
       },
       "signals": {},
       "venue": {
@@ -2767,7 +2765,16 @@
       "siteHealth": {
         "verdict": "live",
         "checkedAt": "2026-08-17T21:57:35.518Z"
-      }
+      },
+      "reputationEvidence": [
+        {
+          "style": "wheat-belgian",
+          "source": "awards",
+          "detail": "Gold, Belgian-Style Strong Ale Pale / Dark / Specialty, Canadian Brewing Awards 2020 — Cousin Eddie’s",
+          "score": 0.52
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "chronicle",
@@ -2959,7 +2966,6 @@
           "pale-ale"
         ],
         "knownFor": [
-          "amber-red",
           "pale-ale"
         ]
       },
@@ -2996,16 +3002,10 @@
       },
       "reputationEvidence": [
         {
-          "style": "amber-red",
-          "source": "awards",
-          "detail": "Gold, European Style Amber to Dark Lager, Canadian Brewing Awards 2024 — Chain Link Vienna Lager",
-          "score": 0.84
-        },
-        {
           "style": "pale-ale",
           "source": "awards",
-          "detail": "Bronze, Belgian Style Abbey Ale/Pale Ale, Canadian Brewing Awards 2024 — Marigold - Belgian Golden Ale",
-          "score": 0.702
+          "detail": "Gold, Belgian-Style Abbey Ale / Pale Ale, Canadian Brewing Awards 2020 — Marigold",
+          "score": 0.814
         }
       ],
       "knownForSource": "awards"
@@ -3072,15 +3072,15 @@
           "pale-ale"
         ],
         "knownFor": [
-          "session-low-alc"
+          "sour"
         ]
       },
       "reputationEvidence": [
         {
-          "style": "session-low-alc",
+          "style": "sour",
           "source": "awards",
-          "detail": "Gold, No to Low Alcohol Beer, Canadian Brewing Awards 2023 — Hazy Pale Ale",
-          "score": 0.76
+          "detail": "Gold, German-Style Sour Ale Berliner-Style Weisse or Gose, Canadian Brewing Awards 2021 — Guava Gose",
+          "score": 0.6
         }
       ],
       "unverifiedHypothesis": [
@@ -3223,7 +3223,8 @@
       "styles": {
         "offers": [],
         "knownFor": [
-          "pale-ale"
+          "pale-ale",
+          "sour"
         ]
       },
       "signals": {},
@@ -3242,8 +3243,14 @@
         {
           "style": "pale-ale",
           "source": "awards",
-          "detail": "Gold, English Bitters, Canadian Brewing Awards 2024 — Little Britain - ESB",
+          "detail": "Gold, English Bitters, Canadian Brewing Awards 2024 — Little Britain – ESB",
           "score": 0.84
+        },
+        {
+          "style": "sour",
+          "source": "awards",
+          "detail": "Silver, American Sour Ale, Canadian Brewing Awards 2025 — Island Breeze",
+          "score": 0.552
         }
       ],
       "knownForSource": "awards"
@@ -4204,9 +4211,7 @@
           "non-alcoholic",
           "amber-red"
         ],
-        "knownFor": [
-          "stout-porter"
-        ]
+        "knownFor": []
       },
       "signals": {},
       "venue": {
@@ -4236,16 +4241,7 @@
         "productCount": 79,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:46:04.541Z"
-      },
-      "reputationEvidence": [
-        {
-          "style": "stout-porter",
-          "source": "awards",
-          "detail": "Gold, Oatmeal Stout, Canadian Brewing Awards 2022 — Red Hook Oatmeal Stout",
-          "score": 0.68
-        }
-      ],
-      "knownForSource": "awards"
+      }
     },
     {
       "id": "flora-hall-brewing",
@@ -4274,7 +4270,6 @@
         ],
         "knownFor": [
           "wild-ale",
-          "farmhouse-saison",
           "stout-porter"
         ]
       },
@@ -4312,13 +4307,7 @@
           "style": "wild-ale",
           "source": "awards",
           "detail": "Gold, American-style Brett Beer, Canadian Brewing Awards 2024 — Foeder Aged Brett Dubbel",
-          "score": 0.84
-        },
-        {
-          "style": "farmhouse-saison",
-          "source": "awards",
-          "detail": "Gold, French and Belgian-Style Saison, Canadian Brewing Awards 2022 — Dry Hopped Saison",
-          "score": 0.68
+          "score": 1.392
         },
         {
           "style": "stout-porter",
@@ -5254,9 +5243,18 @@
           "session-low-alc",
           "non-alcoholic"
         ],
-        "knownFor": []
+        "knownFor": [
+          "pale-ale"
+        ]
       },
-      "reputationEvidence": [],
+      "reputationEvidence": [
+        {
+          "style": "pale-ale",
+          "source": "awards",
+          "detail": "Gold, English Bitters – Ordinary or Special Bitters / Best Bitter or ESB, Canadian Brewing Awards 2020 — Best",
+          "score": 0.52
+        }
+      ],
       "unverifiedHypothesis": [
         "pale-ale",
         "pilsner-lager",
@@ -5290,7 +5288,8 @@
         "productCount": 267,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:46:13.658Z"
-      }
+      },
+      "knownForSource": "awards"
     },
     {
       "id": "high-park-brewery",
@@ -5375,7 +5374,7 @@
           "style": "wheat-belgian",
           "source": "awards",
           "detail": "Gold, American Belgo-Style Ale, Canadian Brewing Awards 2024 — Barnyard",
-          "score": 0.84
+          "score": 1.624
         },
         {
           "style": "sour",
@@ -5750,18 +5749,9 @@
           "barrel-aged",
           "wild-ale"
         ],
-        "knownFor": [
-          "session-low-alc"
-        ]
+        "knownFor": []
       },
-      "reputationEvidence": [
-        {
-          "style": "session-low-alc",
-          "source": "awards",
-          "detail": "Silver, Low Alcohol Beer, Canadian Brewing Awards 2024 — Lake Of Bays Sunchaser Extra Light Lime",
-          "score": 1.064
-        }
-      ],
+      "reputationEvidence": [],
       "unverifiedHypothesis": [
         "pale-ale",
         "pilsner-lager"
@@ -5787,8 +5777,7 @@
         "productCount": 44,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:46:15.768Z"
-      },
-      "knownForSource": "awards"
+      }
     },
     {
       "id": "lake-of-the-woods-brewing-company",
@@ -6111,7 +6100,9 @@
       "lng": -81.9243039,
       "styles": {
         "offers": [],
-        "knownFor": []
+        "knownFor": [
+          "stout-porter"
+        ]
       },
       "signals": {},
       "venue": {
@@ -6124,6 +6115,15 @@
       "osmId": "node/7795283085",
       "lastVerified": "2026-08-17",
       "contact": {},
+      "reputationEvidence": [
+        {
+          "style": "stout-porter",
+          "source": "awards",
+          "detail": "Silver, American & British Porter, Canadian Brewing Awards 2025 — Porter of Prov",
+          "score": 0.552
+        }
+      ],
+      "knownForSource": "awards",
       "closedReason": "Confirmed by Corey 2026-08-25. Closure announced 2026-04-09 after ~12 years — CBC, CTV, Northern Ontario Business, The Manitoulin Expositor all report it; Google's knowledge layer now says 'permanently closed'. Own domain still serves, which is why check-sites never caught it — found by the wide-harvest liveness probe."
     },
     {
@@ -6221,9 +6221,7 @@
       "lng": -79.3867596,
       "styles": {
         "offers": [],
-        "knownFor": [
-          "wheat-belgian"
-        ]
+        "knownFor": []
       },
       "signals": {},
       "venue": {
@@ -6235,16 +6233,7 @@
       },
       "osmId": "node/12042646641",
       "lastVerified": "2026-08-17",
-      "contact": {},
-      "reputationEvidence": [
-        {
-          "style": "wheat-belgian",
-          "source": "awards",
-          "detail": "Silver, Wheat Beer - Belgian Style (Wit), Canadian Brewing Awards 2024 — Great Wit",
-          "score": 0.504
-        }
-      ],
-      "knownForSource": "awards"
+      "contact": {}
     },
     {
       "id": "mcreilly-s-public-house",
@@ -6632,7 +6621,7 @@
         {
           "style": "wheat-belgian",
           "source": "awards",
-          "detail": "Gold, Wheat Beer - German Style (Weiss), Canadian Brewing Awards 2023 — Haberdasher Hefeweizen",
+          "detail": "Gold, Wheat Beer – German Style (Weiss), Canadian Brewing Awards 2023 — Haberdasher Hefeweizen",
           "score": 0.76
         },
         {
@@ -6962,9 +6951,18 @@
       "geocodeMatch": "3426, Mainway, Burlington, Halton Region, Golden Horseshoe, Ontario, L7M 1A8, Canada",
       "styles": {
         "offers": [],
-        "knownFor": []
+        "knownFor": [
+          "barrel-aged"
+        ]
       },
-      "reputationEvidence": [],
+      "reputationEvidence": [
+        {
+          "style": "barrel-aged",
+          "source": "awards",
+          "detail": "Bronze, Wood- and Barrel-Aged Strong Beer, Canadian Brewing Awards 2025 — Kentucky Imperial Stout",
+          "score": 0.634
+        }
+      ],
       "unverifiedHypothesis": [
         "sour",
         "hazy-ipa",
@@ -6986,7 +6984,8 @@
       "siteHealth": {
         "verdict": "bot-challenge",
         "checkedAt": "2026-08-17T21:57:51.527Z"
-      }
+      },
+      "knownForSource": "awards"
     },
     {
       "id": "nita-beer-company",
@@ -7243,15 +7242,15 @@
           "dark-lager"
         ],
         "knownFor": [
-          "amber-red"
+          "pilsner-lager"
         ]
       },
       "reputationEvidence": [
         {
-          "style": "amber-red",
+          "style": "pilsner-lager",
           "source": "awards",
-          "detail": "Gold, North American-Style Amber/Dark Lager, Canadian Brewing Awards 2022 — Red Vienna Lager",
-          "score": 1.544
+          "detail": "Gold, North American Style Premium Lager, Canadian Brewing Awards 2020 — Blonde",
+          "score": 1.126
         }
       ],
       "unverifiedHypothesis": [
@@ -8118,7 +8117,9 @@
       "lng": -80.514209,
       "styles": {
         "offers": [],
-        "knownFor": []
+        "knownFor": [
+          "pale-ale"
+        ]
       },
       "signals": {},
       "venue": {
@@ -8135,7 +8136,16 @@
       "siteHealth": {
         "verdict": "live",
         "checkedAt": "2026-08-17T21:57:55.807Z"
-      }
+      },
+      "reputationEvidence": [
+        {
+          "style": "pale-ale",
+          "source": "awards",
+          "detail": "Gold, North American Style – Blonde or Golden Ale, Canadian Brewing Awards 2020 — Belmont Village",
+          "score": 0.52
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "red-tape-brewery",
@@ -10043,7 +10053,9 @@
           "pale-ale",
           "pilsner-lager"
         ],
-        "knownFor": []
+        "knownFor": [
+          "hazy-ipa"
+        ]
       },
       "signals": {},
       "venue": {
@@ -10073,7 +10085,16 @@
         "productCount": 39,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:46:58.757Z"
-      }
+      },
+      "reputationEvidence": [
+        {
+          "style": "hazy-ipa",
+          "source": "awards",
+          "detail": "Gold, New England Style India Pale Ale, Canadian Brewing Awards 2021 — Taste Buds",
+          "score": 0.6
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "studebaker",
@@ -10413,7 +10434,9 @@
           "pilsner-lager",
           "session-low-alc"
         ],
-        "knownFor": []
+        "knownFor": [
+          "pilsner-lager"
+        ]
       },
       "signals": {},
       "venue": {
@@ -10444,7 +10467,16 @@
         "productCount": 7,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:47:06.186Z"
-      }
+      },
+      "reputationEvidence": [
+        {
+          "style": "pilsner-lager",
+          "source": "awards",
+          "detail": "Gold, Kellerbier/Zwickelbier, Canadian Brewing Awards 2020 — Rockwell Pilsner",
+          "score": 0.52
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "the-exchange-brewery",
@@ -11222,10 +11254,7 @@
           "sour",
           "session-low-alc"
         ],
-        "knownFor": [
-          "wheat-belgian",
-          "west-coast-ipa"
-        ]
+        "knownFor": []
       },
       "signals": {},
       "venue": {
@@ -11247,22 +11276,7 @@
       "siteHealth": {
         "verdict": "live",
         "checkedAt": "2026-08-17T21:58:12.562Z"
-      },
-      "reputationEvidence": [
-        {
-          "style": "wheat-belgian",
-          "source": "awards",
-          "detail": "Gold, Wheat Beer – North American-Style, Canadian Brewing Awards 2022 — Village Wit",
-          "score": 1.184
-        },
-        {
-          "style": "west-coast-ipa",
-          "source": "awards",
-          "detail": "Gold, Specialty IPA, Canadian Brewing Awards 2023 — Binge Watch",
-          "score": 0.76
-        }
-      ],
-      "knownForSource": "awards"
+      }
     },
     {
       "id": "three-county-cider",
@@ -11402,15 +11416,15 @@
           "stout-porter"
         ],
         "knownFor": [
-          "amber-red"
+          "pale-ale"
         ]
       },
       "reputationEvidence": [
         {
-          "style": "amber-red",
+          "style": "pale-ale",
           "source": "awards",
-          "detail": "Silver, North American Style Amber/Dark Lager, Canadian Brewing Awards 2024 — Bunker",
-          "score": 0.504
+          "detail": "Silver, Belgian Tripel & Strong Blonde Ale, Canadian Brewing Awards 2025 — Red Mosquito",
+          "score": 0.552
         }
       ],
       "unverifiedHypothesis": [
@@ -11914,15 +11928,15 @@
           "pilsner-lager"
         ],
         "knownFor": [
-          "stout-porter"
+          "pilsner-lager"
         ]
       },
       "reputationEvidence": [
         {
-          "style": "stout-porter",
+          "style": "pilsner-lager",
           "source": "awards",
-          "detail": "Gold, Sweet Stout or Cream Stout, Canadian Brewing Awards 2023 — Chocolate Milk Stout",
-          "score": 1.406
+          "detail": "Bronze, North American Style Premium Lager, Canadian Brewing Awards 2022 — Helles Lager",
+          "score": 0.712
         }
       ],
       "unverifiedHypothesis": [

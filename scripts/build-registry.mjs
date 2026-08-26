@@ -357,8 +357,20 @@ async function main() {
       const won = awards.breweries?.[record.id];
       if (!won) continue;
 
+      /**
+       * MEDAL LIVENESS. A medal proves the brewery once made that style well;
+       * it does not prove you can go drink it. Steam Whistle's 2020 English
+       * Pale Ale Gold is real — and the beer is gone; their catalog is pilsner
+       * only. Where we HOLD a crawled catalog (offers is non-empty), a medal
+       * style absent from it is demoted: kept in reputationEvidence with
+       * `live: false`, excluded from knownFor. Breweries with no catalog keep
+       * the benefit of the doubt — absence of a crawl is not absence of the
+       * beer. (source-register.md, "Award evidence must decay".)
+       */
+      const catalog = record.styles.offers ?? [];
       const qualifying = Object.entries(won.styleScore)
         .filter(([, score]) => score >= KNOWN_FOR_THRESHOLD)
+        .filter(([style]) => !catalog.length || catalog.includes(style))
         .sort((a, b) => b[1] - a[1])
         .slice(0, 3);
       if (!qualifying.length) continue;

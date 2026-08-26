@@ -33,7 +33,7 @@ const OUT = path.join(here, '..', 'data', 'awards.json');
 const REGISTRY = path.join(here, '..', 'data', 'registry.json');
 
 const YEARS = process.argv.slice(2).filter((a) => /^\d{4}$/.test(a));
-const ALL_YEARS = ['2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014'];
+const ALL_YEARS = ['2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018', '2017', '2016', '2015', '2014'];
 
 /** Full browser header set. A bare UA gets 403 from their WAF; this does not. */
 const HEADERS = {
@@ -92,16 +92,41 @@ function tagsFor(category) {
   return null; // unmapped — reported
 }
 
-/** Newest, largest snapshot of a year's winners page — the largest is the one
- *  captured after results were actually published. */
-async function bestSnapshot(year) {
-  const url = `http://web.archive.org/cdx/search/cdx?url=canadianbrewingawards.com/${year}-winners/&output=json&fl=timestamp,length&filter=statuscode:200&limit=40`;
-  const res = await fetch(url, { headers: HEADERS, signal: AbortSignal.timeout(45_000) });
-  if (!res.ok) throw new Error(`CDX HTTP ${res.status}`);
-  const rows = await res.json();
-  if (!Array.isArray(rows) || rows.length < 2) throw new Error('no snapshots');
-  const best = rows.slice(1).sort((a, b) => Number(b[1]) - Number(a[1]))[0];
-  return best[0];
+/**
+ * Snapshot CANDIDATES for a year, largest first.
+ *
+ * One URL shape is not enough: the winners pages moved between the bare host
+ * and www, with and without a trailing slash, and 2017 also lived at
+ * /2017-winner-list/. The old single-shape query returned "no snapshots" for
+ * 2015-2017, 2019 and 2021, which surfaced as five years parsing ZERO medals
+ * — invisible inside a healthy-looking 789 total until Great Lakes' 2014
+ * sweep failed to appear. Query every shape, merge, and let the caller try
+ * candidates until one parses.
+ */
+async function snapshotCandidates(year) {
+  const shapes = [
+    `canadianbrewingawards.com/${year}-winners/`,
+    `www.canadianbrewingawards.com/${year}-winners/`,
+    `canadianbrewingawards.com/${year}-winners`,
+    `www.canadianbrewingawards.com/${year}-winners`,
+    `www.canadianbrewingawards.com/${year}-winner-list/`,
+  ];
+  const seen = new Map();
+  for (const shape of shapes) {
+    const url = `http://web.archive.org/cdx/search/cdx?url=${shape}&output=json&fl=timestamp,length,original&filter=statuscode:200&limit=40`;
+    try {
+      const res = await fetch(url, { headers: HEADERS, signal: AbortSignal.timeout(45_000) });
+      if (!res.ok) continue;
+      const rows = await res.json();
+      if (!Array.isArray(rows)) continue;
+      for (const [ts, len, original] of rows.slice(1)) {
+        if (!seen.has(ts)) seen.set(ts, { ts, len: Number(len), original });
+      }
+    } catch { /* one shape failing must not sink the year */ }
+    await sleep(500);
+  }
+  if (!seen.size) throw new Error('no snapshots in any URL shape');
+  return [...seen.values()].sort((a, b) => b.len - a.len).slice(0, 4);
 }
 
 /** Strip a page to ordered text lines, preserving cell boundaries. */
@@ -143,26 +168,35 @@ const MEDAL_RE = /^(gold|silver|bronze)$/i;
  * whole table by one.
  */
 function parseWinners(lines, year) {
-  const out = [];
-  for (let i = 1; i < lines.length - 2; i++) {
-    if (!MEDAL_RE.test(lines[i])) continue;
-    const category = lines[i - 1];
-    const beer = lines[i + 1];
-    const brewery = lines[i + 2];
-    const province = lines[i + 3] ?? '';
-    if (!category || !beer || !brewery) continue;
-    if (category.length > 90 || brewery.length > 80) continue;
-    if (MEDAL_RE.test(beer) || MEDAL_RE.test(brewery)) continue;
+  const push = (out, category, medal, beer, brewery, province) => {
+    if (!category || !beer || !brewery) return;
+    if (category.length > 90 || brewery.length > 80) return;
+    if (MEDAL_RE.test(beer) || MEDAL_RE.test(brewery)) return;
     out.push({
       year: Number(year),
-      category: category.replace(/^\d+\s*[-–.]?\s*/, '').trim(),
-      medal: lines[i].toLowerCase(),
+      category: category.replace(/^\d+\s*[)\-–.]?\s*/, '').replace(/\s*\(\+\d+\)\s*$/, '').trim(),
+      medal: medal.toLowerCase(),
       beer,
       brewery,
-      province: province.trim(),
+      province: (province ?? '').trim(),
     });
+  };
+  // Order A — the CBA site's own tables: category, MEDAL, beer, brewery, province.
+  const a = [];
+  for (let i = 1; i < lines.length - 2; i++) {
+    if (!MEDAL_RE.test(lines[i])) continue;
+    push(a, lines[i - 1], lines[i], lines[i + 1], lines[i + 2], lines[i + 3]);
   }
-  return out;
+  // Order B — republished lists (American Craft Beer, 2025): MEDAL, category,
+  // beer, brewery, province — the medal opens the block instead of closing it.
+  const b = [];
+  for (let i = 0; i < lines.length - 4; i++) {
+    if (!MEDAL_RE.test(lines[i])) continue;
+    push(b, lines[i + 1], lines[i], lines[i + 2], lines[i + 3], lines[i + 4]);
+  }
+  // Same anchor, two readings — the wrong order shears every field by one and
+  // produces garbage rows the guards reject, so the richer parse is the truth.
+  return b.length > a.length * 1.5 ? b : a;
 }
 
 async function main() {
@@ -171,32 +205,62 @@ async function main() {
   const unmapped = new Map();
   const perYear = {};
 
+  /**
+   * 2025's official page is a Next.js shell in every archived capture — the
+   * medals were client-fetched and never made it into the snapshot. American
+   * Craft Beer republished the full list; that page is live, fetchable, and
+   * parses under order B. Fewer rows than the official 183 (they trimmed some
+   * categories) — recorded in the source note rather than papered over.
+   */
+  const ALT_SOURCE = {
+    2025: 'https://www.americancraftbeer.com/the-2025-canadian-brewing-awards-winners/',
+  };
+
   for (const year of years) {
     process.stdout.write(`  ${year}  `);
     try {
-      const ts = await bestSnapshot(year);
-      const url = `https://web.archive.org/web/${ts}id_/https://canadianbrewingawards.com/${year}-winners/`;
-      // The archive 429s and 503s under any sustained load, and a dropped
-      // year looks exactly like "that year had no Ontario winners". Retry so
-      // a transient failure never reads as an empty result.
-      let body = null;
-      for (let attempt = 1; attempt <= 4 && body === null; attempt++) {
-        const res = await fetch(url, { headers: HEADERS, signal: AbortSignal.timeout(60_000) });
+      let rows = [];
+      let how = '';
+      if (ALT_SOURCE[year]) {
+        const res = await fetch(ALT_SOURCE[year], { headers: HEADERS, signal: AbortSignal.timeout(60_000) });
         if (res.ok) {
-          const text = await res.text();
-          if (text.length > 5000) body = text;
+          rows = parseWinners(toLines(await res.text()), year);
+          how = 'americancraftbeer.com';
         }
-        if (body === null) await sleep(attempt * 4000);
       }
-      if (body === null) throw new Error('archive unavailable after 4 tries');
-      const rows = parseWinners(toLines(body), year);
+      if (rows.length < 20) {
+        // Try archive candidates, largest first, until one actually parses.
+        // A snapshot can be a redirect stub or a rebuilt-site shell; "fetched
+        // fine, parsed zero" must try the next capture, not conclude the year
+        // was empty.
+        const candidates = await snapshotCandidates(year);
+        for (const c of candidates) {
+          let body = null;
+          for (let attempt = 1; attempt <= 3 && body === null; attempt++) {
+            const res = await fetch(`https://web.archive.org/web/${c.ts}id_/${c.original}`, {
+              headers: HEADERS, signal: AbortSignal.timeout(60_000),
+            });
+            if (res.ok) {
+              const text = await res.text();
+              if (text.length > 5000) body = text;
+            }
+            if (body === null) await sleep(attempt * 4000);
+          }
+          if (body === null) continue;
+          rows = parseWinners(toLines(body), year);
+          how = `snapshot ${c.ts} (${new URL(c.original).host}${new URL(c.original).pathname})`;
+          if (rows.length >= 20) break;
+          await sleep(2000);
+        }
+      }
+      if (rows.length < 20) throw new Error(`best parse was ${rows.length} rows across all candidates`);
       all.push(...rows);
       perYear[year] = rows.length;
-      const on = rows.filter((r) => /ontario/i.test(r.province)).length;
-      console.log(`${String(rows.length).padStart(4)} medals  (${on} Ontario)  snapshot ${ts}`);
+      const on = rows.filter((r) => /ontario|^on$/i.test(r.province)).length;
+      console.log(`${String(rows.length).padStart(4)} medals  (${on} say Ontario)  ${how}`);
     } catch (err) {
       perYear[year] = 0;
-      console.log(`— ${String(err.message).slice(0, 60)}`);
+      console.log(`— ${String(err.message).slice(0, 70)}`);
     }
     await sleep(3000); // the archive rate-limits hard
   }
@@ -214,10 +278,15 @@ async function main() {
       .replace(/\b(brewing|brewery|breweries|brewers|brewhouse|beer|co|company|craft|ales?|inc|ltd|corp|the|and)\b/g, '')
       .replace(/[^a-z0-9]/g, '');
   const byName = new Map();
+  const collisions = [];
   for (const b of registry) {
     const k = norm(b.name);
-    if (k.length >= 3 && !byName.has(k)) byName.set(k, b);
+    if (k.length < 3) continue;
+    if (byName.has(k)) collisions.push(`${byName.get(k).id} <> ${b.id} (both '${k}')`);
+    else byName.set(k, b);
   }
+  if (collisions.length)
+    console.log(`  name collisions (first record wins — check these): ${collisions.join('; ')}`);
 
   let unresolved = 0;
   const ontario = [];
@@ -225,8 +294,13 @@ async function main() {
     const k = norm(r.brewery);
     let hit = byName.get(k);
     if (!hit && k.length >= 5) {
+      // Substring fallback, guarded: the shorter key must be most of the
+      // longer one, or 'greatlakes' happily swallows 'lakes' and every
+      // 'brewing' fragment finds a home it should not have.
       for (const [other, rec] of byName) {
-        if (other.length >= 5 && (other.includes(k) || k.includes(other))) { hit = rec; break; }
+        if (other.length < 5) continue;
+        const [shorter, longer] = other.length < k.length ? [other, k] : [k, other];
+        if (longer.includes(shorter) && shorter.length / longer.length >= 0.6) { hit = rec; break; }
       }
     }
     const saysOntario = /^(ontario|on)$/i.test((r.province || '').trim());

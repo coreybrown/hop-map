@@ -66,6 +66,28 @@
    "sourceClass": "aggregator-community",
    "quoteVerified": false,
    "probe": "expansion-r2"
+  },
+  {
+   "dimension": "beer.style.pilsner-lager",
+   "level": "brand",
+   "polarity": "offers-not-knownfor",
+   "quote": "Golden Horseshoe \u2014 3.3 on 930 ratings; 'fairly standard lager taste'; 'tastes only slightly better than discount brew fare'",
+   "source": "Untappd/BeerAdvocate voice + Beer of the Day",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "probe": "expansion-r3",
+   "note": "PROBED TO SIGNAL and the signal says ordinary: a competent flagship lager, not a reason to visit. This diverges from the ground truth's 'really anything' breadth \u2014 recorded as a divergence for Corey to adjudicate, not silently scored around. Thread CLOSED."
+  },
+  {
+   "dimension": "beer.style.west-coast-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Karma Citra \u2014 'a west leaning IPA that hits it out of the park\u2026 solid A'; 'bright, clear, and crisp with firm bitterness\u2026 lacking the juicy, cloudy, soda-pop taste of some other IPAs'; 3.9 on 11,551 ratings",
+   "source": "Monkeys Fighting Robots dedicated review + Untappd voice",
+   "sourceClass": "editorial-blog+aggregator-community",
+   "quoteVerified": false,
+   "probe": "expansion-r3",
+   "note": "The second quote is a WEST-COAST character statement in the reviewer's own words \u2014 exactly the style discrimination the tags need."
   }
  ]
 }

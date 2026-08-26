@@ -78,6 +78,16 @@
    "quoteVerified": false,
    "probe": "expansion-r2",
    "note": "Lagers named inside a breadth claim, not a dedicated lager review \u2014 weakest of the round. Single class, B ceiling, and strength should sit low."
+  },
+  {
+   "dimension": "beer.style.barrel-aged",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Blackburne Imperial Stout series \u2014 Bourbon Barrel Aged Blackburne, 10.7%, one year in Traverse City Whiskey Co. barrels: 'swirling oaky aromas of sweet cocoa giving way to bold, sticky dark chocolate, vanilla and caramel'; annual editions covered by Canadian Beer News; a fan site documents the series",
+   "source": "Canadian Beer News + baseballismy.life + BeerAdvocate listing",
+   "sourceClass": "editorial-trade+aggregator-community",
+   "quoteVerified": false,
+   "probe": "expansion-r3"
   }
  ]
 }

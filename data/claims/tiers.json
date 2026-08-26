@@ -518,12 +518,14 @@
      "evidence": 1
     },
     "beer.style.west-coast-ipa": {
-     "tier": "C",
+     "tier": "A",
      "classes": [
+      "community",
+      "editorial",
       "self"
      ],
      "verifiedQuotes": 1,
-     "evidence": 1
+     "evidence": 2
     },
     "vibes.room": {
      "tier": "B",
@@ -546,6 +548,12 @@
      "classes": [
       "community"
      ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.pilsner-lager": {
+     "tier": "D",
+     "classes": [],
      "verifiedQuotes": 0,
      "evidence": 1
     }
@@ -603,6 +611,15 @@
      "tier": "B",
      "classes": [
       "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.barrel-aged": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial"
      ],
      "verifiedQuotes": 0,
      "evidence": 1

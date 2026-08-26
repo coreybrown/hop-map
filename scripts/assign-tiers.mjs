@@ -78,11 +78,23 @@ async function main() {
   const registry = JSON.parse(await readFile(REGISTRY, 'utf8')).breweries;
   const gt = JSON.parse(await readFile(GT, 'utf8')).breweries;
 
-  const findReg = (entity, brand) =>
-    registry.find((b) => b.id === entity) ??
-    registry.find((b) => norm(entity).includes(norm(b.id)) || norm(b.id).includes(norm(entity).replace(/brewery|brewing|brew/g, ''))) ??
-    registry.find((b) => norm(b.name) === norm(brand)) ??
-    registry.find((b) => norm(brand).includes(norm(b.name)) || norm(b.name).includes(norm(brand)));
+  /**
+   * Prefer exact id, then exact brand name, then fuzzy — and among fuzzy
+   * candidates prefer an OPEN record over an unverified one. Both GLB records
+   * are the same brand (Etobicoke brewery + Lower Jarvis brewpub), but fuzzy
+   * order alone attached the claims to whichever came first in the file.
+   * Proper multi-location handling is the brandId work; until then, anchor
+   * the brand's claims to its canonical record.
+   */
+  const findReg = (entity, brand) => {
+    const exact = registry.find((b) => b.id === entity) ??
+                  registry.find((b) => norm(b.name) === norm(brand));
+    if (exact) return exact;
+    const fuzzy = registry.filter((b) =>
+      norm(entity).includes(norm(b.id)) || norm(b.id).includes(norm(entity).replace(/brewery|brewing|brew/g, '')) ||
+      norm(brand).includes(norm(b.name)) || norm(b.name).includes(norm(brand)));
+    return fuzzy.find((b) => b.status === 'open') ?? fuzzy[0];
+  };
 
   const tiers = {};
   const files = (await readdir(CLAIMS)).filter(
@@ -91,6 +103,9 @@ async function main() {
 
   for (const file of files) {
     const doc = JSON.parse(await readFile(path.join(CLAIMS, file), 'utf8'));
+    // Only entity claim docs — data/claims/ also holds derived artifacts, and
+    // a stray one crashed the whole run mid-file (silently stale tiers.json).
+    if (!doc.entity || !doc.brand || !Array.isArray(doc.claims)) continue;
     const reg = findReg(doc.entity, doc.brand);
     const dims = {};
 

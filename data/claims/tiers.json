@@ -504,8 +504,8 @@
   },
   "great-lakes-brewery": {
    "brand": "Great Lakes Brewery",
-   "registryId": "great-lakes-brew",
-   "status": "unverified",
+   "registryId": "great-lakes",
+   "status": "open",
    "dims": {
     "beer.overall": {
      "tier": "A",

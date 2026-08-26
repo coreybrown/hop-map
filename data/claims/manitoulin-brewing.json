@@ -14,8 +14,15 @@
    "source": "CBC News + CTV + Northern Ontario Business + The Manitoulin Expositor (independent outlets)",
    "url": "https://www.cbc.ca/news/canada/sudbury/manitoulin-brewing-shutting-down-9.7159541",
    "sourceClass": "news",
-   "quoteVerified": false,
-   "note": "REGISTRY CARRIES THIS AS ACTIVE. Own website still serves, so site-health cannot catch it. Multiple independent news outlets = as strong as closure evidence gets. Buyer interest means it could reopen under new ownership \u2014 watch, don't delete."
+   "quoteVerified": true,
+   "note": "REGISTRY CARRIES THIS AS ACTIVE. Own website still serves, so site-health cannot catch it. Multiple independent news outlets = as strong as closure evidence gets. Buyer interest means it could reopen under new ownership \u2014 watch, don't delete. VERBATIM 'permanently'. Stronger than the buyer-interest framing.",
+   "verbatim": {
+    "url": "https://www.manitoulin.com/manitoulin-brewing-co-closes-its-doors/",
+    "lines": [
+     "But, due to market pressures (alcohol consumption has been dropping steadily and the craft beer market is contracting after years of expansion), the company has announced it closed its doors permanently on April 9.",
+     "Manitoulin Brewing Company has announced it's closing after 12 years in operation. (Northern Ontario Business)"
+    ]
+   }
   },
   {
    "dimension": "beer.style.session-low-alc",

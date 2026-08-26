@@ -9,11 +9,11 @@
    "dimension": "beer.style.amber-red",
    "level": "brand",
    "polarity": "for",
-   "quote": "Silver, American Amber Ale \u2014 'Angry Redhead', Ontario Brewing Awards; Bronze, Brown British Ale \u2014 'What the Frack'",
+   "quote": "Silver, American Amber Ale — 'Angry Redhead', Ontario Brewing Awards; Bronze, Brown British Ale — 'What the Frack'",
    "source": "search layer (LinkedIn company page; LinkedIn blocks fetch)",
    "sourceClass": "juried",
    "quoteVerified": false,
-   "note": "Juried claim pending verification \u2014 the OBA mining pass should confirm year + category. Until then this is a B-tier lead, not an A-tier claim."
+   "note": "Juried claim pending verification — the OBA mining pass should confirm year + category. Until then this is a B-tier lead, not an A-tier claim."
   },
   {
    "dimension": "vibes.setting",
@@ -34,13 +34,13 @@
    "url": "https://blackgold.beer/",
    "sourceClass": "self",
    "quoteVerified": true,
-   "note": "Self-described venue programming \u2014 fine as venue FACT, not as quality claim."
+   "note": "Self-described venue programming — fine as venue FACT, not as quality claim."
   },
   {
    "dimension": "food",
    "level": "location",
    "polarity": "for",
-   "quote": "charcuterie and other snacks \u2026 customers are welcome to order in more substantial meals (bring takeout from other restaurants in town)",
+   "quote": "charcuterie and other snacks … customers are welcome to order in more substantial meals (bring takeout from other restaurants in town)",
    "source": "search layer (visitpetrolia.ca; robots-blocked on fetch)",
    "sourceClass": "tourism",
    "quoteVerified": false,
@@ -59,7 +59,7 @@
    "dimension": "liveness",
    "level": "location",
    "polarity": "for",
-   "quote": "Our hours are Mon\u2013Wed noon\u201310pm, Thu noon\u201311pm, Fri\u2013Sat noon\u201312am, Sun noon\u20138pm \u2026 $15 flat rate Ontario wide shipping",
+   "quote": "Our hours are Mon–Wed noon–10pm, Thu noon–11pm, Fri–Sat noon–12am, Sun noon–8pm … $15 flat rate Ontario wide shipping",
    "source": "blackgold.beer",
    "url": "https://blackgold.beer/",
    "sourceClass": "self",
@@ -67,5 +67,5 @@
   }
  ],
  "leads_unverified": [],
- "honesty_check": "Niche brewery behaves as expected: few claims, mostly B/C tier, one juried lead pending verification. NO style-quality claims fabricated \u2014 no third-party voice ranks their beer within any style. Correct output for a hazy-IPA query here: ABSENT from style results, present on the map."
+ "honesty_check": "Niche brewery behaves as expected: few claims, mostly B/C tier, one juried lead pending verification. NO style-quality claims fabricated — no third-party voice ranks their beer within any style. Correct output for a hazy-IPA query here: ABSENT from style results, present on the map."
 }

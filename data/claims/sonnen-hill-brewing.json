@@ -19,12 +19,12 @@
    "dimension": "beer.style.pilsner-lager",
    "level": "brand",
    "polarity": "for",
-   "quote": "'might be one of the best craft lagers I've had in well over a year \u2026 chock full of high quality malt goodness'",
+   "quote": "'might be one of the best craft lagers I've had in well over a year … chock full of high quality malt goodness'",
    "source": "BeerAdvocate review",
    "sourceClass": "aggregator-community",
    "ordinal": "best-in-a-year personal ranking",
    "quoteVerified": false,
-   "note": "BEYOND ground truth \u2014 GT names saisons only; the harvest surfaces lagers too. Candidate, needs a second class."
+   "note": "BEYOND ground truth — GT names saisons only; the harvest surfaces lagers too. Candidate, needs a second class."
   }
  ]
 }

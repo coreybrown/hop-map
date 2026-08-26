@@ -9,11 +9,11 @@
    "dimension": "beer.style.hazy-ipa",
    "level": "brand",
    "polarity": "for",
-   "quote": "farm brewery \u2026 IPAs noted as standout offerings; prolific IPA release schedule (Through the Glass, Dora series, Ontario IPA, monthly DIPAs); named 'comparable' alongside Bellwoods by Third Moon reviewers",
+   "quote": "farm brewery … IPAs noted as standout offerings; prolific IPA release schedule (Through the Glass, Dora series, Ontario IPA, monthly DIPAs); named 'comparable' alongside Bellwoods by Third Moon reviewers",
    "source": "BeerAdvocate + cross-mention",
    "sourceClass": "aggregator-community",
    "quoteVerified": false,
-   "note": "Matches ground truth (IPAs, specialist). Venue coverage thin \u2014 small farm operation; a vibes query should not route here."
+   "note": "Matches ground truth (IPAs, specialist). Venue coverage thin — small farm operation; a vibes query should not route here."
   }
  ]
 }

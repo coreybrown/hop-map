@@ -13,8 +13,14 @@
    "source": "Golden Tap Awards + BeerAdvocate voice",
    "sourceClass": "juried+aggregator",
    "ordinal": "Best Brewery in Ontario \u00d72",
-   "quoteVerified": false,
-   "note": "Ground truth: 'really anything' \u2014 the breadth claim is CORROBORATED, which is rare; usually breadth means dilution."
+   "quoteVerified": true,
+   "note": "Ground truth: 'really anything' \u2014 the breadth claim is CORROBORATED, which is rare; usually breadth means dilution.",
+   "verbatim": {
+    "url": "https://www.greatlakesbeer.com/ontario-brewery-of-the-year-thank-you/",
+    "lines": [
+     "and for the 2nd consecutive year, Great Lakes was named the"
+    ]
+   }
   },
   {
    "dimension": "beer.style.west-coast-ipa",
@@ -22,9 +28,15 @@
    "polarity": "for",
    "quote": "Karma Citra is one of the most talked about India Pale Ales in Canada; Canuck Pale Ale: Gold, Ontario Brewing Awards 2015; Best Regular Produced Beer in Ontario 2016",
    "source": "own-about + OBA + Golden Tap via search layer",
-   "sourceClass": "juried+self",
-   "quoteVerified": false,
-   "note": "Medals are 2015/2016 \u2014 DECAY applies. Hazemama praise (hazy) is current aggregator voice."
+   "sourceClass": "self+juried-pending",
+   "quoteVerified": true,
+   "note": "Medals are 2015/2016 \u2014 DECAY applies. Hazemama praise (hazy) is current aggregator voice. Medals now verbatim BUT from their own site \u2014 cross-check against data/awards.json for the juried class; 2014-16 vintage, decay applies.",
+   "verbatim": {
+    "url": "https://www.greatlakesbeer.com/about-great-lakes-brewery/",
+    "lines": [
+     "2014 was the year of awards for Great Lakes Brewery. They were named the Canadian Brewery of the Year for the 2nd consecutive year, swept the American IPA category at the Canadian Brewing Awards (Gold: THRUST! an IPA, Silver: Karma Citra IPA)"
+    ]
+   }
   },
   {
    "dimension": "vibes.room",

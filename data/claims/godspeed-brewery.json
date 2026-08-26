@@ -10,7 +10,7 @@
    "level": "brand",
    "polarity": "for",
    "quote": "The Czech lagers are rigorously authentic",
-   "source": "canadas100best.com \u2014 Best Bars 2025 No. 41",
+   "source": "canadas100best.com — Best Bars 2025 No. 41",
    "url": "https://canadas100best.com/list/2025/godspeed-brewery-2025/",
    "sourceClass": "editorial-national",
    "ordinal": "ranked list No. 41 national",
@@ -20,7 +20,7 @@
    "dimension": "beer.style.pilsner-lager",
    "level": "brand",
    "polarity": "for",
-   "quote": "Try: Sklepn\u00edk, conditioned in 4,000-litre pitch-lined barrels from Pilsner Urquell",
+   "quote": "Try: Sklepník, conditioned in 4,000-litre pitch-lined barrels from Pilsner Urquell",
    "source": "canadas100best.com",
    "url": "https://canadas100best.com/list/2025/godspeed-brewery-2025/",
    "sourceClass": "editorial-national",
@@ -41,7 +41,7 @@
    "dimension": "beer.style.dark-lager",
    "level": "brand",
    "polarity": "for",
-   "quote": "Smoked Beer: Irori \u2014 Godspeed Brewery Inc. \u2014 Silver (and Best in Show)",
+   "quote": "Smoked Beer: Irori — Godspeed Brewery Inc. — Silver (and Best in Show)",
    "source": "CBA 2025",
    "url": "https://www.americancraftbeer.com/the-2025-canadian-brewing-awards-winners/",
    "sourceClass": "juried",
@@ -51,7 +51,7 @@
    "dimension": "beer.style.farmhouse-saison",
    "level": "brand",
    "polarity": "for",
-   "quote": "Yuzu \u2014 Godspeed Brewery Inc. \u2014 Ontario \u2014 Bronze; 'A citrus saison is kissed with yuzu'",
+   "quote": "Yuzu — Godspeed Brewery Inc. — Ontario — Bronze; 'A citrus saison is kissed with yuzu'",
    "source": "CBA 2025 + canadas100best",
    "url": "https://www.americancraftbeer.com/the-2025-canadian-brewing-awards-winners/",
    "sourceClass": "juried+editorial",
@@ -71,7 +71,7 @@
    "dimension": "vibes.room",
    "level": "location",
    "polarity": "for",
-   "quote": "the minimalism and dark wood accents creating a slick yet comfortable vibe \u2026 an open air intimacy",
+   "quote": "the minimalism and dark wood accents creating a slick yet comfortable vibe … an open air intimacy",
    "source": "notyourchild.com feature",
    "url": "https://notyourchild.com/today-we-feature-the-godspeed-brewery-just-in-time-for-you-to-visit/",
    "sourceClass": "editorial-blog",
@@ -81,7 +81,7 @@
    "dimension": "patio",
    "level": "location",
    "polarity": "for",
-   "quote": "Visit \u2026 during the summer to take advantage of their super nice patio",
+   "quote": "Visit … during the summer to take advantage of their super nice patio",
    "source": "wanderlog (user reviews aggregated)",
    "url": "https://wanderlog.com/place/details/1412528/godspeed-brewery",
    "sourceClass": "aggregator-user",
@@ -101,7 +101,7 @@
     {
      "polarity": "against",
      "quote": "another craft brewery let down by its overpriced but low end food (recurring across TripAdvisor reviews)",
-     "source": "TripAdvisor via search layer \u2014 TA robots-blocked, quotes unverified",
+     "source": "TripAdvisor via search layer — TA robots-blocked, quotes unverified",
      "quoteVerified": false
     }
    ],
@@ -132,7 +132,7 @@
    "dimension": "beer.flagship",
    "level": "brand",
    "polarity": "for",
-   "quote": "From the Ochame IPA made with green tea harvested annually from Lafontaine's tea fields to the Irori peated scotch lager \u2026 each beer feels like an extension of the brewer's life influences",
+   "quote": "From the Ochame IPA made with green tea harvested annually from Lafontaine's tea fields to the Irori peated scotch lager … each beer feels like an extension of the brewer's life influences",
    "source": "notyourchild.com",
    "url": "https://notyourchild.com/today-we-feature-the-godspeed-brewery-just-in-time-for-you-to-visit/",
    "sourceClass": "editorial-blog",
@@ -156,14 +156,14 @@
      "quoteVerified": true
     }
    ],
-   "resolution": "OPEN \u2014 fresher primary source wins; stale claim traced to a dead URL",
+   "resolution": "OPEN — fresher primary source wins; stale claim traced to a dead URL",
    "note": "The liveness tripwire fired on stale data and the two-source rule caught it. Keep both records."
   }
  ],
  "leads_unverified": [
   {
    "dimension": "beer.style.kolsch",
-   "quote": "Gokurosama K\u00f6lsch-Style Ale is Godspeed's annual nod to the pale ales from Cologne",
+   "quote": "Gokurosama Kölsch-Style Ale is Godspeed's annual nod to the pale ales from Cologne",
    "source": "search layer (own site)",
    "sourceClass": "self"
   },
@@ -177,6 +177,6 @@
  ],
  "pipeline_notes": [
   "thecraftbeerdiaries.com is a HIJACKED DOMAIN (Indonesian gambling spam). Its search-layer claim ('stout worth the trip') must not be used. Add hijack detection to extraction: page language/topic mismatch vs query.",
-  "godspeedbrewery.com robots.txt blocks our fetcher (Squarespace default?) \u2014 manual curl was used for the liveness check. Decide policy: robots-respect means the SELF class comes from search layer + catalogs only for such sites."
+  "godspeedbrewery.com robots.txt blocks our fetcher (Squarespace default?) — manual curl was used for the liveness check. Decide policy: robots-respect means the SELF class comes from search layer + catalogs only for such sites."
  ]
 }

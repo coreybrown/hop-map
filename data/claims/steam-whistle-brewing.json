@@ -40,8 +40,14 @@
    ],
    "source": "BeerCrank + About Beer Magazine + Untappd voice (3.5, ~52k ratings)",
    "sourceClass": "editorial+aggregator",
-   "quoteVerified": false,
-   "note": "THE FACTOR-COLLAPSE CASE, resolved correctly by disaggregation: venue/experience elite, beer competent-but-contested. Should rank TOP for a first-timer/tour/experience query and MID for 'best pilsner' \u2014 Godspeed's Czech lagers outrank it there on juried + editorial voice. Ground truth agrees (go-for: pilsner; not-for: experimental)."
+   "quoteVerified": true,
+   "note": "THE FACTOR-COLLAPSE CASE, resolved correctly by disaggregation: venue/experience elite, beer competent-but-contested. Should rank TOP for a first-timer/tour/experience query and MID for 'best pilsner' \u2014 Godspeed's Czech lagers outrank it there on juried + editorial voice. Ground truth agrees (go-for: pilsner; not-for: experimental). Negative side now verbatim from a dedicated critical review.",
+   "verbatim": {
+    "url": "https://www.bottlebrief.com/beer-review/why-this-pilsner-missed-the-mark-a-critical-look-at-steam-whistle/",
+    "lines": [
+     "Steam Whistle Pilsner tends to appeal primarily to drinkers who favor mild, neutral beers. The beer lacks the depth and complexity found in many modern craft or European pilsners, leaving a somewhat one-dimensional taste."
+    ]
+   }
   }
  ]
 }

@@ -9,7 +9,7 @@
    "dimension": "vibes.setting",
    "level": "location",
    "polarity": "for",
-   "quote": "'Awesome brewery in an old church' \u2014 a tiny church with beer flowing from taps by the entrance",
+   "quote": "'Awesome brewery in an old church' — a tiny church with beer flowing from taps by the entrance",
    "source": "TripAdvisor titles",
    "sourceClass": "aggregator-user",
    "quoteVerified": false
@@ -18,7 +18,7 @@
    "dimension": "beer.overall",
    "level": "brand",
    "polarity": "tempered",
-   "quote": "'small selection \u2026 but very enjoyable'; Holy Smoke Scotch Ale 'one of the most unusual beers you'll ever taste' vs 'all of their beers average, nothing really special'",
+   "quote": "'small selection … but very enjoyable'; Holy Smoke Scotch Ale 'one of the most unusual beers you'll ever taste' vs 'all of their beers average, nothing really special'",
    "source": "TripAdvisor voice, both directions",
    "sourceClass": "aggregator-user",
    "quoteVerified": false,

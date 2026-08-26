@@ -4,11 +4,11 @@
  "locations": [
   {
    "id": "whitewater-riverside",
-   "address": "22 Fletcher Rd, Foresters Falls \u2014 Riverside Brew Pub (moved 2023)"
+   "address": "22 Fletcher Rd, Foresters Falls — Riverside Brew Pub (moved 2023)"
   },
   {
    "id": "whitewater-lakeside",
-   "address": "Cobden \u2014 Lakeside"
+   "address": "Cobden — Lakeside"
   }
  ],
  "sweptAt": "2026-08-25",
@@ -22,7 +22,7 @@
    "source": "whitewaterregion.ca + OpenTable",
    "sourceClass": "tourism+aggregator",
    "quoteVerified": false,
-   "note": "Two-location split confirmed by a THIRD independent source (AGCO, The Growler implicitly, now tourism). One 'Extremely Disappointing' TA headline \u2014 single voice, record not amplify."
+   "note": "Two-location split confirmed by a THIRD independent source (AGCO, The Growler implicitly, now tourism). One 'Extremely Disappointing' TA headline — single voice, record not amplify."
   }
  ]
 }

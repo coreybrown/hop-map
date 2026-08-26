@@ -14,16 +14,22 @@
    "sourceClass": "aggregator-user",
    "ordinal": "style-specific personal ranking",
    "quoteVerified": false,
-   "note": "A NICHE brewery yielding a style-specific ordinal claim \u2014 exactly what a west-coast query in PEC needs. Single witness = B-tier at best."
+   "note": "A NICHE brewery yielding a style-specific ordinal claim — exactly what a west-coast query in PEC needs. Single witness = B-tier at best."
   },
   {
    "dimension": "vibes.community",
    "level": "location",
    "polarity": "for",
-   "quote": "laid-back pub atmosphere \u2014 beer, pizza, pretzels; bingo and drag nights",
+   "quote": "laid-back pub atmosphere — beer, pizza, pretzels; bingo and drag nights",
    "source": "Yelp/TA voice",
    "sourceClass": "aggregator-user",
-   "quoteVerified": false
+   "quoteVerified": true,
+   "verbatim": {
+    "url": "https://wanderlog.com/place/details/1361442/555-brewing-co",
+    "lines": [
+     "Nestled in the heart of Picton, 555 Brewing Co is a must-visit spot for a laid-back pub atmosphere offering beer, pizza, and pretzels. The menu features unique pizzas like the vegan option with tomatoes, basil, balsamic, and garlic cashew cheese. This local gem hosts various events such as bingo and"
+    ]
+   }
   },
   {
    "dimension": "food",

@@ -18,7 +18,7 @@
    "dimension": "beer.style.stout-porter",
    "level": "brand",
    "polarity": "for",
-   "quote": "Eephus Oatmeal Brown Ale is their signature brew and it stands above \u2014 it's exceptional",
+   "quote": "Eephus Oatmeal Brown Ale is their signature brew and it stands above — it's exceptional",
    "source": "TripAdvisor/Yelp voice",
    "sourceClass": "aggregator-user",
    "quoteVerified": false,
@@ -28,7 +28,7 @@
    "dimension": "beer.style.hazy-ipa",
    "level": "brand",
    "polarity": "for",
-   "quote": "Greenwood Vermont Style IPA \u2026 juicy nod to the hazy beers of the green mountain state; 'Greenwood NEIPA and WHIP IPA are a juicy haven'",
+   "quote": "Greenwood Vermont Style IPA … juicy nod to the hazy beers of the green mountain state; 'Greenwood NEIPA and WHIP IPA are a juicy haven'",
    "source": "LCBO copy + reviews",
    "sourceClass": "retail+aggregator",
    "quoteVerified": false
@@ -41,16 +41,22 @@
    "source": "BringFido + own site",
    "sourceClass": "self+aggregator",
    "quoteVerified": false,
-   "note": "Family/dog is IDENTITY here, not amenity \u2014 'perfect spot\u2026 with friends or family'. Both locations."
+   "note": "Family/dog is IDENTITY here, not amenity — 'perfect spot… with friends or family'. Both locations."
   },
   {
    "dimension": "vibes.room",
    "level": "brand",
    "polarity": "for",
-   "quote": "'Beer and baseball are synonymous. It's a slow sport, very conducive to drinking some beers with friends' \u2026 staff 'legends'; 'My absolute favorite brewery in Toronto'",
+   "quote": "'Beer and baseball are synonymous. It's a slow sport, very conducive to drinking some beers with friends' … staff 'legends'; 'My absolute favorite brewery in Toronto'",
    "source": "reviews via search layer",
    "sourceClass": "aggregator-user",
-   "quoteVerified": false
+   "quoteVerified": true,
+   "verbatim": {
+    "url": "https://foodism.ca/venues/left-field-brewery-liberty-village/",
+    "lines": [
+     "“Beer and baseball are synonymous. It’s a slow sport, very conducive to drinking some beers with friends and catching up with one another. That’s the vibe we wanted in the space.”"
+    ]
+   }
   }
  ]
 }

@@ -1,0 +1,748 @@
+{
+ "generatedAt": "2026-08-26",
+ "tiers": {
+  "555-brewing": {
+   "brand": "555 Brewing Co.",
+   "registryId": "555-brewing",
+   "status": "open",
+   "dims": {
+    "beer.style.west-coast-ipa": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "style-specific personal ranking",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.community": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "food": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "badlands-brewing": {
+   "brand": "Badlands Brewing Company",
+   "registryId": "badlands",
+   "status": "open",
+   "dims": {
+    "beer.style.hazy-ipa": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "bayfield-brewing": {
+   "brand": "Bayfield Brewing Co.",
+   "registryId": "bayfield-brewing-company",
+   "status": "unverified",
+   "dims": {
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "bellwoods-brewery": {
+   "brand": "Bellwoods Brewery",
+   "registryId": "bellwoods",
+   "status": "open",
+   "dims": {
+    "beer.style.pale-ale": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "ordinal": "category-defining language",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.sour": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "ordinal": "volume signal ~28k ratings",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.wild-ale": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.non-alcoholic": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "ordinal": "'winning the game' superlative",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "A",
+     "classes": [
+      "editorial",
+      "juried"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.pilsner-lager": {
+     "tier": "D",
+     "classes": [],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.room": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "food": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "patio": {
+     "tier": "B",
+     "classes": [
+      "community",
+      "self"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "tour": {
+     "tier": "C",
+     "classes": [
+      "self"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "service": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "contested": true,
+     "verifiedQuotes": 0,
+     "evidence": 2
+    },
+    "value": {
+     "tier": "—",
+     "classes": [],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.crowd": {
+     "tier": "—",
+     "classes": [],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "liveness": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    }
+   }
+  },
+  "black-gold-brewery": {
+   "brand": "Black Gold Brewery",
+   "registryId": "black-gold-brewery",
+   "status": "unverified",
+   "dims": {
+    "beer.style.amber-red": {
+     "tier": "B",
+     "classes": [
+      "juried"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "tourism"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "vibes.community": {
+     "tier": "C",
+     "classes": [
+      "self"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "food": {
+     "tier": "B",
+     "classes": [
+      "tourism"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "liveness": {
+     "tier": "C",
+     "classes": [
+      "self"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    }
+   }
+  },
+  "blood-brothers-brewing": {
+   "brand": "Blood Brothers Brewing",
+   "registryId": "blood-brothers",
+   "status": "open",
+   "dims": {
+    "beer.style.hazy-ipa": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "'clear winner' within-style comparison",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.stout-porter": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial"
+     ],
+     "ordinal": "'best … most underrated' — rank vs reputation stated directly",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "burdock-brewery": {
+   "brand": "Burdock",
+   "registryId": "burdock",
+   "status": "open",
+   "dims": {
+    "beer.style.pilsner-lager": {
+     "tier": "A",
+     "classes": [
+      "editorial",
+      "juried",
+      "self"
+     ],
+     "juried": "Silver, European Style Lager (Pilsner), Canadian Brewing Awards 2022 — Pilsner",
+     "verifiedQuotes": 0,
+     "evidence": 2
+    },
+    "beer.style.wild-ale": {
+     "tier": "B",
+     "classes": [
+      "editorial",
+      "self"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.music": {
+     "tier": "C",
+     "classes": [
+      "self"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "church-key-brewing": {
+   "brand": "Church-Key Brewing Company",
+   "registryId": "church-key",
+   "status": "open",
+   "dims": {
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "gananoque-brewing": {
+   "brand": "Gan Brewing Company",
+   "registryId": "gananoque-brewing-company",
+   "status": "unverified",
+   "dims": {
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "godspeed-brewery": {
+   "brand": "Godspeed Brewery",
+   "registryId": "godspeed",
+   "status": "open",
+   "dims": {
+    "beer.style.pilsner-lager": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "ordinal": "ranked list No. 41 national",
+     "verifiedQuotes": 2,
+     "evidence": 2
+    },
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "juried"
+     ],
+     "ordinal": "Best in Show, national field",
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "beer.style.dark-lager": {
+     "tier": "B",
+     "classes": [
+      "juried"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "beer.style.farmhouse-saison": {
+     "tier": "A",
+     "classes": [
+      "editorial",
+      "juried"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "vibes.room": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "verifiedQuotes": 2,
+     "evidence": 2
+    },
+    "patio": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "food": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "contested": true,
+     "verifiedQuotes": 1,
+     "evidence": 2
+    },
+    "service": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "contested": true,
+     "verifiedQuotes": 1,
+     "evidence": 2
+    },
+    "beer.flagship": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "liveness": {
+     "tier": "D",
+     "classes": [],
+     "contested": true,
+     "verifiedQuotes": 1,
+     "evidence": 2
+    }
+   }
+  },
+  "great-lakes-brewery": {
+   "brand": "Great Lakes Brewery",
+   "registryId": "great-lakes-brew",
+   "status": "unverified",
+   "dims": {
+    "beer.overall": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "juried"
+     ],
+     "ordinal": "Best Brewery in Ontario ×2",
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "beer.style.west-coast-ipa": {
+     "tier": "C",
+     "classes": [
+      "self"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "vibes.room": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "left-field-brewery": {
+   "brand": "Left Field Brewery",
+   "registryId": "left-field",
+   "status": "open",
+   "dims": {
+    "beer.style.stout-porter": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.hazy-ipa": {
+     "tier": "B",
+     "classes": [
+      "community",
+      "retail"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "family": {
+     "tier": "B",
+     "classes": [
+      "community",
+      "self"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.room": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    }
+   }
+  },
+  "mackinnon-brothers": {
+   "brand": "MacKinnon Brothers Brewing Co.",
+   "registryId": "mackinnon-brothers",
+   "status": "open",
+   "dims": {
+    "vibes.setting": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "tourism"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.community": {
+     "tier": "B",
+     "classes": [
+      "self",
+      "tourism"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "ordinal.lists": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "ordinal": "named in curated rural-brewery list",
+     "verifiedQuotes": 1,
+     "evidence": 1
+    }
+   }
+  },
+  "manitoulin-brewing": {
+   "brand": "Manitoulin Brewing Company",
+   "registryId": "manitoulin-brewery",
+   "status": "closed",
+   "dims": {
+    "liveness": {
+     "tier": "—",
+     "classes": [],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "beer.style.session-low-alc": {
+     "tier": "B",
+     "classes": [
+      "juried"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "new-limburg-brewing": {
+   "brand": "New Limburg Brewing Company",
+   "registryId": "new-limburg-brewing-company",
+   "status": "unverified",
+   "dims": {
+    "beer.style.wheat-belgian": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "juried"
+     ],
+     "ordinal": "medals + best-in-province claim",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "parsons-brewing": {
+   "brand": "Parsons Brewing Company",
+   "registryId": "parsons",
+   "status": "open",
+   "dims": {
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "experience-first language",
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "value": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    }
+   }
+  },
+  "sonnen-hill-brewing": {
+   "brand": "Sonnen Hill Brewing",
+   "registryId": "sonnen-hill",
+   "status": "open",
+   "dims": {
+    "beer.style.farmhouse-saison": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.pilsner-lager": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "best-in-a-year personal ranking",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "steam-whistle-brewing": {
+   "brand": "Steam Whistle Brewing",
+   "registryId": "steam-whistle",
+   "status": "open",
+   "dims": {
+    "tour": {
+     "tier": "B",
+     "classes": [
+      "community",
+      "self"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.pilsner-lager": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial"
+     ],
+     "contested": true,
+     "verifiedQuotes": 0,
+     "evidence": 2
+    }
+   }
+  },
+  "third-moon-brewing": {
+   "brand": "Third Moon Brewing",
+   "registryId": "third-moon",
+   "status": "open",
+   "dims": {
+    "beer.style.hazy-ipa": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "superlative + floor-beats-others comparison",
+     "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "beer.style.stout-porter": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 1,
+     "evidence": 1
+    }
+   }
+  },
+  "whitewater-brewing": {
+   "brand": "Whitewater Brewing Company",
+   "registryId": "whitewater-brewing-company",
+   "status": "unverified",
+   "dims": {
+    "vibes.setting": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "tourism"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  }
+ }
+}

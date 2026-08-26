@@ -9,12 +9,19 @@
    "dimension": "vibes.setting",
    "level": "location",
    "polarity": "for",
-   "quote": "'Parsons is more than a brewery \u2014 it's an experience' \u2026 unstructured playground nestled between a field of barley and a fledgling hop yard; rustic buildings, wide-open space",
+   "quote": "'Parsons is more than a brewery — it's an experience' … unstructured playground nestled between a field of barley and a fledgling hop yard; rustic buildings, wide-open space",
    "source": "TripAdvisor/Wanderlog voice",
    "sourceClass": "aggregator-user",
    "ordinal": "experience-first language",
-   "quoteVerified": false,
-   "note": "THE 'fun brewery on a field' archetype from Corey's brief, found in the wild. Family + dog + outdoor kitchen."
+   "quoteVerified": true,
+   "note": "THE 'fun brewery on a field' archetype from Corey's brief, found in the wild. Family + dog + outdoor kitchen.",
+   "verbatim": {
+    "url": "https://wanderlog.com/place/details/254768/parsons-brewing-company",
+    "lines": [
+     "Parsons is more than a brewery — it’s an experience. A must-visit every time!",
+     "Parsons Brewing Company is always our first stop when we arrive in Prince Edward County, and for good reason — it’s everything you want in a PEC experience. The setting is charming, welcoming, and quintessentially County, with rustic buildings, wide-open space, and thoughtful touches throughout."
+    ]
+   }
   },
   {
    "dimension": "value",
@@ -23,7 +30,13 @@
    "quote": "portions slightly small for the price",
    "source": "same corpus",
    "sourceClass": "aggregator-user",
-   "quoteVerified": false
+   "quoteVerified": true,
+   "verbatim": {
+    "url": "https://wanderlog.com/place/details/254768/parsons-brewing-company",
+    "lines": [
+     "Parsons Brewing Company offers a lovely atmosphere for friends to enjoy craft beer and delicious food. Reviewers praise the outstanding beer selection, with highlights like the Crushable Pilsner and flavorful dishes such as the pork belly and smash burger. The service is excellent despite busy night"
+    ]
+   }
   }
  ]
 }

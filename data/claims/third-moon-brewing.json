@@ -13,8 +13,14 @@
    "source": "BeerAdvocate voice + Bar Towel forum",
    "sourceClass": "aggregator-community",
    "ordinal": "superlative + floor-beats-others comparison",
-   "quoteVerified": false,
-   "note": "Reviewer with 100+ unique releases logged \u2014 high-credibility witness. Comparable-to co-mention: 'Badlands and Bellwoods' \u2014 the comparison graph in action."
+   "quoteVerified": true,
+   "note": "Reviewer with 100+ unique releases logged \u2014 high-credibility witness. Comparable-to co-mention: 'Badlands and Bellwoods' \u2014 the comparison graph in action.",
+   "verbatim": {
+    "url": "https://www.bartowel.com/forum/viewtopic.php?p=162219",
+    "lines": [
+     "I've mainly had their IPAs, but they've been uniformly excellent. Kind of bringing back the more classic style IPA, but with a modern presentation."
+    ]
+   }
   },
   {
    "dimension": "beer.style.stout-porter",
@@ -23,7 +29,13 @@
    "quote": "big pastry stouts featuring dessert-like flavors \u2014 coffee, chocolate, coconut, maple syrup; 'Each Beast a God' coffee stout praised",
    "source": "same corpus",
    "sourceClass": "aggregator-community",
-   "quoteVerified": false
+   "quoteVerified": true,
+   "verbatim": {
+    "url": "https://www.bartowel.com/forum/viewtopic.php?p=162219",
+    "lines": [
+     "Agreed. I recently tried their All Together IPA, Each Beast a God Coffee Stout, and Dust Made Flesh Double IPA and thought all three beers were fantastic. The IPAs were comparable to the best offerings from Badlands and Bellwoods and the Coffee Stout was superb, with a subtle black currant note that"
+    ]
+   }
   }
  ]
 }

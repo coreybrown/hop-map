@@ -161,7 +161,14 @@
    "quote": "operating normally as of mid-2026; $6.11M damages awarded 2023 in landlord dispute over a third location",
    "source": "dailyhive via search layer",
    "sourceClass": "news",
-   "quoteVerified": false
+   "quoteVerified": true,
+   "verbatim": {
+    "url": "https://dailyhive.com/toronto/bellwoods-brewery-open-new-location",
+    "lines": [
+     "Bellwoods Brewery to finally open new location after wild legal case with landlord",
+     "(top spot) for craft beer, is at long last poised to open a third location in the city"
+    ]
+   }
   }
  ],
  "counter_evidence": [

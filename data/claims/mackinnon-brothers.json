@@ -1,0 +1,49 @@
+{
+ "entity": "mackinnon-brothers",
+ "brand": "MacKinnon Brothers Brewing Co.",
+ "location": "1915 County Rd 22, Bath (200-year family farm)",
+ "sweptAt": "2026-08-25",
+ "queries": 3,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "'the most picturesque brewery' \u2014 on a bicentennial family farm; hops, wheat and barley grown on the property; farm-field patio; taproom in the bottom of the historic Old Barn",
+   "source": "TripAdvisor + mackinnonbrewing.com + Naturally L&A",
+   "sourceClass": "aggregator+tourism",
+   "quoteVerified": false,
+   "note": "Corey's 'go experience this really fun brewery, it's on a field' archetype. Estate brewing (own-grown ingredients) is a differentiator almost no Ontario brewery has."
+  },
+  {
+   "dimension": "vibes.community",
+   "level": "location",
+   "polarity": "for",
+   "quote": "live music weekly Sat 4\u20137, Sun 1\u20134; outdoor stage and play area; hosts weddings in the barn hall; farm + hop-field tours in summer",
+   "source": "kingstonlive + own site",
+   "sourceClass": "tourism+self",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Crosscut Canadian Ale \u2014 'a resurrection of a traditional Canadian recipe'; 100% Ontario-grown hops; 'all great tasting beers', samples 'quite generous'",
+   "source": "Beer Et Seq + Beaumont Drinks + Brewers Journal Canada + TripAdvisor",
+   "sourceClass": "editorial+aggregator",
+   "quoteVerified": false,
+   "note": "Beer voice is solid-traditional, not elite-hype. Styles: Canadian ale, English IPA, amber lager, weissbier, American stout. No hazy program \u2014 a hazy query should NOT route here; a 'great farm brewery day out' query absolutely should."
+  },
+  {
+   "dimension": "ordinal.lists",
+   "level": "location",
+   "polarity": "for",
+   "quote": "'8 Rural Ontario Breweries to Visit in 2025' (Canada Culinary); Ottawa Road Trips feature 2025-08-18",
+   "source": "listicle corpus",
+   "sourceClass": "editorial-travel",
+   "ordinal": "named in curated rural-brewery list",
+   "quoteVerified": false
+  }
+ ],
+ "corridor_note": "ON the Toronto\u2192Kingston corridor (Bath, 20 min west of Kingston). For the demo query this is the vibes/setting anchor stop, complementing beer-led stops."
+}

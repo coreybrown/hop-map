@@ -1,0 +1,47 @@
+{
+ "entity": "burdock-brewery",
+ "brand": "Burdock",
+ "locations": [
+  {
+   "id": "burdock-bloor",
+   "address": "1184 Bloor St W (brewery + music hall + kitchen)"
+  },
+  {
+   "id": "burdock-kensington",
+   "address": "184 Augusta Ave, Kensington Market"
+  }
+ ],
+ "sweptAt": "2026-08-25",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.pilsner-lager",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Since 2015 \u2026 focusing on beers that are food friendly, refreshing, pale, and easy-drinking, mostly lagers and pale ales; Kensington expansion 'with a lager-forward beer program'",
+   "source": "own copy + news via search layer",
+   "sourceClass": "self+news",
+   "quoteVerified": false,
+   "note": "Matches ground truth (lagers, lighter beers, saisons). Third-party corroboration for lager QUALITY still thin \u2014 needs the fetch pass; keep tier honest."
+  },
+  {
+   "dimension": "beer.style.wild-ale",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Docklife collaborative Wild Saison (Lowlife x Burdock); smoked dark saison 'rich with coffee and a hint of chocolate'; Grape Ales inspired by wine",
+   "source": "BeerCrank review + own copy",
+   "sourceClass": "editorial-blog+self",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "vibes.music",
+   "level": "location:burdock-bloor",
+   "polarity": "for",
+   "quote": "a kitchen, a brewery, and a stage under one roof \u2014 Brewery & Music Hall",
+   "source": "own site + OpenTable",
+   "sourceClass": "self",
+   "quoteVerified": false,
+   "note": "Music hall is a DISTINCT experience dimension no other pilot brewery has. Bloor only \u2014 Kensington must not inherit."
+  }
+ ]
+}

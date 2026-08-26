@@ -1,0 +1,47 @@
+{
+ "entity": "steam-whistle-brewing",
+ "brand": "Steam Whistle Brewing",
+ "location": "The Roundhouse, 255 Bremner Blvd, Toronto",
+ "sweptAt": "2026-08-25",
+ "queries": 3,
+ "claims": [
+  {
+   "dimension": "tour",
+   "level": "location",
+   "polarity": "for",
+   "quote": "guided tours in the historic John Street Roundhouse, a designated National Historic Site \u2026 $20, 30 minutes, includes a bottle; steps from the CN Tower",
+   "source": "TripAdvisor + steamwhistle.ca",
+   "sourceClass": "aggregator+self",
+   "quoteVerified": false,
+   "note": "Experience evidence is A-grade and abundant: tours, Bierg\u00e4rten, festivals, tailgates. This is what the venue is FOR."
+  },
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "iconic Roundhouse building with its rich industrial heritage; annual Roundhouse Winter Craft Beer Festival",
+   "source": "multiple tourism/review sources",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.style.pilsner-lager",
+   "level": "brand",
+   "polarity": "conflict",
+   "claims": [
+    {
+     "polarity": "for",
+     "quote": "hits the perfect sweet spot between a highly refreshing, easy drinker and a beer with actual, respectable hop character \u2026 balance immaculate"
+    },
+    {
+     "polarity": "against",
+     "quote": "'Pretty boring' \u2026 'a good beer and that's it' \u2026 'not even close to being the best pilsner I've had'"
+    }
+   ],
+   "source": "BeerCrank + About Beer Magazine + Untappd voice (3.5, ~52k ratings)",
+   "sourceClass": "editorial+aggregator",
+   "quoteVerified": false,
+   "note": "THE FACTOR-COLLAPSE CASE, resolved correctly by disaggregation: venue/experience elite, beer competent-but-contested. Should rank TOP for a first-timer/tour/experience query and MID for 'best pilsner' \u2014 Godspeed's Czech lagers outrank it there on juried + editorial voice. Ground truth agrees (go-for: pilsner; not-for: experimental)."
+  }
+ ]
+}

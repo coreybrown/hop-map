@@ -1,0 +1,29 @@
+{
+ "entity": "third-moon-brewing",
+ "brand": "Third Moon Brewing",
+ "location": "295 Alliance Rd, Milton",
+ "sweptAt": "2026-08-25",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "IPAs 'uniformly excellent' \u2026 'easily one of the best breweries in Ontario, possibly in all of Canada' \u2026 'the worst beer I've had from them is better than the best beers from most breweries'",
+   "source": "BeerAdvocate voice + Bar Towel forum",
+   "sourceClass": "aggregator-community",
+   "ordinal": "superlative + floor-beats-others comparison",
+   "quoteVerified": false,
+   "note": "Reviewer with 100+ unique releases logged \u2014 high-credibility witness. Comparable-to co-mention: 'Badlands and Bellwoods' \u2014 the comparison graph in action."
+  },
+  {
+   "dimension": "beer.style.stout-porter",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "big pastry stouts featuring dessert-like flavors \u2014 coffee, chocolate, coconut, maple syrup; 'Each Beast a God' coffee stout praised",
+   "source": "same corpus",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false
+  }
+ ]
+}

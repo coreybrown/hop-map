@@ -1,0 +1,39 @@
+{
+ "entity": "great-lakes-brewery",
+ "brand": "Great Lakes Brewery",
+ "location": "30 Queen Elizabeth Blvd, Etobicoke",
+ "sweptAt": "2026-08-25",
+ "queries": 2,
+ "claims": [
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "for the 2nd consecutive year, Great Lakes was named the Best Brewery in Ontario (Golden Tap Awards); 'excel at a wide range of styles, from hoppy pales/IPAs/DIPAs, to porters and stouts, to English-style ales, to German, Czech, and North American-style lagers'",
+   "source": "Golden Tap Awards + BeerAdvocate voice",
+   "sourceClass": "juried+aggregator",
+   "ordinal": "Best Brewery in Ontario \u00d72",
+   "quoteVerified": false,
+   "note": "Ground truth: 'really anything' \u2014 the breadth claim is CORROBORATED, which is rare; usually breadth means dilution."
+  },
+  {
+   "dimension": "beer.style.west-coast-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Karma Citra is one of the most talked about India Pale Ales in Canada; Canuck Pale Ale: Gold, Ontario Brewing Awards 2015; Best Regular Produced Beer in Ontario 2016",
+   "source": "own-about + OBA + Golden Tap via search layer",
+   "sourceClass": "juried+self",
+   "quoteVerified": false,
+   "note": "Medals are 2015/2016 \u2014 DECAY applies. Hazemama praise (hazy) is current aggregator voice."
+  },
+  {
+   "dimension": "vibes.room",
+   "level": "location",
+   "polarity": "for",
+   "quote": "warm, inviting, and unpretentious \u2026 very large patio spring to fall; live music weekends; dog-friendly",
+   "source": "Yelp/TripAdvisor via search layer",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

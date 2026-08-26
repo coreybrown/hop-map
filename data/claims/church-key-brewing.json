@@ -1,0 +1,28 @@
+{
+ "entity": "church-key-brewing",
+ "brand": "Church-Key Brewing Company",
+ "location": "Campbellford (1878 church)",
+ "sweptAt": "2026-08-25",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "'Awesome brewery in an old church' \u2014 a tiny church with beer flowing from taps by the entrance",
+   "source": "TripAdvisor titles",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "tempered",
+   "quote": "'small selection \u2026 but very enjoyable'; Holy Smoke Scotch Ale 'one of the most unusual beers you'll ever taste' vs 'all of their beers average, nothing really special'",
+   "source": "TripAdvisor voice, both directions",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false,
+   "note": "Honest mid: unique setting + one distinctive beer (smoked), contested overall quality. B/C tier is the right landing."
+  }
+ ]
+}

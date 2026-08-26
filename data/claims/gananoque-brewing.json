@@ -1,0 +1,28 @@
+{
+ "entity": "gananoque-brewing",
+ "brand": "Gan Brewing Company",
+ "location": "9 King St E, Gananoque",
+ "sweptAt": "2026-08-25",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "historic building \u2026 inviting patio and fire tables \u2026 chance to ring the historic bell tower, free popcorn",
+   "source": "TripAdvisor/Wanderlog voice",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "five house-made beers plus guest taps; 'flavorful and well-crafted' (Black Bear Bock, Naughty Otter, Cooper's Hawk IPA, Trusty Pike Pilsner); one 'Disappointed' dissent",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false,
+   "note": "Honest local stop on the corridor's east end. No style stands out \u2014 beer.overall B/C, never a style-query answer."
+  }
+ ]
+}

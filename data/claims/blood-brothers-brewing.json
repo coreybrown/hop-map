@@ -1,0 +1,39 @@
+{
+ "entity": "blood-brothers-brewing",
+ "brand": "Blood Brothers Brewing",
+ "location": "165 Geary Ave, Toronto",
+ "sweptAt": "2026-08-25",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Shumei \u2026 in a crowded field of hazy IPAs, is a clear winner",
+   "source": "review voice via search layer",
+   "sourceClass": "aggregator-user",
+   "ordinal": "'clear winner' within-style comparison",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.style.stout-porter",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Guilty Remnant white stout \u2026 Capt Howdy imperial stout \u2026 barrel aged stout praised",
+   "source": "review voice",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "probably the best (and also most underrated) brewery in mid and downtown Toronto; U.S. distribution for the first time",
+   "source": "reviews + clevelandprost substack",
+   "sourceClass": "aggregator+editorial",
+   "ordinal": "'best \u2026 most underrated' \u2014 rank vs reputation stated directly",
+   "quoteVerified": false,
+   "note": "'Underrated' is the product's whole pitch in one word: aggregate ratings under-price this brewery."
+  }
+ ]
+}

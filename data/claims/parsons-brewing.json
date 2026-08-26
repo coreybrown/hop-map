@@ -1,0 +1,29 @@
+{
+ "entity": "parsons-brewing",
+ "brand": "Parsons Brewing Company",
+ "location": "876 County Rd 49, Picton",
+ "sweptAt": "2026-08-25",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "'Parsons is more than a brewery \u2014 it's an experience' \u2026 unstructured playground nestled between a field of barley and a fledgling hop yard; rustic buildings, wide-open space",
+   "source": "TripAdvisor/Wanderlog voice",
+   "sourceClass": "aggregator-user",
+   "ordinal": "experience-first language",
+   "quoteVerified": false,
+   "note": "THE 'fun brewery on a field' archetype from Corey's brief, found in the wild. Family + dog + outdoor kitchen."
+  },
+  {
+   "dimension": "value",
+   "level": "location",
+   "polarity": "tempered",
+   "quote": "portions slightly small for the price",
+   "source": "same corpus",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "entity": "bayfield-brewing",
+ "brand": "Bayfield Brewing Co.",
+ "location": "14 Bayfield Main St N, Bayfield (Lake Huron)",
+ "sweptAt": "2026-08-25",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "brewpub in the Village of Bayfield on the shores of Lake Huron \u2014 wood-accented surroundings, front and back patios, cozy fireplace in winter",
+   "source": "Yelp/TA voice",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "tempered",
+   "quote": "sampler of all eight beers \u2014 'those who aren't fans of hoppy beers may only enjoy half'; Belgian Whit stands out, 'amazing light grapefruit flavor'",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false,
+   "note": "Food-led lakeside brewpub (3.9 TA, ranked #13 of 20 restaurants IN BAYFIELD \u2014 weak ordinal). beerLed=false candidate."
+  }
+ ]
+}

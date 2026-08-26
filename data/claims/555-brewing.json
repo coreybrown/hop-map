@@ -1,0 +1,38 @@
+{
+ "entity": "555-brewing",
+ "brand": "555 Brewing Co.",
+ "location": "124 Main St, Picton",
+ "sweptAt": "2026-08-25",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.west-coast-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Footprint IPA 'closest to true American west coast' [I've had] yet",
+   "source": "TripAdvisor review",
+   "sourceClass": "aggregator-user",
+   "ordinal": "style-specific personal ranking",
+   "quoteVerified": false,
+   "note": "A NICHE brewery yielding a style-specific ordinal claim \u2014 exactly what a west-coast query in PEC needs. Single witness = B-tier at best."
+  },
+  {
+   "dimension": "vibes.community",
+   "level": "location",
+   "polarity": "for",
+   "quote": "laid-back pub atmosphere \u2014 beer, pizza, pretzels; bingo and drag nights",
+   "source": "Yelp/TA voice",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "food",
+   "level": "location",
+   "polarity": "tempered",
+   "quote": "some praise the pizza, others note it could be improved",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

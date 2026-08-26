@@ -1,0 +1,30 @@
+{
+ "entity": "sonnen-hill-brewing",
+ "brand": "Sonnen Hill Brewing",
+ "location": "20727 Heart Lake Rd, Caledon Village",
+ "sweptAt": "2026-08-25",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.farmhouse-saison",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "small farm brewery focusing on fresh pale beer and mixed-culture fermentations; 'No Worry', 'Schmaison' saisons; 'Not Another Spiffy' blended saison sour a crowd favourite",
+   "source": "Untappd/BeerAdvocate voice",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "Matches ground truth (saisons) exactly."
+  },
+  {
+   "dimension": "beer.style.pilsner-lager",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'might be one of the best craft lagers I've had in well over a year \u2026 chock full of high quality malt goodness'",
+   "source": "BeerAdvocate review",
+   "sourceClass": "aggregator-community",
+   "ordinal": "best-in-a-year personal ranking",
+   "quoteVerified": false,
+   "note": "BEYOND ground truth \u2014 GT names saisons only; the harvest surfaces lagers too. Candidate, needs a second class."
+  }
+ ]
+}

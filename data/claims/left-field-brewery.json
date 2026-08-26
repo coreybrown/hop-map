@@ -1,0 +1,56 @@
+{
+ "entity": "left-field-brewery",
+ "brand": "Left Field Brewery",
+ "locations": [
+  {
+   "id": "left-field-wagstaff",
+   "address": "36 Wagstaff Dr, Toronto (Leslieville)"
+  },
+  {
+   "id": "left-field-liberty",
+   "address": "Liberty Village"
+  }
+ ],
+ "sweptAt": "2026-08-25",
+ "queries": 2,
+ "claims": [
+  {
+   "dimension": "beer.style.stout-porter",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Eephus Oatmeal Brown Ale is their signature brew and it stands above \u2014 it's exceptional",
+   "source": "TripAdvisor/Yelp voice",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false,
+   "note": "Brown ale maps nearest to stout-porter/amber family; ground truth names Eephus explicitly."
+  },
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Greenwood Vermont Style IPA \u2026 juicy nod to the hazy beers of the green mountain state; 'Greenwood NEIPA and WHIP IPA are a juicy haven'",
+   "source": "LCBO copy + reviews",
+   "sourceClass": "retail+aggregator",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "family",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "taproom and bottle shop are family friendly; children and leashed dogs are always welcome; basset hound mascot named Wrigley",
+   "source": "BringFido + own site",
+   "sourceClass": "self+aggregator",
+   "quoteVerified": false,
+   "note": "Family/dog is IDENTITY here, not amenity \u2014 'perfect spot\u2026 with friends or family'. Both locations."
+  },
+  {
+   "dimension": "vibes.room",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'Beer and baseball are synonymous. It's a slow sport, very conducive to drinking some beers with friends' \u2026 staff 'legends'; 'My absolute favorite brewery in Toronto'",
+   "source": "reviews via search layer",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

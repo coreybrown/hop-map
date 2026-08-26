@@ -1,0 +1,28 @@
+{
+ "entity": "whitewater-brewing",
+ "brand": "Whitewater Brewing Company",
+ "locations": [
+  {
+   "id": "whitewater-riverside",
+   "address": "22 Fletcher Rd, Foresters Falls \u2014 Riverside Brew Pub (moved 2023)"
+  },
+  {
+   "id": "whitewater-lakeside",
+   "address": "Cobden \u2014 Lakeside"
+  }
+ ],
+ "sweptAt": "2026-08-25",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "founded by three good friends in 2011 on the banks of the Mighty Ottawa River; Riverside welcomes families and children, outdoor seating",
+   "source": "whitewaterregion.ca + OpenTable",
+   "sourceClass": "tourism+aggregator",
+   "quoteVerified": false,
+   "note": "Two-location split confirmed by a THIRD independent source (AGCO, The Growler implicitly, now tourism). One 'Extremely Disappointing' TA headline \u2014 single voice, record not amplify."
+  }
+ ]
+}

@@ -169,6 +169,18 @@
      "(top spot) for craft beer, is at long last poised to open a third location in the city"
     ]
    }
+  },
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Roman Candle \u2014 their first and flagship IPA \u2014 is classified New England/Hazy IPA, 4.0 with 18,310 ratings; 'hazy, dank and lightly resinous\u2026 juicy melon, apricot, orange peel'; Witchshark X (imperial) 4.2",
+   "source": "Untappd community classification + volume",
+   "sourceClass": "aggregator-community",
+   "ordinal": "18k ratings at 4.0 \u2014 volume signal",
+   "quoteVerified": false,
+   "probe": "expansion-r2",
+   "note": "The community classifies and rates the flagship AS a hazy at scale. This is the claim GBH would corroborate if it weren't robots-blocked."
   }
  ],
  "counter_evidence": [

@@ -18,11 +18,11 @@
    "dimension": "beer.style.pilsner-lager",
    "level": "brand",
    "polarity": "for",
-   "quote": "Since 2015 … focusing on beers that are food friendly, refreshing, pale, and easy-drinking, mostly lagers and pale ales; Kensington expansion 'with a lager-forward beer program'",
+   "quote": "Since 2015 \u2026 focusing on beers that are food friendly, refreshing, pale, and easy-drinking, mostly lagers and pale ales; Kensington expansion 'with a lager-forward beer program'",
    "source": "own copy + news via search layer",
    "sourceClass": "self+news",
    "quoteVerified": false,
-   "note": "Matches ground truth (lagers, lighter beers, saisons). Third-party corroboration for lager QUALITY still thin — needs the fetch pass; keep tier honest."
+   "note": "Matches ground truth (lagers, lighter beers, saisons). Third-party corroboration for lager QUALITY still thin \u2014 needs the fetch pass; keep tier honest."
   },
   {
    "dimension": "beer.style.wild-ale",
@@ -37,11 +37,32 @@
    "dimension": "vibes.music",
    "level": "location:burdock-bloor",
    "polarity": "for",
-   "quote": "a kitchen, a brewery, and a stage under one roof — Brewery & Music Hall",
+   "quote": "a kitchen, a brewery, and a stage under one roof \u2014 Brewery & Music Hall",
    "source": "own site + OpenTable",
    "sourceClass": "self",
    "quoteVerified": false,
-   "note": "Music hall is a DISTINCT experience dimension no other pilot brewery has. Bloor only — Kensington must not inherit."
+   "note": "Music hall is a DISTINCT experience dimension no other pilot brewery has. Bloor only \u2014 Kensington must not inherit."
+  },
+  {
+   "dimension": "beer.style.farmhouse-saison",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'Tuesday' \u2014 an evolving saison series exploring different yeast strains, 'classic saison notes, spice, clove, fresh straw'; 'excels at hoppy, dry, and farmhouse/sour styles\u2026 considered a top 5 brewery in Ontario'; Ben's Beer Blog: 'Burdock Brewery is the real deal'",
+   "source": "BeerAdvocate voice + Ben's Beer Blog",
+   "sourceClass": "aggregator-community+editorial-blog",
+   "ordinal": "'top 5 brewery in Ontario'",
+   "quoteVerified": false,
+   "probe": "expansion-r2"
+  },
+  {
+   "dimension": "beer.style.session-low-alc",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Belgian table beer \u2014 a grisette with spelt, rye, buckwheat and oats at 3.2% \u2014 'a touch fruity and nothing short of phenomenal'",
+   "source": "review voice via search layer",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "probe": "expansion-r2"
   }
  ]
 }

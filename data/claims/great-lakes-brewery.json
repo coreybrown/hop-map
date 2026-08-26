@@ -46,6 +46,26 @@
    "source": "Yelp/TripAdvisor via search layer",
    "sourceClass": "aggregator-user",
    "quoteVerified": false
+  },
+  {
+   "dimension": "beer.style.pale-ale",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'one of Ontario's premier brewers of hoppy, India style pale ales'; Canuck Pale Ale reviewed across TorontoBeerBlog, Toronto Booze Hound, Patio Pint \u2014 'consistently reasonable price and fantastic tropical flavours\u2026 almost always in the fridge'",
+   "source": "dedicated blog reviews",
+   "sourceClass": "editorial-blog",
+   "quoteVerified": false,
+   "probe": "expansion-r2"
+  },
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'customers love the hazy IPAs, like the Hazemama'",
+   "source": "Yelp voice (round-1 sweep)",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "probe": "expansion-r2"
   }
  ]
 }

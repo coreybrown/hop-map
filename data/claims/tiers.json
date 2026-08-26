@@ -45,6 +45,22 @@
      ],
      "verifiedQuotes": 0,
      "evidence": 1
+    },
+    "beer.style.barrel-aged": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.stout-porter": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
     }
    }
   },
@@ -187,6 +203,15 @@
      ],
      "verifiedQuotes": 1,
      "evidence": 1
+    },
+    "beer.style.hazy-ipa": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "18k ratings at 4.0 — volume signal",
+     "verifiedQuotes": 0,
+     "evidence": 1
     }
    }
   },
@@ -308,6 +333,24 @@
      "tier": "C",
      "classes": [
       "self"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.farmhouse-saison": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial"
+     ],
+     "ordinal": "'top 5 brewery in Ontario'",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.session-low-alc": {
+     "tier": "B",
+     "classes": [
+      "community"
      ],
      "verifiedQuotes": 0,
      "evidence": 1
@@ -448,6 +491,14 @@
      "contested": true,
      "verifiedQuotes": 1,
      "evidence": 2
+    },
+    "beer.style.kolsch": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
     }
    }
   },
@@ -475,6 +526,22 @@
      "evidence": 1
     },
     "vibes.room": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.pale-ale": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.hazy-ipa": {
      "tier": "B",
      "classes": [
       "community"
@@ -521,6 +588,23 @@
       "community"
      ],
      "verifiedQuotes": 1,
+     "evidence": 1
+    },
+    "beer.style.sour": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.pilsner-lager": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
      "evidence": 1
     }
    }

@@ -9,11 +9,31 @@
    "dimension": "beer.style.hazy-ipa",
    "level": "brand",
    "polarity": "for",
-   "quote": "farm brewery … IPAs noted as standout offerings; prolific IPA release schedule (Through the Glass, Dora series, Ontario IPA, monthly DIPAs); named 'comparable' alongside Bellwoods by Third Moon reviewers",
+   "quote": "farm brewery \u2026 IPAs noted as standout offerings; prolific IPA release schedule (Through the Glass, Dora series, Ontario IPA, monthly DIPAs); named 'comparable' alongside Bellwoods by Third Moon reviewers",
    "source": "BeerAdvocate + cross-mention",
    "sourceClass": "aggregator-community",
    "quoteVerified": false,
-   "note": "Matches ground truth (IPAs, specialist). Venue coverage thin — small farm operation; a vibes query should not route here."
+   "note": "Matches ground truth (IPAs, specialist). Venue coverage thin \u2014 small farm operation; a vibes query should not route here."
+  },
+  {
+   "dimension": "beer.style.barrel-aged",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "#SELECT BBA \u2014 imperial stout blended from Basil Hayden, Elijah Craig, Willett bourbon and Willett rye barrels, ~22-month blend age: 'a masterful integration of base beer and spirit-soaked wood'; 'Inky' annual barrel blend (34/30/22-month bourbon barrels)",
+   "source": "Collection86 'best barrel-aged stouts' + Birrapedia; stocked by De Biersalon (NL) \u2014 international distribution signal",
+   "sourceClass": "editorial-niche",
+   "quoteVerified": false,
+   "probe": "expansion-r2"
+  },
+  {
+   "dimension": "beer.style.stout-porter",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "#SELECT and Inky are imperial STOUTS \u2014 the barrel program is a stout program; 'bittersweet chocolate, toasted oak, rich vanilla'",
+   "source": "same corpus",
+   "sourceClass": "editorial-niche",
+   "quoteVerified": false,
+   "probe": "expansion-r2"
   }
  ]
 }

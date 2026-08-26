@@ -1,0 +1,47 @@
+{
+ "entity": "manitoulin-brewing",
+ "brand": "Manitoulin Brewing Company",
+ "location": "43 Manitowaning Rd, Little Current",
+ "sweptAt": "2026-08-25",
+ "queries": 5,
+ "claims": [
+  {
+   "dimension": "liveness",
+   "level": "location",
+   "polarity": "against",
+   "severity": "CLOSED",
+   "quote": "After nearly 12 years in business \u2026 will shut down; announced April 9, 2026; changing market conditions. Interest from multiple prospective buyers; operations expected to continue into early May [2026].",
+   "source": "CBC News + CTV + Northern Ontario Business + The Manitoulin Expositor (independent outlets)",
+   "url": "https://www.cbc.ca/news/canada/sudbury/manitoulin-brewing-shutting-down-9.7159541",
+   "sourceClass": "news",
+   "quoteVerified": false,
+   "note": "REGISTRY CARRIES THIS AS ACTIVE. Own website still serves, so site-health cannot catch it. Multiple independent news outlets = as strong as closure evidence gets. Buyer interest means it could reopen under new ownership \u2014 watch, don't delete."
+  },
+  {
+   "dimension": "beer.style.session-low-alc",
+   "level": "brand",
+   "polarity": "for",
+   "historical": true,
+   "quote": "Killarney Cream Ale won gold at the 2022 Ontario Brewing Awards; Cup and Saucer English Ale silver (Canada Beer Awards); flagship Swing Bridge Blonde Ale 'approachable gateway to craft beer'",
+   "source": "The Manitoulin Expositor",
+   "url": "https://www.manitoulin.com/manitoulin-brewing-company-wins-canada-beer-award/",
+   "sourceClass": "juried-via-news",
+   "quoteVerified": false,
+   "note": "Real medals, now moot for routing. THE CASE for liveness gating awards: without the closure check, the awards pass would rank a dead brewery."
+  },
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "historical": true,
+   "quote": "outdoor bar made from an old grain bin; pet-friendly patio; on-site food truck (smoked meats, burgers, poutine)",
+   "source": "TripAdvisor + BringFido via search layer",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ],
+ "snowball": [
+  "Split Rail Brewing Co. (Gore Bay) \u2014 the OTHER Manitoulin Island brewery, appears alive; roster check"
+ ],
+ "pilot_lesson": "Picked as the remote-north COVERAGE floor; turned out to be a LIVENESS catch instead. The wide harvest doubles as the closure detector no other layer provides: OSM lags, the domain still serves, AGCO licence may not lapse for months."
+}

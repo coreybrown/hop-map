@@ -1,0 +1,182 @@
+{
+ "entity": "bellwoods-brewery",
+ "brand": "Bellwoods Brewery",
+ "locations": [
+  {
+   "id": "bellwoods-ossington",
+   "address": "124-126 Ossington Ave, Toronto",
+   "kind": "brewpub + bottle shop (the original, 2012)"
+  },
+  {
+   "id": "bellwoods-hafis",
+   "address": "20 Hafis Rd, North York",
+   "kind": "production brewery + taproom + bottle shop"
+  }
+ ],
+ "sweptAt": "2026-08-25",
+ "queries": 15,
+ "claims": [
+  {
+   "dimension": "beer.style.pale-ale",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Jutsu and Jelly King essentially moved the goalposts when it comes to Pale Ales in Ontario",
+   "source": "Good Beer Hunting (international beer journalism)",
+   "url": "https://www.goodbeerhunting.com/blog/2018/5/23/bellwoods-brewery-in-toronto-ontario",
+   "sourceClass": "editorial-national",
+   "ordinal": "category-defining language",
+   "docDate": "2018-05",
+   "quoteVerified": false,
+   "note": "2018 \u2014 strong but aging; decay applies. Fetch GBH for verbatim confirmation."
+  },
+  {
+   "dimension": "beer.style.sour",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "seasonal sour beer offerings, particularly the fruit-infused Jelly King, attract significant interest at the bottle shop on release days; Jelly King: 28,269 ratings on Untappd",
+   "source": "Fodor's expert review + Untappd count via search layer",
+   "sourceClass": "editorial-travel",
+   "ordinal": "volume signal ~28k ratings",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.style.wild-ale",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "White Picket Fence \u2014 Blended Foeder Saison, solera-style \u2026 layers of balanced acidity, subtle brett; Barrel 437 Spontaneous Grape Ale; Farmageddon Foeder Aged Wild Ale",
+   "source": "Canadian Beer News + product corpus",
+   "url": "https://www.canadianbeernews.com/2022/07/20/bellwoods-brewery-releases-barrel-437-spontaneous-grape-ale-and-farmageddon-blueberry-wild-ale/",
+   "sourceClass": "editorial-trade",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.style.non-alcoholic",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Bellwoods Brewery winning the non-alcoholic craft beer game",
+   "source": "somegoodcleanfun.com (NA-focused editorial)",
+   "url": "https://www.somegoodcleanfun.com/blog/non-alcoholic-beer-at-bellwoods-brewery",
+   "sourceClass": "editorial-niche",
+   "ordinal": "'winning the game' superlative",
+   "quoteVerified": false,
+   "note": "Matches ground truth exactly (NA Jelly King as headline product)."
+  },
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "wins from the Canadian Brewing Awards, the Golden Tap Awards, and Now Best of Awards; 'The Best Place To Have A Beer in Canada'; breweries have begun to look toward Bellwoods as a model",
+   "source": "thebesttoronto.com + GBH via search layer",
+   "sourceClass": "editorial+juried-mixed",
+   "quoteVerified": false,
+   "note": "Award names need year+category resolution in the awards pass before this counts as juried evidence."
+  },
+  {
+   "dimension": "beer.style.pilsner-lager",
+   "level": "brand",
+   "polarity": "offers-not-knownfor",
+   "quote": "Bellweiser 'iconic Canadian beer' per retail shop copy; LCBO-listed",
+   "source": "retail/shop copy (bishopscellar, LCBO)",
+   "sourceClass": "retail-promo",
+   "quoteVerified": false,
+   "note": "GROUND-TRUTH TEST CASE. Corey: nobody drives to Ossington for a lager. Retail-promo class must NOT promote this to knownFor \u2014 third-party voice concentrates on hazy/sour/wild/NA. If the pipeline promotes this, the class weights are wrong."
+  },
+  {
+   "dimension": "vibes.room",
+   "level": "location:bellwoods-ossington",
+   "polarity": "for",
+   "quote": "warm, unique space \u2026 second-floor mezzanine gives you a birds-eye view right into the brewhouse; white picket fence patio",
+   "source": "tourism/aggregator corpus",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "food",
+   "level": "location:bellwoods-ossington",
+   "polarity": "for",
+   "quote": "Chef Jason Browne's dynamic menu is celebrated for being inviting, uncomplicated, and thoughtful \u2014 a culinary parallel to the award-winning Bellwoods beers; seasonal, farm-to-table",
+   "source": "TasteToronto/Toronto Life via search layer",
+   "sourceClass": "editorial-local",
+   "quoteVerified": false,
+   "note": "Location-specific: the KITCHEN is Ossington. Hafis must not inherit this."
+  },
+  {
+   "dimension": "patio",
+   "level": "location:bellwoods-ossington",
+   "polarity": "for",
+   "quote": "Well-behaved dogs are welcome on the patio \u2026 communal table seating; no reservations for the patio",
+   "source": "own FAQ + TripAdvisor via search layer",
+   "sourceClass": "self+aggregator",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "tour",
+   "level": "location:bellwoods-ossington",
+   "polarity": "for",
+   "quote": "Guided tasting: four 4oz samples, a 4oz reserve-cellar sample, shared snack, dedicated staff \u2014 Ossington brewpub too small for tours; Hafis has the production facility",
+   "source": "Tock listing + FAQ",
+   "sourceClass": "self",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "service",
+   "level": "location:bellwoods-ossington",
+   "polarity": "conflict",
+   "claims": [
+    {
+     "polarity": "for",
+     "quote": "attentive and friendly service \u2026 extensive knowledge of the menu"
+    },
+    {
+     "polarity": "against",
+     "quote": "servers not knowing the hops in pale ales on the menu; wait staff often non-existent when crowded"
+    }
+   ],
+   "source": "review aggregates via search layer",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "value",
+   "level": "location:bellwoods-ossington",
+   "polarity": "against",
+   "quote": "'these mofos are seriously OVERPRICED' \u2014 $12 fried chicken sandwich, cheese board 'not worth the money due to small quantity'",
+   "source": "review via search layer",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "vibes.crowd",
+   "level": "location:bellwoods-ossington",
+   "polarity": "against",
+   "quote": "main complaint is about long lines \u2026 be prepared for crowds; selection often limited with gaps in the popular beers",
+   "source": "review aggregates",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "liveness",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "operating normally as of mid-2026; $6.11M damages awarded 2023 in landlord dispute over a third location",
+   "source": "dailyhive via search layer",
+   "sourceClass": "news",
+   "quoteVerified": false
+  }
+ ],
+ "counter_evidence": [
+  {
+   "dimension": "beer.overall",
+   "polarity": "against",
+   "quote": "just your average bar with some good review by a few popular blogs and listicles",
+   "source": "TripAdvisor review titled 'Overrated'",
+   "sourceClass": "aggregator-user",
+   "note": "Minority voice vs overwhelming consensus \u2014 kept because deleting dissent is how echo chambers get built. Weight, don't erase."
+  }
+ ],
+ "extraction_notes": [
+  "Fetch pass still owed: goodbeerhunting.com, torontolife.com, blogTO, somegoodcleanfun.com for verbatim quotes (search-layer paraphrases marked quoteVerified:false).",
+  "Topic-sweep poison observed: 'best breweries Toronto' listicles include CRAFT Beer Market and Beertown (bars, not breweries) and Amsterdam BrewHouse alongside actual breweries. Roster gate (licence) must filter listicle mentions before they become claims.",
+  "Multi-location split is real and material: Ossington = kitchen/patio/tastings; Hafis = production + taproom + release-day queues. Experience claims tagged to Ossington must not inherit."
+ ]
+}

@@ -96,9 +96,32 @@ async function main() {
   const unswept = [];
   for (const c of candidates) {
     const dim = c.swept?.dims?.[DIM];
-    if (!c.swept) { unswept.push(c); continue; }
-    if (!dim || !['A', 'B'].includes(dim.tier)) continue; // C/D never answer a style query
-    ranked.push({ ...c, dim, strength: strength(dim) });
+    if (c.swept) {
+      if (!dim || !['A', 'B'].includes(dim.tier)) continue; // C/D never answer a style query
+      ranked.push({ ...c, dim, strength: strength(dim) });
+      continue;
+    }
+    /*
+     * Not yet swept — but the registry's own knownFor is the juried layer and
+     * it covers everyone. A medal for the queried style is one independent
+     * third-party class: tier B by the standing rules, citing the medal. This
+     * is what keeps the corridor east of Toronto from looking empty when the
+     * evidence for it exists.
+     */
+    const known = c.b.styles?.knownFor ?? [];
+    const ev = (c.b.reputationEvidence ?? []).filter((e) => e.style === styleArg);
+    if (known.includes(styleArg) && ev.length) {
+      const detail = ev.map((e) => e.detail).join('; ');
+      const yr = Number((detail.match(/\b(20\d\d)\b/) ?? [])[1]);
+      const dimB = {
+        tier: 'B', classes: ['juried'], juried: detail,
+        juriedStale: yr && yr < new Date().getFullYear() - 8 ? true : undefined,
+        evidence: ev.length, verifiedQuotes: 0,
+      };
+      ranked.push({ ...c, dim: dimB, strength: strength(dimB), juriedOnly: true });
+    } else {
+      unswept.push(c);
+    }
   }
   ranked.sort((x, y) =>
     x.dim.tier !== y.dim.tier ? x.dim.tier.localeCompare(y.dim.tier)
@@ -113,7 +136,7 @@ async function main() {
   console.log(`  straight-line corridor (demo); the app uses OSRM road geometry\n${line}`);
   console.log(`\nRANKED — tier, then strength, then detour:`);
   ranked.forEach((r, i) => {
-    console.log(`\n  ${i + 1}. ${r.b.name}  [${r.dim.tier}${r.dim.contested ? ' contested' : ''}]  str ${r.strength}  detour ${r.pos.detourKm.toFixed(1)} km  (${r.b.city || '—'})`);
+    console.log(`\n  ${i + 1}. ${r.b.name}  [${r.dim.tier}${r.dim.contested ? ' contested' : ''}${r.juriedOnly ? ' · medal-only, unswept' : ''}]  str ${r.strength}  detour ${r.pos.detourKm.toFixed(1)} km  (${r.b.city || '—'})`);
     if (r.dim.juried) console.log(`     medal: ${r.dim.juried}${r.dim.juriedStale ? '  (stale — decayed)' : ''}`);
     if (r.dim.ordinal) console.log(`     ordinal: ${r.dim.ordinal}`);
   });

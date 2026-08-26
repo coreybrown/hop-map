@@ -1,0 +1,28 @@
+{
+ "entity": "black-lab-brewing",
+ "brand": "Black Lab Brewing",
+ "location": "818 Eastern Ave, Toronto (Leslieville)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "dog",
+   "level": "location",
+   "polarity": "for",
+   "quote": "the dog-friendly brewery \u2014 it's the identity, down to the name; live music, fresh pizza some days",
+   "source": "TripAdvisor voice",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'I've tried several other breweries in the area but this by far has the best beer'; jellybean sour made with actual jellybeans",
+   "source": "same",
+   "sourceClass": "aggregator-community",
+   "ordinal": "best-in-area personal ranking",
+   "quoteVerified": false
+  }
+ ]
+}

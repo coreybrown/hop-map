@@ -1,0 +1,20 @@
+{
+ "entity": "granite-brewery",
+ "brand": "Granite Brewery & Restaurant",
+ "location": "245 Eglinton Ave E, Toronto (since 1991)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.session-low-alc",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "cask-conditioned real ale, naturally carbonated, dry-hopped in the cask \u2014 'they offer cask ale, which is unique in the city'; 'reminded them of a pub in England'; Best Bitter Special and Peculiar recommended",
+   "source": "Yelp/BeerAdvocate voice",
+   "sourceClass": "aggregator-community",
+   "ordinal": "only-cask-program-in-city",
+   "quoteVerified": false,
+   "note": "English-ale institution since 1991 \u2014 the cask dimension nobody else in Toronto holds. Family-owned brewpub + beer store."
+  }
+ ]
+}

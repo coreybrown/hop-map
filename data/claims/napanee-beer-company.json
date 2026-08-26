@@ -1,0 +1,29 @@
+{
+ "entity": "napanee-beer-company",
+ "brand": "The Napanee Beer Company",
+ "location": "Napanee",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.dark-lager",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Blacklist \u2014 'one of the most accurate Ontario-brewed interpretations of a schwarzbier'; 'really good and full bodied and rich'",
+   "source": "BeerAdvocate review voice",
+   "sourceClass": "aggregator-community",
+   "ordinal": "most-accurate-in-Ontario style claim",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.style.sour",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "raspberry sour 'one of the best' sour beers tried; 'little award winning brewery' \u2014 4.9 from 47",
+   "source": "TripAdvisor + Facebook voice",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "'Award winning' self/aggregate phrasing \u2014 which awards, unresolved; OBA mining should confirm. Hard to find, no signage, 'worth the search'."
+  }
+ ]
+}

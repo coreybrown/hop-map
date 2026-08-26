@@ -1,0 +1,47 @@
+{
+ "entity": "kingston-brewing-company",
+ "brand": "Kingston Brewing Company",
+ "location": "34 Clarence St, Kingston",
+ "sweptAt": "2026-08-26",
+ "queries": 2,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "Ontario's oldest brew pub \u2014 celebrating its 40th anniversary in April 2026; 26 beers and cider on tap with two on cask; traditional wood smoker on the back patio producing authentic BBQ",
+   "source": "visitkingston.ca feature + Yelp",
+   "sourceClass": "tourism+aggregator",
+   "ordinal": "oldest in Ontario \u2014 a superlative nothing else can claim",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.style.session-low-alc",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Dragon's Breath \u2014 Bitter/Ordinary, 3.7 on ~1,400 ratings; 'the Dragon's Breath cask ale really enjoyable' \u2014 house cask tradition",
+   "source": "Untappd + TripAdvisor voice",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "Heritage cask-and-BBQ brewpub: the reason to go is the INSTITUTION, not style excellence. Experience-led, beer honest."
+  },
+  {
+   "dimension": "food",
+   "level": "location",
+   "polarity": "for",
+   "quote": "wood smoker on the back patio producing authentic BBQ along with house-made pub food",
+   "source": "Yelp voice",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "liveness",
+   "level": "location",
+   "polarity": "for",
+   "quote": "open, hours posted, 40th anniversary April 2026",
+   "source": "visitkingston + Yelp Aug 2026",
+   "sourceClass": "tourism",
+   "quoteVerified": false
+  }
+ ]
+}

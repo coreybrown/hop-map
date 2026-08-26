@@ -1,0 +1,19 @@
+{
+ "entity": "mill-st-brew-pub",
+ "brand": "Mill Street Brew Pub (Distillery District)",
+ "location": "21 Tank House Lane, Toronto",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "working production brewery inside the pub \u2014 'the unmistakable smells of fermenting malt, hops and yeast'; heart of the historic Distillery District; seasonal beers made on-site",
+   "source": "destinationtoronto + reviews",
+   "sourceClass": "tourism+aggregator",
+   "quoteVerified": false,
+   "note": "PASSES the gate: brews on site, visitable. Macro-owned (Labatt/AB InBev) \u2014 ownership is a fact worth surfacing, not a gate. Tourist-scale venue like Steam Whistle."
+  }
+ ]
+}

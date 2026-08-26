@@ -1,0 +1,20 @@
+{
+ "entity": "common-good",
+ "brand": "Common Good Beer Co.",
+ "location": "475 Ellesmere Rd, Scarborough",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'Scarborough Ontario's only craft brewery'; 'customers rave about the diverse selection', popular Solace East Coast IPA; board games, pop-up food Saturdays",
+   "source": "TripAdvisor/Yelp voice",
+   "sourceClass": "aggregator-community",
+   "ordinal": "only-in-Scarborough place superlative",
+   "quoteVerified": false,
+   "note": "The AGCO-absence case: absent from the licence file yet demonstrably real and open \u2014 why AGCO is a contributor, never a gate."
+  }
+ ]
+}

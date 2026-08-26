@@ -1,0 +1,27 @@
+{
+ "entity": "ganaraska-brewing",
+ "brand": "Ganaraska Brewing Company",
+ "location": "Port Hope (riverside, registry city blank \u2014 fix)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "rooftop patio as a standout feature offering views of the town; along the Ganaraska River in historic downtown Port Hope; close to the 401; dog-friendly",
+   "source": "TripAdvisor voice",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "food",
+   "level": "location",
+   "polarity": "tempered",
+   "quote": "pulled pork and grown-up grilled cheese praised; 'wings lacked flavor', sides limited \u2014 food inconsistent",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

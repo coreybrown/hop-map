@@ -1,0 +1,29 @@
+{
+ "entity": "midtown-brewing",
+ "brand": "Midtown Brewing Company",
+ "location": "266 Main St, Wellington (PEC)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'The beer was fabulous' \u2026 'really well made and a bit different from many of the micro breweries' \u2014 4.2, 96% recommend of 663",
+   "source": "TripAdvisor voice",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "food",
+   "level": "location",
+   "polarity": "for",
+   "quote": "'well known for their burgers \u2026 the MBC burger which is the best in the County'; wide-open industrial room, brewing before your eyes",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "ordinal": "'best burger in the County'",
+   "quoteVerified": false,
+   "note": "Food-forward brewpub \u2014 a 'great food + good beer' stop, Wellington's main street."
+  }
+ ]
+}

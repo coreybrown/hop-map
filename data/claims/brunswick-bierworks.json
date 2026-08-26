@@ -1,0 +1,19 @@
+{
+ "entity": "brunswick-bierworks",
+ "brand": "Brunswick Bierworks",
+ "location": "25 Curity Ave, East York",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.community",
+   "level": "location",
+   "polarity": "for",
+   "quote": "'a collective of brewery partners \u2026 brewing beers from brewers across the globe'; taproom + large patio; a wedding 'blew other venues out of the water' (Aug 2026)",
+   "source": "WeddingWire + Yelp voice",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false,
+   "note": "CONTRACT-HOST case: its own beer identity is a rotating collective, so brand beer claims stay thin by nature; the location is real, visitable, events-led. One stale Yelp 'closed' flag contradicted by Aug 2026 activity."
+  }
+ ]
+}

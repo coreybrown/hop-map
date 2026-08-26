@@ -1,0 +1,19 @@
+{
+ "entity": "signal-brewery",
+ "brand": "Signal Brewery",
+ "location": "86 River Rd, Corbyville (Belleville)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "liveness",
+   "level": "location",
+   "polarity": "tempered",
+   "quote": "'Premises are for sale but still open with an amended menu' (TripAdvisor review title); hours posted through 2026",
+   "source": "TripAdvisor + Yelp",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false,
+   "note": "OPEN but distressed: property listed for sale, menu cut back, and three staff left to found All My Friends in PEC. WATCH status \u2014 recheck before routing anyone."
+  }
+ ]
+}

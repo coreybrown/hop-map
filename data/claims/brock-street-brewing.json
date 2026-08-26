@@ -1,0 +1,28 @@
+{
+ "entity": "brock-street-brewing",
+ "brand": "Brock Street Brewing Company",
+ "location": "Whitby",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.amber-red",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'their red beer won gold for the dark ale category' at the Ontario Brewing Awards; blonde bronze (light), pilsner bronze (Bohemian), Belgian quad silver",
+   "source": "TripAdvisor recounting OBA results",
+   "sourceClass": "juried-via-aggregator",
+   "quoteVerified": false,
+   "note": "Medal YEARS unresolved \u2014 OBA mining should confirm before this hardens. Dissent on record: 'beer was ordinary and overpriced', room 'really loud'."
+  },
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "tempered",
+   "quote": "3.7 TripAdvisor; 'No One Was Impressed' review title vs 'great local brewery' voice",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

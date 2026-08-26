@@ -1,0 +1,28 @@
+{
+ "entity": "stonehooker",
+ "brand": "Stonehooker Brewing Company",
+ "location": "Lakeshore Rd, Mississauga",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "170-seat biergarten on the front lawn \u2014 live music, BBQ, 16-18 taps, bottleshop",
+   "source": "TripAdvisor/Wanderlog",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "tempered",
+   "quote": "'excellent craft beer selections, dark porters to fruity sours' vs a 2.9 TripAdvisor aggregate and food inconsistency complaints",
+   "source": "same",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "Voice splits: beer praised, restaurant side drags the aggregate. Classic factor-collapse specimen."
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "entity": "steadfast-brewing",
+ "brand": "Steadfast Brewing Company",
+ "location": "301 Lansdowne Ave, Toronto",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "4.8 from 150 \u2014 'beers ranging from crisp K\u00f6lsch to bold IPAs that are considered excellent'; founded by three friends",
+   "source": "review aggregate",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "food",
+   "level": "location",
+   "polarity": "for",
+   "quote": "'fantastic kitchen serving up delectable Mexican street food \u2014 cactus and pork tacos, jalapeno poppers' \u2014 rotating menu",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

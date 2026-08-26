@@ -1,0 +1,20 @@
+{
+ "entity": "red-tape-brewery",
+ "brand": "Red Tape Brewery",
+ "location": "159 Main St, Toronto (East End-Danforth)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'many noting it is some of the best in Canada'; Sara's Power Sour and That Was Easy Pale Ale the must-tries; trivia, open-mic comedy, pet-friendly",
+   "source": "Wanderlog/TripAdvisor voice",
+   "sourceClass": "aggregator-community",
+   "ordinal": "'some of the best in Canada'",
+   "quoteVerified": false,
+   "note": "Aggregator superlative from thin n \u2014 B with modest strength, don't over-read."
+  }
+ ]
+}

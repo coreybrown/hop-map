@@ -1,0 +1,19 @@
+{
+ "entity": "northumberland-hills-brewery",
+ "brand": "Northumberland Hills Brewery",
+ "location": "1024 Division St, Cobourg (registry city blank \u2014 fix)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "tempered",
+   "quote": "'hidden gem with seriously delicious beers and friendly staff'; '6 Mile From Bangor' Irish Red, Jam Session Blackberry Sour \u2014 vs a 1.8/5 RestaurantGuru outlier (n=5) and BA 3.55 thin",
+   "source": "TripAdvisor/Wanderlog vs RestaurantGuru",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "Small-n mixed voice \u2014 honest B/C. Corridor mid-point (Cobourg) option, not a destination claim."
+  }
+ ]
+}

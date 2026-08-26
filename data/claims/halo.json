@@ -1,0 +1,28 @@
+{
+ "entity": "halo",
+ "brand": "Halo Brewery",
+ "location": "247 Wallace Ave, Toronto (Junction Triangle)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.sour",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'customers frequently commend the great variety, especially their flavorful sours'; Shapeshifter sour IPA; 'recommend them for anyone who likes sours and beers that are out there'",
+   "source": "Yelp/TripAdvisor voice",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "GT: sours + experimental \u2713\u2713. 'Beers that are out there' is the experimental TASTE_AXIS positively evidenced \u2014 the axis the taxonomy said needed a reputation source, now it has one."
+  },
+  {
+   "dimension": "vibes.room",
+   "level": "location",
+   "polarity": "for",
+   "quote": "small but airy, great little patio beside the railway tracks; warm cozy vibe",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

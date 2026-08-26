@@ -1,0 +1,39 @@
+{
+ "entity": "true-history",
+ "brand": "True History Brewing",
+ "location": "1154 St Clair Ave W, Toronto",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.pilsner-lager",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'brew list is largely house made classic German/Czech styles \u2026 really clean, true to style and well made'; every beer under 5%; 'a rising star in the Toronto beer scene'",
+   "source": "BeerAdvocate + blogTO voice",
+   "sourceClass": "aggregator-community+editorial-local",
+   "ordinal": "'rising star' + true-to-style praise",
+   "quoteVerified": false,
+   "note": "GT: lagers/pilsners/old-school \u2713. THE brewery whose fabricated hazy-ipa seed started the no-source-no-label rule \u2014 now positively evidenced for what it actually is."
+  },
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "against",
+   "quote": "'Unlike the sour and fruit flavour beers that many local breweries have adopted, True History makes easy-to-drink, low ABV beers'",
+   "source": "blogTO",
+   "sourceClass": "editorial-local",
+   "quoteVerified": false,
+   "note": "Third-party support for the GT notFor (IPAs, sours) \u2014 the against-evidence the test set called most valuable."
+  },
+  {
+   "dimension": "beer.style.session-low-alc",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "every beer contains less than five per cent ABV \u2014 a deliberate identity",
+   "source": "blogTO",
+   "sourceClass": "editorial-local",
+   "quoteVerified": false
+  }
+ ]
+}

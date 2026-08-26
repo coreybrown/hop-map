@@ -1,0 +1,18 @@
+{
+ "entity": "bickford-brewing",
+ "brand": "Bickford Brewing Co.",
+ "location": "292A Harbord St, Toronto (opened 2024)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "founder won home-brewing awards before going pro (basement \u2192 Harbord Village, 2024); 'flavorful and delicious' \u2014 foggy day IPA, dark raspberry sour; cozy, small, plenty of seating",
+   "source": "blogTO + St. John's Wort blog",
+   "sourceClass": "editorial-local+aggregator",
+   "quoteVerified": false
+  }
+ ]
+}

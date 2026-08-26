@@ -1,0 +1,19 @@
+{
+ "entity": "henderson",
+ "brand": "Henderson Brewing Company",
+ "location": "128A Sterling Rd, Toronto",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.pale-ale",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Henderson's Best ESB \u2014 'modern take on this classic English ale has won awards for its well-balanced, easy-drinking flavour'; 'quite a delightful amber ale, smooth and delicious'",
+   "source": "Foodism + BeerAdvocate voice",
+   "sourceClass": "editorial-local+aggregator",
+   "quoteVerified": false,
+   "note": "GT: ales/easy-drinking, beer=Henderson's Best \u2713 \u2014 the registry medal layer (2020 ESB Gold) and this voice now agree from independent directions."
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "entity": "rorschach",
+ "brand": "Rorschach Brewing Co.",
+ "location": "1001 Eastern Ave, Toronto (century home)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.sour",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Hedonism sorbet sour IPA \u2014 'customers love the sours they make so much they get Hedonism when they see it at LCBO'; banana/strawberry/raspberry/acai",
+   "source": "review voice + LCBO listing",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "GT: 'weird style sours' \u2713 \u2014 sorbet sour IPA is exactly that."
+  },
+  {
+   "dimension": "beer.style.stout-porter",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Scotch Barrel Aged Imperial Stout 'bold at 11.9% but surprisingly smooth'; Decadence salted-caramel latte milk stout at LCBO",
+   "source": "same",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "in a century-old home between Leslieville and The Beaches; 'a community mainstay highly regarded for its creativity' \u2014 4.2 from 494",
+   "source": "blogTO/RestaurantGuru voice",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false
+  }
+ ]
+}

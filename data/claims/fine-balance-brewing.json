@@ -1,0 +1,29 @@
+{
+ "entity": "fine-balance-brewing",
+ "brand": "Fine Balance Brewing Company",
+ "location": "Kingston",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'probably the best craft beers in a long time' \u2014 4.8 from 61; the 'acclaimed IPA'; 'try the oats and cream IPA, praised by seasoned beer enthusiasts'; range runs 'hazy IPAs and crisp pilsners to rich pastry stouts and fruited sours'",
+   "source": "TripAdvisor/Restaurantji voice",
+   "sourceClass": "aggregator-community",
+   "ordinal": "'best in a long time' + 4.8 aggregate",
+   "quoteVerified": false,
+   "note": "THE east-end hazy stop the corridor demo lacked. Kingston sits at 100% along the route with no A/B hazy claim until now."
+  },
+  {
+   "dimension": "vibes.room",
+   "level": "location",
+   "polarity": "for",
+   "quote": "bright and spacious, patio, lots of parking, dog-friendly; food trucks or a gelato cart on premises, outside food welcome",
+   "source": "same corpus",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

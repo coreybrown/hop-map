@@ -1,0 +1,19 @@
+{
+ "entity": "beaches-brewing",
+ "brand": "Beaches Brewing Company",
+ "location": "1953 Queen St E, Toronto",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "liveness",
+   "level": "location",
+   "polarity": "for",
+   "quote": "closed permanently Dec 3, 2025 ('lack of revenue') \u2014 then REOPENED June 2026 with new owners joining the founder; blogTO covered both",
+   "source": "blogTO Dec 2025 + June 2026",
+   "sourceClass": "news",
+   "quoteVerified": false,
+   "note": "OPEN as of June 2026, new iteration. The kind of churn only a fresh sweep catches \u2014 registry says nothing of it. WATCH status; beer claims reset with new ownership."
+  }
+ ]
+}

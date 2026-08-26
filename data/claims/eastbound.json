@@ -1,0 +1,28 @@
+{
+ "entity": "eastbound",
+ "brand": "Eastbound Brewing Company",
+ "location": "700 Queen St E, Toronto",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "witbier Racing the Sunset, Full Dunkel Jacket German dark, Hibiscus Lemongrass Saison 'a crowd favorite' \u2014 4.2, #1,061 of 5,877",
+   "source": "TripAdvisor voice",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "GT says 'broad range' and the evidence is exactly that: breadth with no dominant style. beer.overall B, no style claim \u2014 correct shape."
+  },
+  {
+   "dimension": "food",
+   "level": "location",
+   "polarity": "for",
+   "quote": "creative menu, beer-infused dishes, spacious patio, near Broadview",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

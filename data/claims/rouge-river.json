@@ -1,0 +1,19 @@
+{
+ "entity": "rouge-river",
+ "brand": "Rouge River Brewing Company",
+ "location": "50 Bullock Dr, Markham",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'the best hazy ipa I've found in Toronto!'; focused on hop-forward and sour ales; Holy Trinity (Simcoe/Citra/Mosaic, oats for haze) scores 88; Hopeye 'electric pineapple'",
+   "source": "BeerAdvocate + review voice",
+   "sourceClass": "aggregator-community",
+   "ordinal": "best-in-Toronto personal ranking",
+   "quoteVerified": false
+  }
+ ]
+}

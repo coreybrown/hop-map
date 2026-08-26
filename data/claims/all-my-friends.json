@@ -1,0 +1,20 @@
+{
+ "entity": "all-my-friends",
+ "brand": "All My Friends Beer Co.",
+ "location": "Bloomfield (registry says Picton \u2014 fix city)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "pours 'some of Ontario's best Hazy IPAs, crisp lagers, and fruit packed beers'; 'creative branding, delicious IPAs, and a supportive community'",
+   "source": "myprinceedwardcounty.com editorial + TripAdvisor voice",
+   "sourceClass": "editorial-local+aggregator",
+   "ordinal": "'some of Ontario's best' \u2014 province-scale superlative",
+   "quoteVerified": false,
+   "note": "Founded by three ex-Signal Brewery employees \u2014 the scene's talent moved HERE. PEC hazy anchor for the corridor."
+  }
+ ]
+}

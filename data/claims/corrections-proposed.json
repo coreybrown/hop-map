@@ -1,1 +1,65 @@
-[]
+[
+ {
+  "id": "barley-days-brewery",
+  "proposedAt": "2026-08-26",
+  "proposal": "status: closed",
+  "evidence": "Yelp listing marked CLOSED (March 2026); domain barleydays* already known hijacked (serves AU gambling site per site-health). Two independent signals. TripAdvisor listing is stale.",
+  "rule": "human confirms"
+ },
+ {
+  "id": "glenora-craft-brewery",
+  "proposedAt": "2026-08-26",
+  "proposal": "reconcile identity \u2014 likely Lake on the Mountain Brewing",
+  "evidence": "No web presence under 'Glenora Craft Brewery'. AGCO licenses 'LAKE ON THE MOUNTAIN RESORT INN (THE)', Picton, as a brewery; Lake on the Mountain Brewing operates at 11369 Loyalist Pkwy beside the Glenora Ferry. OSM likely carries a stale/wrong name at those coords.",
+  "rule": "human confirms"
+ },
+ {
+  "id": "(new) daft-brewing",
+  "proposedAt": "2026-08-26",
+  "proposal": "ADD to roster \u2014 missing brewery",
+  "evidence": "Daft Brewing, 768 Princess St, Kingston (Williamsville). West-Coast-inspired, rotating sours/lagers/stouts, strong TripAdvisor voice, live site daftbrewing.com. Found by snowball from Kingston sweeps; absent from OSM import.",
+  "rule": "roster additions land via the roster-expansion pass; recorded here so it is not lost"
+ },
+ {
+  "id": "the-waterfront",
+  "proposedAt": "2026-08-26",
+  "proposal": "isBrewery: false \u2014 venueKind: gastropub",
+  "evidence": "The Waterfront River Pub & Terrace, 22 Water St, Napanee: a gastropub in an 1857 FORMER brewery building, refurbished 2013; '20 taps serves local craft beer as well as traditional tap favorites' \u2014 pours others' beer, brews nothing. The historic-brewery building explains the OSM tag.",
+  "rule": "human confirms"
+ },
+ {
+  "id": "sir-monty-s",
+  "proposedAt": "2026-08-26",
+  "proposal": "status: closed (verify \u2014 single source)",
+  "evidence": "Yelp marks Sir Monty's Brewing (Courtice) CLOSED, updated May 2026. RestaurantGuru still lists 4.5/410 (stale?). Brewpub under Stuttering John's restaurant. ONE closure source only \u2014 weaker than Barley Days; needs a second signal or a call.",
+  "rule": "human confirms"
+ },
+ {
+  "id": "c-est-what",
+  "proposedAt": "2026-08-26",
+  "proposal": "isBrewery: false \u2014 venueKind: beer-bar-with-house-brand",
+  "evidence": "C'est What's own history page: house beers brewed OFF-SITE since the 1990s (Select Brewing \u2192 Lakeside \u2192 Durham Brewing, formalized 2021 as 'Cest What Durham Brewing'). Great beer bar, zero on-site brewing \u2014 fails the brews-on-site gate. The house BRAND could live as a contract brand record.",
+  "rule": "human confirms"
+ },
+ {
+  "id": "lake-wilcox-brewing-company",
+  "proposedAt": "2026-08-26",
+  "proposal": "status: closed",
+  "evidence": "Yelp CLOSED (Feb 2026), blogTO listing marked CLOSED, Foursquare 'Now Closed' \u2014 three independent platforms. Vaughan location.",
+  "rule": "human confirms"
+ },
+ {
+  "id": "elephant-and-castle + the-old-sod + town-crier-pub-the-halfway-beer-house + taberna-nacional + craft-beer-market + real-sports-bar-and-grill + eataly-toronto + goose-island-brewhouse",
+  "proposedAt": "2026-08-26",
+  "proposal": "isBrewery: false \u2014 chain pubs / bars / a food hall pouring others' beer",
+  "evidence": "Named in HANDOFF as pub contamination still in the active pool; all absent from AGCO brewery licences; OSM beersServed shows macro taps where held. Goose Island Brewhouse is an AB-InBev satellite bar. No own-production evidence anywhere in the sweep.",
+  "rule": "human confirms \u2014 batch, but each is individually checkable"
+ },
+ {
+  "id": "molson",
+  "proposedAt": "2026-08-26",
+  "proposal": "isBrewery: false for ROUTING (macro production plant, no public taproom)",
+  "evidence": "Molson Toronto (Etobicoke) is a real production brewery but not a visitable craft stop \u2014 fails the visitable half of the gate. Exclude from recommendations; keep the record.",
+  "rule": "human confirms"
+ }
+]

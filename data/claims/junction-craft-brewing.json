@@ -1,0 +1,29 @@
+{
+ "entity": "junction-craft-brewing",
+ "brand": "Junction Craft Brewing",
+ "location": "150 Symes Rd, Toronto \u2014 'The Destructor'",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "restored 1930s city incinerator known as The Destructor \u2014 decommissioned in the 80s, raves in the 90s, restored 2018; vast industrial taproom, loft vibe, big patio",
+   "source": "TripAdvisor/blogTO voice",
+   "sourceClass": "aggregator-community",
+   "ordinal": "a building nobody else has",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "tempered",
+   "quote": "'the most mainstream of the breweries in the area \u2014 good standard beers and playful rotating options like earl grey tea'",
+   "source": "same",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "Comparative places it BELOW its Symes Rd neighbours on beer, ABOVE on room. Old Cawthra Ave Yelp listing reads closed \u2014 that is the 2018 MOVE, not a closure."
+  }
+ ]
+}

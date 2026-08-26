@@ -1,0 +1,20 @@
+{
+ "entity": "high-park-brewery",
+ "brand": "High Park Brewery",
+ "location": "839 Runnymede Rd, Toronto",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.pilsner-lager",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Against the Grain \u2014 2019 Ontario Brewing Awards GOLD, 'clean, crisp, refreshing German-style lager'; Under the Sakura cherry-blossom lager with Black River cherry juice",
+   "source": "blogTO + OBA via listing",
+   "sourceClass": "juried-via-editorial+aggregator",
+   "ordinal": "OBA Gold 2019 (year attached)",
+   "quoteVerified": false,
+   "note": "Juried + community = A-candidate once the OBA table lands. Certified B-Corp; 12 taps, big patio, dog-friendly."
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "entity": "avling",
+ "brand": "Avling Kitchen & Brewery",
+ "location": "1042 Queen St E, Toronto",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.farmhouse-saison",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Saison 'charming yet elusive \u2026 citrus zest, pear and black pepper over pleasing acidity'; 'sampled 3 saisons and felt they were all great'",
+   "source": "review voice + shop copy",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "Matches Corey's ground truth exactly (sours, saisons, pale ales). Rooftop farm supplies the kitchen and beers (lavender for Selene)."
+  },
+  {
+   "dimension": "beer.style.sour",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "Selene smoked-lavender sour (in-house applewood-smoked Ontario malt, rooftop lavender); Meerkat lightweight sour",
+   "source": "same",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "food",
+   "level": "location",
+   "polarity": "for",
+   "quote": "kitchen-and-brewery with rooftop farm; 'focus on lagers, sours, and ales \u2014 everything tasted good'",
+   "source": "blogTO/Yelp voice",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

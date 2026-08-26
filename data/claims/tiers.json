@@ -33,6 +33,69 @@
     }
    }
   },
+  "all-my-friends": {
+   "brand": "All My Friends Beer Co.",
+   "registryId": "all-my-friends",
+   "status": "open",
+   "dims": {
+    "beer.style.hazy-ipa": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial"
+     ],
+     "ordinal": "'some of Ontario's best' — province-scale superlative",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "all-or-nothing": {
+   "brand": "All or Nothing Brewhouse & Distillery",
+   "registryId": "all-or-nothing",
+   "status": "open",
+   "dims": {
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "avling": {
+   "brand": "Avling Kitchen & Brewery",
+   "registryId": "avling-bewery",
+   "status": "unverified",
+   "dims": {
+    "beer.style.farmhouse-saison": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.sour": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "food": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
   "badlands-brewing": {
    "brand": "Badlands Brewing Company",
    "registryId": "badlands",
@@ -64,6 +127,22 @@
     }
    }
   },
+  "bandit-brewery": {
+   "brand": "Bandit Brewery",
+   "registryId": "bandit-brewery",
+   "status": "unverified",
+   "dims": {
+    "vibes.setting": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
   "bayfield-brewing": {
    "brand": "Bayfield Brewing Co.",
    "registryId": "bayfield-brewing-company",
@@ -81,6 +160,21 @@
      "tier": "B",
      "classes": [
       "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "beaches-brewing": {
+   "brand": "Beaches Brewing Company",
+   "registryId": "beaches-brewing-co",
+   "status": "unverified",
+   "dims": {
+    "liveness": {
+     "tier": "B",
+     "classes": [
+      "editorial"
      ],
      "verifiedQuotes": 0,
      "evidence": 1
@@ -215,6 +309,22 @@
     }
    }
   },
+  "bickford-brewing": {
+   "brand": "Bickford Brewing Co.",
+   "registryId": "bickford-brewing-company",
+   "status": "unverified",
+   "dims": {
+    "beer.overall": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
   "black-gold-brewery": {
    "brand": "Black Gold Brewery",
    "registryId": "black-gold-brewery",
@@ -270,6 +380,30 @@
     }
    }
   },
+  "black-lab-brewing": {
+   "brand": "Black Lab Brewing",
+   "registryId": "black-lab-brewing",
+   "status": "unverified",
+   "dims": {
+    "dog": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "best-in-area personal ranking",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
   "blood-brothers-brewing": {
    "brand": "Blood Brothers Brewing",
    "registryId": "blood-brothers",
@@ -301,6 +435,44 @@
       "editorial"
      ],
      "ordinal": "'best … most underrated' — rank vs reputation stated directly",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "brock-street-brewing": {
+   "brand": "Brock Street Brewing Company",
+   "registryId": "brock-street-brewing-company",
+   "status": "unverified",
+   "dims": {
+    "beer.style.amber-red": {
+     "tier": "B",
+     "classes": [
+      "juried"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "brunswick-bierworks": {
+   "brand": "Brunswick Bierworks",
+   "registryId": "brunswick-bierworks",
+   "status": "unverified",
+   "dims": {
+    "vibes.community": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
      "verifiedQuotes": 0,
      "evidence": 1
     }
@@ -359,6 +531,29 @@
     }
    }
   },
+  "chronicle-brewing": {
+   "brand": "Chronicle Brewing Company",
+   "registryId": "chronicle",
+   "status": "open",
+   "dims": {
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.community": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
   "church-key-brewing": {
    "brand": "Church-Key Brewing Company",
    "registryId": "church-key",
@@ -382,6 +577,69 @@
     }
    }
   },
+  "common-good": {
+   "brand": "Common Good Beer Co.",
+   "registryId": "common-good",
+   "status": "open",
+   "dims": {
+    "beer.style.hazy-ipa": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "only-in-Scarborough place superlative",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "eastbound": {
+   "brand": "Eastbound Brewing Company",
+   "registryId": "eastbound",
+   "status": "open",
+   "dims": {
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "food": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "fine-balance-brewing": {
+   "brand": "Fine Balance Brewing Company",
+   "registryId": "fine-balance",
+   "status": "open",
+   "dims": {
+    "beer.style.hazy-ipa": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "'best in a long time' + 4.8 aggregate",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.room": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
   "gananoque-brewing": {
    "brand": "Gan Brewing Company",
    "registryId": "gananoque-brewing-company",
@@ -396,6 +654,29 @@
      "evidence": 1
     },
     "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "ganaraska-brewing": {
+   "brand": "Ganaraska Brewing Company",
+   "registryId": "ganaraska-brewing-company",
+   "status": "unverified",
+   "dims": {
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "food": {
      "tier": "B",
      "classes": [
       "community"
@@ -504,6 +785,22 @@
     }
    }
   },
+  "granite-brewery": {
+   "brand": "Granite Brewery & Restaurant",
+   "registryId": "granite-brewery",
+   "status": "unverified",
+   "dims": {
+    "beer.style.session-low-alc": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "only-cask-program-in-city",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
   "great-lakes-brewery": {
    "brand": "Great Lakes Brewery",
    "registryId": "great-lakes",
@@ -556,6 +853,129 @@
     "beer.style.pilsner-lager": {
      "tier": "D",
      "classes": [],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "halo": {
+   "brand": "Halo Brewery",
+   "registryId": "halo",
+   "status": "unverified",
+   "dims": {
+    "beer.style.sour": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.room": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "henderson": {
+   "brand": "Henderson Brewing Company",
+   "registryId": "henderson",
+   "status": "open",
+   "dims": {
+    "beer.style.pale-ale": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial",
+      "juried"
+     ],
+     "juried": "Gold, English Bitters – Ordinary or Special Bitters / Best Bitter or ESB, Canadian Brewing Awards 2020 — Best",
+     "verifiedQuotes": 0,
+     "evidence": 2
+    }
+   }
+  },
+  "high-park-brewery": {
+   "brand": "High Park Brewery",
+   "registryId": "high-park-brewery",
+   "status": "unverified",
+   "dims": {
+    "beer.style.pilsner-lager": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "juried"
+     ],
+     "ordinal": "OBA Gold 2019 (year attached)",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "junction-craft-brewing": {
+   "brand": "Junction Craft Brewing",
+   "registryId": "junction-craft-brewing",
+   "status": "unverified",
+   "dims": {
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "a building nobody else has",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "kingston-brewing-company": {
+   "brand": "Kingston Brewing Company",
+   "registryId": "kingston-brewing-company",
+   "status": "unverified",
+   "dims": {
+    "vibes.setting": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "tourism"
+     ],
+     "ordinal": "oldest in Ontario — a superlative nothing else can claim",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.session-low-alc": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "food": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "liveness": {
+     "tier": "B",
+     "classes": [
+      "tourism"
+     ],
      "verifiedQuotes": 0,
      "evidence": 1
     }
@@ -709,6 +1129,70 @@
     }
    }
   },
+  "midtown-brewing": {
+   "brand": "Midtown Brewing Company",
+   "registryId": "midtown-brewing-co",
+   "status": "unverified",
+   "dims": {
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "food": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "'best burger in the County'",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "mill-st-brew-pub": {
+   "brand": "Mill Street Brew Pub (Distillery District)",
+   "registryId": "mill-st-brew-pub",
+   "status": "unverified",
+   "dims": {
+    "vibes.setting": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "tourism"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "napanee-beer-company": {
+   "brand": "The Napanee Beer Company",
+   "registryId": "the-napanee-beer-company",
+   "status": "unverified",
+   "dims": {
+    "beer.style.dark-lager": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "most-accurate-in-Ontario style claim",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.sour": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
   "new-limburg-brewing": {
    "brand": "New Limburg Brewing Company",
    "registryId": "new-limburg-brewing-company",
@@ -725,6 +1209,21 @@
      "evidence": 1
     },
     "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "northumberland-hills-brewery": {
+   "brand": "Northumberland Hills Brewery",
+   "registryId": "northumberland-hills-brewery",
+   "status": "unverified",
+   "dims": {
+    "beer.overall": {
      "tier": "B",
      "classes": [
       "community"
@@ -758,6 +1257,110 @@
     }
    }
   },
+  "rainhard-brewing": {
+   "brand": "Rainhard Brewing Co.",
+   "registryId": "rainhard-brewing",
+   "status": "unverified",
+   "dims": {
+    "beer.style.wheat-belgian": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "best-in-GTA style claim",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.stout-porter": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "juried"
+     ],
+     "juried": "Gold, Sweet Stout or Cream Stout, Canadian Brewing Awards 2022 — Sweetbacks",
+     "verifiedQuotes": 0,
+     "evidence": 2
+    }
+   }
+  },
+  "red-tape-brewery": {
+   "brand": "Red Tape Brewery",
+   "registryId": "red-tape-brewery",
+   "status": "unverified",
+   "dims": {
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "'some of the best in Canada'",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "rorschach": {
+   "brand": "Rorschach Brewing Co.",
+   "registryId": "rorschach",
+   "status": "open",
+   "dims": {
+    "beer.style.sour": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.stout-porter": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "rouge-river": {
+   "brand": "Rouge River Brewing Company",
+   "registryId": "rouge-river",
+   "status": "open",
+   "dims": {
+    "beer.style.hazy-ipa": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "best-in-Toronto personal ranking",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "signal-brewery": {
+   "brand": "Signal Brewery",
+   "registryId": "signal-brewery",
+   "status": "open",
+   "dims": {
+    "liveness": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
   "sonnen-hill-brewing": {
    "brand": "Sonnen Hill Brewing",
    "registryId": "sonnen-hill",
@@ -777,6 +1380,29 @@
       "community"
      ],
      "ordinal": "best-in-a-year personal ranking",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "steadfast-brewing": {
+   "brand": "Steadfast Brewing Company",
+   "registryId": "steadfast-brewing-co",
+   "status": "unverified",
+   "dims": {
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "food": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
      "verifiedQuotes": 0,
      "evidence": 1
     }
@@ -816,6 +1442,29 @@
     }
    }
   },
+  "stonehooker": {
+   "brand": "Stonehooker Brewing Company",
+   "registryId": "stonehooker",
+   "status": "open",
+   "dims": {
+    "vibes.setting": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
   "third-moon-brewing": {
    "brand": "Third Moon Brewing",
    "registryId": "third-moon",
@@ -836,6 +1485,76 @@
       "community"
      ],
      "verifiedQuotes": 1,
+     "evidence": 1
+    }
+   }
+  },
+  "town-brewery": {
+   "brand": "Town Brewery",
+   "registryId": "town-brewery",
+   "status": "open",
+   "dims": {
+    "beer.style.hazy-ipa": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "ordinal": "'can hang with any of Ontario's' — province-scale comparison",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "vibes.community": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "true-history": {
+   "brand": "True History Brewing",
+   "registryId": "true-history",
+   "status": "open",
+   "dims": {
+    "beer.style.pilsner-lager": {
+     "tier": "A",
+     "classes": [
+      "community",
+      "editorial"
+     ],
+     "ordinal": "'rising star' + true-to-style praise",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.hazy-ipa": {
+     "tier": "—",
+     "classes": [],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.session-low-alc": {
+     "tier": "B",
+     "classes": [
+      "editorial"
+     ],
+     "verifiedQuotes": 0,
+     "evidence": 1
+    }
+   }
+  },
+  "two-loons-brewing": {
+   "brand": "Two Loons Brewing",
+   "registryId": "two-loons-brewing",
+   "status": "unverified",
+   "dims": {
+    "beer.overall": {
+     "tier": "B",
+     "classes": [
+      "community"
+     ],
+     "verifiedQuotes": 0,
      "evidence": 1
     }
    }

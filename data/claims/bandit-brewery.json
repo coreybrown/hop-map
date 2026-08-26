@@ -1,0 +1,19 @@
+{
+ "entity": "bandit-brewery",
+ "brand": "Bandit Brewery",
+ "location": "2125 Dundas St W, Toronto (Roncesvalles)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "vibes.setting",
+   "level": "location",
+   "polarity": "for",
+   "quote": "German beer-garden-inspired patio in front of an old auto-body shop \u2014 strung lights, small trees, covered; beer-battered cheese curds; 10bbl micro, constantly changing list",
+   "source": "travellingfoodie + TripAdvisor",
+   "sourceClass": "editorial-blog+aggregator",
+   "quoteVerified": false,
+   "note": "Venue-led, rotating range, 3.9 \u2014 no style claim earned, and GT left it blank too. Consistent."
+  }
+ ]
+}

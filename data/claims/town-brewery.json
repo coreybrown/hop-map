@@ -1,0 +1,29 @@
+{
+ "entity": "town-brewery",
+ "brand": "Town Brewery",
+ "location": "1632 Charles St, Whitby",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.hazy-ipa",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'brewing amazing beer that can hang with basically any of Ontario's countless, excellent craft beers'; 'mostly brews IPAs, but also a tasty Helles'; Planet Caravan double IPA praised",
+   "source": "TripAdvisor voice",
+   "sourceClass": "aggregator-community",
+   "ordinal": "'can hang with any of Ontario's' \u2014 province-scale comparison",
+   "quoteVerified": false,
+   "note": "THE Durham-region IPA stop for the corridor's 17% mark."
+  },
+  {
+   "dimension": "vibes.community",
+   "level": "location",
+   "polarity": "for",
+   "quote": "industrial open space, board games, monthly craft show with free vendor tables; very affordable",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "entity": "chronicle-brewing",
+ "brand": "Chronicle Brewing Company",
+ "location": "Bowmanville",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'brilliant selection of foundational, classic beers like blonde ales and crisp lagers, but also experiments with juicy IPAs, sour lagers and fruit-filled sour beers' \u2014 4.9 from 247 (Birdeye), 4.4 from 212 (RestaurantGuru)",
+   "source": "editorial-ish blurb + review aggregate",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "vibes.community",
+   "level": "location",
+   "polarity": "for",
+   "quote": "pop-culture theme \u2014 video games, movies, TV on labels and interior; 'nerdy, chic hipster-ish feel'; complimentary popcorn, dogs welcome, live music",
+   "source": "same",
+   "sourceClass": "aggregator-user",
+   "quoteVerified": false,
+   "note": "A distinct identity dimension (nerd-culture taproom) the vocabulary should keep as vibes.community."
+  }
+ ]
+}

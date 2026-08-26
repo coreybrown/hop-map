@@ -1,0 +1,29 @@
+{
+ "entity": "rainhard-brewing",
+ "brand": "Rainhard Brewing Co.",
+ "location": "100 Symes Rd, Toronto (Stockyards)",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.style.wheat-belgian",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'Best Belgians in the GTA' (review title)",
+   "source": "TripAdvisor",
+   "sourceClass": "aggregator-community",
+   "ordinal": "best-in-GTA style claim",
+   "quoteVerified": false
+  },
+  {
+   "dimension": "beer.style.stout-porter",
+   "level": "brand",
+   "polarity": "for",
+   "quote": "'award winning IPAs and Stout'; Bourbon Barrel Aged Satanic Panic highlighted; 'emerged as one of [the] favorite breweries in Toronto'",
+   "source": "Yelp/TripAdvisor voice",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "'Award winning' unresolved \u2014 OBA/CBA mining should land the years. Family room: pinball, foosball, kids' games, dogs."
+  }
+ ]
+}

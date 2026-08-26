@@ -1,0 +1,19 @@
+{
+ "entity": "two-loons-brewing",
+ "brand": "Two Loons Brewing",
+ "location": "122 Brock Ave, Toronto",
+ "sweptAt": "2026-08-26",
+ "queries": 1,
+ "claims": [
+  {
+   "dimension": "beer.overall",
+   "level": "brand",
+   "polarity": "tempered",
+   "quote": "'a solid hazy IPA with some nice hop flavors, though nothing especially superlative'; Flying South pale ale 'pretty solid'; local-farm sourcing, sustainability focus",
+   "source": "BeerAdvocate voice",
+   "sourceClass": "aggregator-community",
+   "quoteVerified": false,
+   "note": "Honest mid \u2014 solid neighbourhood spot, no destination claim."
+  }
+ ]
+}

@@ -384,7 +384,7 @@ async function main() {
           style,
           source: 'awards',
           detail: best
-            ? `${best.medal[0].toUpperCase()}${best.medal.slice(1)}, ${best.category}, Canadian Brewing Awards ${best.year} — ${best.beer}`
+            ? `${best.medal[0].toUpperCase()}${best.medal.slice(1)}, ${best.category}, ${best.competition ?? 'Canadian Brewing Awards'} ${best.year} — ${best.beer}`
             : 'Canadian Brewing Awards medal',
           score,
         };

@@ -244,7 +244,11 @@ function parseWinners(lines, year) {
         continue;
       }
       const parts = m[2].split(/\s+[|\u2013\u2014-]\s+/).map((x) => x.trim()).filter(Boolean);
+      // Three parts on national lists (beer | brewery | province); TWO on
+      // Ontario-only lists (Gold: Mile Hill – OutSpoken Brewing) — no
+      // province column exists when every row is Ontario.
       if (parts.length >= 3) push(c, category, m[1], parts[0], parts[1], parts[parts.length - 1]);
+      else if (parts.length === 2) push(c, category, m[1], parts[0], parts[1], '');
     }
   }
 
@@ -287,7 +291,20 @@ async function main() {
     2021: 'https://matterofbeer.com/2021/09/20/2021-canadian-brewing-awards-winners/',
     2020: 'https://beerinfo.com/the-2020-canadian-brewing-awards/',
     2019: 'https://beerinfo.com/canadian_brewing_awards_2019/',
+    2017: 'https://ontariobev.net/winners-announced-2017-canadian-brewing-awards/',
   };
+  /**
+   * Ontario Brewing Awards — the second juried competition, Ontario-only and
+   * cheaper to enter, so it catches breweries that skip the national one.
+   * The official .ca site is dead; beerinfo republishes per-year lists in the
+   * same MEDAL:-prefixed format. Only these years exist there — the archive
+   * can backfill the rest when its index endpoint recovers.
+   */
+  const OBA_SOURCES = [
+    { year: 2024, url: 'https://beerinfo.com/2024-ontario-brewing-awards-medal-winners/' },
+    { year: 2019, url: 'https://beerinfo.com/2019-ontario-brewing-awards-medal-winners/' },
+    { year: 2018, url: 'https://beerinfo.com/2018-ontario-brewing-awards-medal-winners/' },
+  ];
 
   await mkdir(CACHE, { recursive: true });
   for (const year of years) {
@@ -360,6 +377,7 @@ async function main() {
       }
       if (rows.length < 20) throw new Error(`best parse was ${rows.length} rows across ${typeof fetched === 'number' ? fetched : '?'} fetched candidates`);
       if (how !== 'cache') await writeFile(path.join(CACHE, `${year}.json`), JSON.stringify(rows));
+      for (const r of rows) r.competition ??= 'Canadian Brewing Awards';
       all.push(...rows);
       perYear[year] = rows.length;
       const on = rows.filter((r) => /ontario|^on$/i.test(r.province)).length;
@@ -369,6 +387,34 @@ async function main() {
       console.log(`— ${String(err.message).slice(0, 70)}`);
     }
     await sleep(8000); // the archive rate-limits hard — be genuinely slow
+  }
+
+  for (const { year, url } of OBA_SOURCES) {
+    process.stdout.write(`  OBA ${year}  `);
+    try {
+      let rows = [];
+      try {
+        const cached = JSON.parse(await readFile(path.join(CACHE, `oba-${year}.json`), 'utf8'));
+        if (Array.isArray(cached) && cached.length >= 20) rows = cached;
+      } catch { /* fetch */ }
+      if (rows.length < 20) {
+        const res = await fetch(url, { headers: HEADERS, signal: AbortSignal.timeout(60_000) });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        rows = parseWinners(toLines(await res.text()), year);
+        // An Ontario-only competition has no province column; every row is Ontario.
+        for (const r of rows) r.province ||= 'Ontario';
+        if (rows.length >= 20) await writeFile(path.join(CACHE, `oba-${year}.json`), JSON.stringify(rows));
+      }
+      if (rows.length < 20) throw new Error(`parsed only ${rows.length}`);
+      for (const r of rows) { r.competition = 'Ontario Brewing Awards'; r.province ||= 'Ontario'; }
+      all.push(...rows);
+      perYear[`OBA-${year}`] = rows.length;
+      console.log(`${String(rows.length).padStart(4)} medals`);
+    } catch (err) {
+      perYear[`OBA-${year}`] = 0;
+      console.log(`— ${String(err.message).slice(0, 60)}`);
+    }
+    await sleep(2000);
   }
 
   /**
@@ -443,7 +489,7 @@ async function main() {
       medals: [],
       styleScore: {},
     });
-    rec.medals.push({ year: r.year, medal: r.medal, category: r.category, beer: r.beer, styles: r.styles });
+    rec.medals.push({ year: r.year, medal: r.medal, category: r.category, beer: r.beer, styles: r.styles, competition: r.competition });
     const age = Math.max(0, thisYear - r.year);
     const recency = Math.max(0.25, 1 - age * 0.08);
     for (const s of r.styles) {

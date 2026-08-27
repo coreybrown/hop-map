@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-26T22:29:55.143Z",
+  "generatedAt": "2026-08-27T02:06:47.752Z",
   "attribution": "Contains data from OpenStreetMap contributors, licensed under ODbL.",
   "count": 270,
   "curated": 63,
   "listed": 207,
-  "withStyles": 116,
+  "withStyles": 118,
   "coverage": {
     "website": 201,
     "phone": 114,
@@ -16,7 +16,7 @@
     "offers": 104,
     "description": 66,
     "flaggedNotBrewery": 14,
-    "knownFor": 28,
+    "knownFor": 34,
     "excludedNotBrewery": 18,
     "closed": 7,
     "liveWebsite": 140,
@@ -1778,7 +1778,9 @@
           "sour",
           "pale-ale"
         ],
-        "knownFor": []
+        "knownFor": [
+          "amber-red"
+        ]
       },
       "signals": {},
       "venue": {
@@ -1798,7 +1800,16 @@
       "siteHealth": {
         "verdict": "live",
         "checkedAt": "2026-08-17T21:57:29.689Z"
-      }
+      },
+      "reputationEvidence": [
+        {
+          "style": "amber-red",
+          "source": "awards",
+          "detail": "Bronze, Amber and Brown American Beer, Ontario Brewing Awards 2024 — Black Rock",
+          "score": 0.664
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "brasserie-tienne-br-l",
@@ -1938,7 +1949,10 @@
           "wheat-belgian",
           "amber-red"
         ],
-        "knownFor": []
+        "knownFor": [
+          "pilsner-lager",
+          "wheat-belgian"
+        ]
       },
       "signals": {},
       "venue": {
@@ -1958,7 +1972,22 @@
       "siteHealth": {
         "verdict": "not-found",
         "checkedAt": "2026-08-17T21:57:31.513Z"
-      }
+      },
+      "reputationEvidence": [
+        {
+          "style": "pilsner-lager",
+          "source": "awards",
+          "detail": "Gold, International Lager, Ontario Brewing Awards 2024 — Oktoberfest Festbier",
+          "score": 1.28
+        },
+        {
+          "style": "wheat-belgian",
+          "source": "awards",
+          "detail": "Bronze, Wheat Beer – German Style (Weiss), Canadian Brewing Awards 2024 — Hefeweizen",
+          "score": 1.062
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "brew-revolution",
@@ -2966,7 +2995,8 @@
           "pale-ale"
         ],
         "knownFor": [
-          "pale-ale"
+          "pale-ale",
+          "stout-porter"
         ]
       },
       "signals": {},
@@ -3006,6 +3036,12 @@
           "source": "awards",
           "detail": "Gold, Belgian-Style Abbey Ale / Pale Ale, Canadian Brewing Awards 2020 — Marigold",
           "score": 0.814
+        },
+        {
+          "style": "stout-porter",
+          "source": "awards",
+          "detail": "Gold, Porter, Canadian Brewing Awards 2019 — Clifford Porter",
+          "score": 0.656
         }
       ],
       "knownForSource": "awards"
@@ -3223,8 +3259,8 @@
       "styles": {
         "offers": [],
         "knownFor": [
-          "pale-ale",
-          "sour"
+          "sour",
+          "pale-ale"
         ]
       },
       "signals": {},
@@ -3241,16 +3277,16 @@
       "osmCheckedOn": "2024-09-15",
       "reputationEvidence": [
         {
+          "style": "sour",
+          "source": "awards",
+          "detail": "Gold, Catharina Sour, Ontario Brewing Awards 2024 — Island Breeze",
+          "score": 1.832
+        },
+        {
           "style": "pale-ale",
           "source": "awards",
           "detail": "Gold, English Bitters, Canadian Brewing Awards 2024 — Little Britain – ESB",
           "score": 0.84
-        },
-        {
-          "style": "sour",
-          "source": "awards",
-          "detail": "Silver, American Sour Ale, Canadian Brewing Awards 2025 — Island Breeze",
-          "score": 0.552
         }
       ],
       "knownForSource": "awards"
@@ -3913,7 +3949,9 @@
           "pale-ale",
           "pilsner-lager"
         ],
-        "knownFor": []
+        "knownFor": [
+          "pale-ale"
+        ]
       },
       "signals": {},
       "venue": {
@@ -3938,7 +3976,16 @@
       "siteHealth": {
         "verdict": "live",
         "checkedAt": "2026-08-17T21:57:39.370Z"
-      }
+      },
+      "reputationEvidence": [
+        {
+          "style": "pale-ale",
+          "source": "awards",
+          "detail": "Gold, American Pale Ale, Ontario Brewing Awards 2018 — Elora Borealis Citra Pale Ale",
+          "score": 0.72
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "evergreen-craft-ales",
@@ -4307,7 +4354,7 @@
           "style": "wild-ale",
           "source": "awards",
           "detail": "Gold, American-style Brett Beer, Canadian Brewing Awards 2024 — Foeder Aged Brett Dubbel",
-          "score": 1.392
+          "score": 2.16
         },
         {
           "style": "stout-porter",
@@ -4480,7 +4527,9 @@
           "amber-red",
           "hazy-ipa"
         ],
-        "knownFor": []
+        "knownFor": [
+          "amber-red"
+        ]
       },
       "signals": {},
       "venue": {
@@ -4509,7 +4558,16 @@
         "productCount": 76,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:46:06.172Z"
-      }
+      },
+      "reputationEvidence": [
+        {
+          "style": "amber-red",
+          "source": "awards",
+          "detail": "Silver, Amber and Brown American Beer, Ontario Brewing Awards 2024 — On The BANKS of The Mattagami",
+          "score": 0.768
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "gananoque-brewing-company",
@@ -6622,7 +6680,7 @@
           "style": "wheat-belgian",
           "source": "awards",
           "detail": "Gold, Wheat Beer – German Style (Weiss), Canadian Brewing Awards 2023 — Haberdasher Hefeweizen",
-          "score": 0.76
+          "score": 0.976
         },
         {
           "style": "hazy-ipa",
@@ -6909,7 +6967,10 @@
       "lng": -79.1640035,
       "styles": {
         "offers": [],
-        "knownFor": []
+        "knownFor": [
+          "pale-ale",
+          "amber-red"
+        ]
       },
       "signals": {},
       "venue": {
@@ -6925,7 +6986,22 @@
       "siteHealth": {
         "verdict": "server-error",
         "checkedAt": "2026-08-17T21:57:51.326Z"
-      }
+      },
+      "reputationEvidence": [
+        {
+          "style": "pale-ale",
+          "source": "awards",
+          "detail": "Gold, British Pale Ale, Ontario Brewing Awards 2018 — BEER 101 BITTER",
+          "score": 0.962
+        },
+        {
+          "style": "amber-red",
+          "source": "awards",
+          "detail": "Bronze, Irish And Scotch Ales, Canadian Brewing Awards 2023 — Beer 101 Strong",
+          "score": 0.636
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "nickel-brook",
@@ -6952,15 +7028,29 @@
       "styles": {
         "offers": [],
         "knownFor": [
-          "barrel-aged"
+          "west-coast-ipa",
+          "barrel-aged",
+          "hazy-ipa"
         ]
       },
       "reputationEvidence": [
         {
+          "style": "west-coast-ipa",
+          "source": "awards",
+          "detail": "Gold, Imperial IPA, Ontario Brewing Awards 2018 — Immodest Imperial IPA",
+          "score": 1.344
+        },
+        {
           "style": "barrel-aged",
           "source": "awards",
           "detail": "Bronze, Wood- and Barrel-Aged Strong Beer, Canadian Brewing Awards 2025 — Kentucky Imperial Stout",
-          "score": 0.634
+          "score": 0.85
+        },
+        {
+          "style": "hazy-ipa",
+          "source": "awards",
+          "detail": "Silver, New England IPA, Ontario Brewing Awards 2024 — Wicked Awesome",
+          "score": 0.768
         }
       ],
       "unverifiedHypothesis": [
@@ -7249,8 +7339,8 @@
         {
           "style": "pilsner-lager",
           "source": "awards",
-          "detail": "Gold, North American Style Premium Lager, Canadian Brewing Awards 2020 — Blonde",
-          "score": 1.126
+          "detail": "Gold, Dark European Lager, Ontario Brewing Awards 2024 — Brunette",
+          "score": 3.3
         }
       ],
       "unverifiedHypothesis": [
@@ -9448,8 +9538,8 @@
         "offers": [],
         "knownFor": [
           "barrel-aged",
-          "west-coast-ipa",
-          "wheat-belgian"
+          "hazy-ipa",
+          "west-coast-ipa"
         ]
       },
       "signals": {},
@@ -9471,16 +9561,16 @@
           "score": 1.8
         },
         {
+          "style": "hazy-ipa",
+          "source": "awards",
+          "detail": "Bronze, New England IPA, Ontario Brewing Awards 2024 — DRIFT",
+          "score": 0.714
+        },
+        {
           "style": "west-coast-ipa",
           "source": "awards",
           "detail": "Silver, English Style India Pale Ale, Canadian Brewing Awards 2023 — English IPA",
           "score": 0.694
-        },
-        {
-          "style": "wheat-belgian",
-          "source": "awards",
-          "detail": "Gold, Wheat Beer – German Style (Weiss), Canadian Brewing Awards 2022 — Banana Hammock",
-          "score": 0.68
         }
       ],
       "knownForSource": "awards"
@@ -9501,7 +9591,9 @@
       "lng": -75.7070646,
       "styles": {
         "offers": [],
-        "knownFor": []
+        "knownFor": [
+          "sour"
+        ]
       },
       "signals": {},
       "venue": {
@@ -9515,7 +9607,16 @@
       "lastVerified": "2026-08-17",
       "contact": {},
       "openingHours": "Tu,We,Su 12:00-22:00, Th 12:00-23:00, Fr,Sa 12:00-24:00",
-      "osmCheckedOn": "2026-05-09"
+      "osmCheckedOn": "2026-05-09",
+      "reputationEvidence": [
+        {
+          "style": "sour",
+          "source": "awards",
+          "detail": "Silver, Catharina Sour, Ontario Brewing Awards 2024 — Manhire",
+          "score": 0.768
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "sparrow",
@@ -11935,8 +12036,8 @@
         {
           "style": "pilsner-lager",
           "source": "awards",
-          "detail": "Bronze, North American Style Premium Lager, Canadian Brewing Awards 2022 — Helles Lager",
-          "score": 0.712
+          "detail": "Gold, Craft Lager, Ontario Brewing Awards 2018 — Helles Lager",
+          "score": 1.432
         }
       ],
       "unverifiedHypothesis": [

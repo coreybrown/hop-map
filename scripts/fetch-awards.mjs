@@ -264,7 +264,25 @@ function parseWinners(lines, year) {
   const PROV = /^(ontario|on|qu[ée]bec|qc|british columbia|bc|alberta|ab|manitoba|mb|saskatchewan|sk|nova scotia|ns|new brunswick|nb|newfoundland.*|nl|prince edward island|pei?|yukon|yt|northwest territories|nt|nunavut|nu)$/i;
   const provScore = (rows) =>
     rows.length ? rows.filter((r) => PROV.test(r.province.trim())).length / rows.length : 0;
-  const scored = [a, b, c].map((rows) => ({ rows, score: provScore(rows) }));
+  /*
+   * Order D — ontariobev's 2017 format: 'MEDAL: Brewery, Beer (ON)'. Comma
+   * separated, brewery first, two-letter province code in trailing parens.
+   * (A few rows flip beer/brewery; those simply fail to match the registry —
+   * a small loss, not a corruption.)
+   */
+  const d = [];
+  {
+    let category = '';
+    for (const line of lines) {
+      const m = line.match(/^(gold|silver|bronze)\s*:\s*(.+?),\s*(.+?)\s*\(([A-Z]{2})\)\s*$/i);
+      if (!m) {
+        if (!/^(gold|silver|bronze)/i.test(line) && line.length <= 90) category = line;
+        continue;
+      }
+      push(d, category, m[1], m[3], m[2], m[4]);
+    }
+  }
+  const scored = [a, b, c, d].map((rows) => ({ rows, score: provScore(rows) }));
   const best = scored.filter((x) => x.score >= 0.3).sort((x, y) => y.rows.length - x.rows.length)[0];
   if (best) return best.rows;
   return scored.sort((x, y) => y.rows.length - x.rows.length)[0].rows; // no province column anywhere
@@ -326,7 +344,7 @@ async function main() {
         const res = await fetch(ALT_SOURCE[year], { headers: HEADERS, signal: AbortSignal.timeout(60_000) });
         if (res.ok) {
           rows = parseWinners(toLines(await res.text()), year);
-          how = 'americancraftbeer.com';
+          how = new URL(ALT_SOURCE[year]).host;
         }
       }
       if (rows.length < 20) {

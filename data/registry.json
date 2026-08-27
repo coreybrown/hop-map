@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-08-27T02:06:47.752Z",
+  "generatedAt": "2026-08-27T05:26:52.403Z",
   "attribution": "Contains data from OpenStreetMap contributors, licensed under ODbL.",
   "count": 270,
   "curated": 63,
   "listed": 207,
-  "withStyles": 118,
+  "withStyles": 119,
   "coverage": {
     "website": 201,
     "phone": 114,
@@ -16,7 +16,7 @@
     "offers": 104,
     "description": 66,
     "flaggedNotBrewery": 14,
-    "knownFor": 34,
+    "knownFor": 36,
     "excludedNotBrewery": 18,
     "closed": 7,
     "liveWebsite": 140,
@@ -289,7 +289,7 @@
           "style": "pale-ale",
           "source": "awards",
           "detail": "Silver, Cream Ale, Canadian Brewing Awards 2024 — Cream Ale",
-          "score": 1.054
+          "score": 1.222
         }
       ],
       "unverifiedHypothesis": [
@@ -3116,7 +3116,7 @@
           "style": "sour",
           "source": "awards",
           "detail": "Gold, German-Style Sour Ale Berliner-Style Weisse or Gose, Canadian Brewing Awards 2021 — Guava Gose",
-          "score": 0.6
+          "score": 0.768
         }
       ],
       "unverifiedHypothesis": [
@@ -5310,7 +5310,7 @@
           "style": "pale-ale",
           "source": "awards",
           "detail": "Gold, English Bitters – Ordinary or Special Bitters / Best Bitter or ESB, Canadian Brewing Awards 2020 — Best",
-          "score": 0.52
+          "score": 0.688
         }
       ],
       "unverifiedHypothesis": [
@@ -6845,7 +6845,9 @@
       "lng": -80.402239,
       "styles": {
         "offers": [],
-        "knownFor": []
+        "knownFor": [
+          "wheat-belgian"
+        ]
       },
       "signals": {},
       "venue": {
@@ -6862,7 +6864,16 @@
       "siteHealth": {
         "verdict": "live",
         "checkedAt": "2026-08-17T21:57:50.963Z"
-      }
+      },
+      "reputationEvidence": [
+        {
+          "style": "wheat-belgian",
+          "source": "awards",
+          "detail": "Gold, Belgian-Style Tripel, Canadian Brewing Awards 2017 — Tripel",
+          "score": 0.698
+        }
+      ],
+      "knownForSource": "awards"
     },
     {
       "id": "niagara-brewing-company",
@@ -7038,7 +7049,7 @@
           "style": "west-coast-ipa",
           "source": "awards",
           "detail": "Gold, Imperial IPA, Ontario Brewing Awards 2018 — Immodest Imperial IPA",
-          "score": 1.344
+          "score": 1.624
         },
         {
           "style": "barrel-aged",
@@ -8540,9 +8551,18 @@
           "sour",
           "pilsner-lager"
         ],
-        "knownFor": []
+        "knownFor": [
+          "pale-ale"
+        ]
       },
-      "reputationEvidence": [],
+      "reputationEvidence": [
+        {
+          "style": "pale-ale",
+          "source": "awards",
+          "detail": "Gold, North American Style Pale Ale, Canadian Brewing Awards 2017 — Beneath the Planet of the APAs",
+          "score": 0.728
+        }
+      ],
       "unverifiedHypothesis": [
         "hazy-ipa",
         "pale-ale"
@@ -8567,7 +8587,8 @@
         "productCount": 9,
         "truncated": false,
         "fetchedAt": "2026-08-17T21:46:45.237Z"
-      }
+      },
+      "knownForSource": "awards"
     },
     {
       "id": "royal-city",

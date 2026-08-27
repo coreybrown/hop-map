@@ -1205,8 +1205,10 @@
       "juried"
      ],
      "ordinal": "medals + best-in-province claim",
+     "juried": "Gold, Belgian-Style Tripel, Canadian Brewing Awards 2017 — Tripel",
+     "juriedStale": true,
      "verifiedQuotes": 0,
-     "evidence": 1
+     "evidence": 2
     },
     "vibes.setting": {
      "tier": "B",
@@ -1341,6 +1343,16 @@
       "community"
      ],
      "ordinal": "best-in-Toronto personal ranking",
+     "verifiedQuotes": 0,
+     "evidence": 1
+    },
+    "beer.style.pale-ale": {
+     "tier": "B",
+     "classes": [
+      "juried"
+     ],
+     "juried": "Gold, North American Style Pale Ale, Canadian Brewing Awards 2017 — Beneath the Planet of the APAs",
+     "juriedStale": true,
      "verifiedQuotes": 0,
      "evidence": 1
     }
